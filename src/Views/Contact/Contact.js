@@ -14,7 +14,7 @@ function Contact() {
             </div>
             <div style={{textAlign:'center',fontSize:'30px'}}>Talk to a member of our sales team.</div>
             <div style={{textAlign:'center',margin:'10px'}}>We'll help you find out right  product at right pricing.</div>
-            <button></button>
+            <button className='button'>Contact Sales</button>
           </div>
         </div>
         <div>

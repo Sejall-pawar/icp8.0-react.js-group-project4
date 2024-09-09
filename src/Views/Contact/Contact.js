@@ -2,7 +2,7 @@ import React from 'react'
 import './contact.css'
 import helpimg from './help.jpg'
 import callimg from './call.png'
-import button1 from '../../Components/button/button'
+import Button1 from '../../Components/button/button'
 
 function Contact() {
   return (
@@ -15,9 +15,7 @@ function Contact() {
             </div>
             <div style={{textAlign:'center',fontSize:'30px'}}>Talk to a member of our sales team.</div>
             <div style={{textAlign:'center',margin:'10px'}}>We'll help you find out right  product at right pricing.</div>            
-            <div>
-              <button1 />
-            </div>
+            <div style={{margin:'35px'}}><Button1 text='Contact Sales'/></div>
            </div>
         </div>
         <div>

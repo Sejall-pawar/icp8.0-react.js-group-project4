@@ -1,8 +1,9 @@
 import React from "react";
+import './button.css'
 
-function Button(){
+function Button(props){
     return(
-        <button className="button">Click me</button>
+        <button className="button">{props.text}</button>
     )
 }
 

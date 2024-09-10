@@ -1,7 +1,10 @@
 import React from 'react'
 import './Furniture.css'
+import Header from './../../Components/Header/Header'; 
+import Footer from './../../Components/Footer/Footer';
 
 function Furniture() {
+    
   const furnitureItems = [
     {
       id: 1,
@@ -27,14 +30,14 @@ function Furniture() {
 
     {
       id: 4,
-      image: `${process.env.PUBLIC_URL}/images/study_desk.jpg`, // Local image from public folder
+      image: `${process.env.PUBLIC_URL}/images/study_desk.jpg`,
       title: 'Study Desk',
       description: 'Spacious study desk, ideal for work or study.',
       price: '$15/month'
     },
     {
       id: 5,
-      image: `${process.env.PUBLIC_URL}/images/study_desk.jpg`, // Local image from public folder
+      image: `${process.env.PUBLIC_URL}/images/study_desk.jpg`, 
       title: 'Study Desk',
       description: 'Spacious study desk, ideal for work or study.',
       price: '$15/month'
@@ -42,19 +45,21 @@ function Furniture() {
 
     {
       id: 6,
-      image: `${process.env.PUBLIC_URL}/images/study_desk.jpg`, // Local image from public folder
+      image: `${process.env.PUBLIC_URL}/images/study_desk.jpg`, 
       title: 'Study Desk',
       description: 'Spacious study desk, ideal for work or study.',
       price: '$15/month'
     }
     
-
-
     
-    
-  ];
+];
 
-  return (
+
+return (
+  <div>
+    
+    <Header />
+
     <div className="furniture-container">
       <h1>Furniture on Rent</h1>
       <div className="furniture-cards">
@@ -69,7 +74,11 @@ function Furniture() {
         ))}
       </div>
     </div>
-  );
+
+  
+    <Footer />
+  </div>
+);
 }
 
-export default Furniture
+export default Furniture;

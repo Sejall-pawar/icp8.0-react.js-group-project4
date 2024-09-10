@@ -81,29 +81,29 @@ function Furniture() {
     {
       id: 9,
       image: restChair, 
-      title: 'Shoe Rack',
-      description: 'Compact and durable shoe rack with multiple shelves to keep your footwear organized.',
+      title: 'Rest Chair',
+      description: 'Comfortable reclining rest chair, ideal for relaxation or reading.',
       price: '$22/month'
     },
     {
       id: 10,
       image: bookShelf, 
-      title: 'Shoe Rack',
-      description: 'Compact and durable shoe rack with multiple shelves to keep your footwear organized.',
+      title: 'Bookshelf',
+      description: 'Spacious wooden bookshelf with multiple shelves for organizing your books and decor.',
       price: '$22/month'
     },
     {
       id: 11,
       image: woodenSwing, 
-      title: 'Shoe Rack',
-      description: 'Compact and durable shoe rack with multiple shelves to keep your footwear organized.',
+      title: 'Wooden Swing',
+      description: 'Charming wooden swing, perfect for indoor or outdoor relaxation.',
       price: '$22/month'
     },
     {
       id: 12,
       image: bedTable, 
-      title: 'Shoe Rack',
-      description: 'Compact and durable shoe rack with multiple shelves to keep your footwear organized.',
+      title: 'Bedside Table',
+      description: 'Elegant bedside table with storage drawers for your night-time essentials.',
       price: '$22/month'
     }
 

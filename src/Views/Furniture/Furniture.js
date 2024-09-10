@@ -10,6 +10,15 @@ function Furniture() {
       description: 'Comfortable 3-seater sofa set available for rent.',
       price: '$25/month'
     },
+    {
+      id: 2,
+      image: `${process.env.PUBLIC_URL}/images/dining_table.jpg`, // Local image from public folder
+      title: 'Dining Table',
+      description: 'Elegant dining table with 4 chairs.',
+      price: '$20/month'
+    },
+
+    
     
   ];
 

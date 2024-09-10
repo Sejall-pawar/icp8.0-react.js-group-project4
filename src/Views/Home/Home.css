@@ -27,3 +27,51 @@
     color: #758694;
     text-align: center;
 }
+
+.key-title{
+  text-align: center;
+  color: #405D72;
+  margin-bottom: 0;
+}
+
+.key-contanier {
+    display: flex;
+    justify-content: space-evenly; 
+    align-items: center; 
+    flex-wrap: wrap; 
+    padding: 20px; 
+    gap: 20px; 
+}
+
+.key-detail {
+    width: 300px; 
+    background-color: white; 
+    border-radius: 5px; 
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    padding: 20px; 
+    text-align: center; 
+    margin-top: 0;
+}
+
+.key-img {
+    height: 200px; 
+    width: 200px; 
+    object-fit: cover; 
+    border-radius: 5px; 
+    margin-bottom: 15px; 
+}
+
+.key-detail h1 {
+    font-size: 20px; 
+    margin: 10px 0; 
+    color: #405D72; 
+}
+
+.key-detail h2 {
+    font-size: 15px; 
+    margin: 5px 0; 
+    color: #7A8E9B; 
+}

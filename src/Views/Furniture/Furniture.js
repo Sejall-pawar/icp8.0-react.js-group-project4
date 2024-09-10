@@ -24,7 +24,23 @@ function Furniture() {
       description: 'Spacious study desk, ideal for work or study.',
       price: '$15/month'
     },
-     
+
+    {
+      id: 4,
+      image: `${process.env.PUBLIC_URL}/images/study_desk.jpg`, // Local image from public folder
+      title: 'Study Desk',
+      description: 'Spacious study desk, ideal for work or study.',
+      price: '$15/month'
+    },
+    {
+      id: 5,
+      image: `${process.env.PUBLIC_URL}/images/study_desk.jpg`, // Local image from public folder
+      title: 'Study Desk',
+      description: 'Spacious study desk, ideal for work or study.',
+      price: '$15/month'
+    },
+    
+
 
     
     

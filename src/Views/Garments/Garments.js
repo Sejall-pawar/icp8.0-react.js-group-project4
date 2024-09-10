@@ -1,21 +1,15 @@
 import React from 'react';
-import Navbar from './Components/Navbar';
-import HeroSection from './Components/HeroSection';
-import Cards from './Components/cards';
+import Header from "./../../Components/Header/Header";
+import Footer from "./../../Components/Footer/Footer";
 
-function GarmentsApp() {
+function Garments() {
   return (
     <div>
-      {/* Navigation bar with links to Men's and Women's sections */}
-      <Navbar />
-
-      {/* Hero section with changing images */}
-      <HeroSection />
-
-      {/* Cards for Women's and Men's wear */}
-      <Cards />
+      <Header />
+      
+      <Footer />
     </div>
   );
 }
 
-export default GarmentsApp;
+export default Garments;

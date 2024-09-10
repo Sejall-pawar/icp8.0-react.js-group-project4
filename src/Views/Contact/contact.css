@@ -1,0 +1,37 @@
+body{
+    background-color: gray;
+}
+.big{
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+  
+}
+.sales{
+    background-color: white;
+}
+.help{
+    background-color: white;
+}
+
+h1{
+    padding-left: 40px;
+}
+.img{
+    width: 400px;
+}
+.innerbox1{
+    margin-left: 100px;
+    box-shadow: 1px 5px 5px gray;
+    height: 350px;
+    width: 350px;
+}
+.callimg{
+    height: 60px;
+    display: block;
+    margin: 40px auto;
+}

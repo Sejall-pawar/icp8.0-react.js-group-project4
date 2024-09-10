@@ -12,11 +12,19 @@ function Furniture() {
     },
     {
       id: 2,
-      image: `${process.env.PUBLIC_URL}/images/dining_table.jpg`, // Local image from public folder
+      image: `${process.env.PUBLIC_URL}/images/dining_table.jpg`,
       title: 'Dining Table',
       description: 'Elegant dining table with 4 chairs.',
       price: '$20/month'
     },
+    {
+      id: 3,
+      image: `${process.env.PUBLIC_URL}/images/study_desk.jpg`, 
+      title: 'Study Desk',
+      description: 'Spacious study desk, ideal for work or study.',
+      price: '$15/month'
+    },
+     
 
     
     

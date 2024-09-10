@@ -3,41 +3,49 @@ import './Furniture.css'
 import Header from './../../Components/Header/Header'; 
 import Footer from './../../Components/Footer/Footer';
 
+import sofaImage from './Furniture Img/sofa.jpeg';
+import diningTableImage from './Furniture Img/dinning table.jpeg';
+import studyDeskImage from './Furniture Img/study desk.jpg';
+import bedImage from './Furniture Img/bed.jpg';
+import dressingTable from './Furniture Img/dressing table.jpg';
+import wardRobe from './Furniture Img/wardrobe.jpeg';
+
+
+
 function Furniture() {
     
   const furnitureItems = [
     {
       id: 1,
-      image: `${process.env.PUBLIC_URL}/images/sofa.jpg`, 
+      image: sofaImage,   
       title: 'Sofa Set',
       description: 'Comfortable 3-seater sofa set available for rent.',
       price: '$25/month'
     },
     {
       id: 2,
-      image: `${process.env.PUBLIC_URL}/images/dining_table.jpg`,
+      image: diningTableImage,  // Use imported image
       title: 'Dining Table',
       description: 'Elegant dining table with 4 chairs.',
       price: '$20/month'
     },
     {
       id: 3,
-      image: `${process.env.PUBLIC_URL}/images/study_desk.jpg`, 
+      image: studyDeskImage,  // Use imported image
       title: 'Study Desk',
       description: 'Spacious study desk, ideal for work or study.',
       price: '$15/month'
     },
-
     {
       id: 4,
-      image: `${process.env.PUBLIC_URL}/images/study_desk.jpg`,
-      title: 'Study Desk',
+      image: bedImage,
+      title: 'Bed',
       description: 'Spacious study desk, ideal for work or study.',
       price: '$15/month'
     },
     {
       id: 5,
-      image: `${process.env.PUBLIC_URL}/images/study_desk.jpg`, 
+      image: dressingTable, 
       title: 'Study Desk',
       description: 'Spacious study desk, ideal for work or study.',
       price: '$15/month'
@@ -45,7 +53,7 @@ function Furniture() {
 
     {
       id: 6,
-      image: `${process.env.PUBLIC_URL}/images/study_desk.jpg`, 
+      image: wardRobe, 
       title: 'Study Desk',
       description: 'Spacious study desk, ideal for work or study.',
       price: '$15/month'

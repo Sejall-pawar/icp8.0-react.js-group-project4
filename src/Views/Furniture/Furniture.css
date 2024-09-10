@@ -3,3 +3,13 @@
     padding: 40px;
     background-color: #f4f4f4;
   }
+
+  .furniture-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 30px;
+    margin: 20px;
+  }
+  

@@ -11,6 +11,7 @@ footer {
     height: 30px;
     width: 30px;
     padding: 5px;
+    cursor: pointer;
 }
 
 .pages {
@@ -25,3 +26,25 @@ footer {
     color: white; 
 }
 
+.type{
+    font-size: 17px;
+    display: flex;
+    align-items: flex-start;
+    text-decoration: underline;
+}
+
+.type-name{
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start;
+    font-size: 13px;
+}
+
+.footer-line{
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer-line h1 {
+    font-size: 15px;
+}

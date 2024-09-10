@@ -23,18 +23,38 @@ function Footer() {
                         </div>
                     </div>
                     <div className='pages'>
-                        <Link to="/">Home</Link> 
+                        <Link to="/">Home</Link>
                         <Link to="/furniture">Furniture</Link>
                         <Link to="/garments">Garments</Link>
                         <Link to="/electronics">Electronics</Link>
                         <Link to="/vehicles">Vehicles</Link>
                     </div>
-                    <div>
-
+                    <div className='pages'>
+                        <Link to="/contact">Contact</Link>
+                        <Link to="/reviews">Reviews</Link>
+                        <Link to="/registration">User Registration</Link>
                     </div>
                     <div>
-
+                        <h1 className='type'>Furniture On Rent</h1>
+                        <h3 className='type-name'>Bedroom Furniture</h3>
+                        <h3 className='type-name'>Living Room Furniture</h3>
+                        <h3 className='type-name'>Sofa Set</h3>
+                        <h3 className='type-name'>Dining Table</h3>
                     </div>
+                    <div>
+                    <h1 className='type'>Appliances On Rent</h1>
+                        <h3 className='type-name'>Refrigerator</h3>
+                        <h3 className='type-name'>Air Cooler</h3>
+                        <h3 className='type-name'>Washing Mschine</h3>
+                        <h3 className='type-name'>Microwave</h3>
+                    </div>
+                </div>
+                <hr></hr>
+                <div className='footer-line'>
+                    <h1>&copy; 2024  Rentify Hub Products & Services Pvt. Ltd</h1>
+                    <h1>
+                    All Rights Reserved | Terms and Conditions | Privacy Policy
+                    </h1>
                 </div>
             </footer>
         </div>

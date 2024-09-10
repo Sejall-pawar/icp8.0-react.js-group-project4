@@ -11,6 +11,10 @@ import dressingTable from './Furniture Img/dressing table.jpg';
 import wardRobe from './Furniture Img/wardrobe.jpeg';
 import centerTable from './Furniture Img/center table.jpg';
 import shoeRack from './Furniture Img/shoe rack.jpg';
+import restChair from './Furniture Img/Arm rest chair.jpg';
+import bookShelf from './Furniture Img/book shelf.jpg';
+import woodenSwing from './Furniture Img/wooden swing.jpg';
+import bedTable from './Furniture Img/bed side table.jpeg';
 
 
 
@@ -73,13 +77,36 @@ function Furniture() {
       title: 'Shoe Rack',
       description: 'Compact and durable shoe rack with multiple shelves to keep your footwear organized.',
       price: '$22/month'
+    },
+    {
+      id: 9,
+      image: restChair, 
+      title: 'Shoe Rack',
+      description: 'Compact and durable shoe rack with multiple shelves to keep your footwear organized.',
+      price: '$22/month'
+    },
+    {
+      id: 10,
+      image: bookShelf, 
+      title: 'Shoe Rack',
+      description: 'Compact and durable shoe rack with multiple shelves to keep your footwear organized.',
+      price: '$22/month'
+    },
+    {
+      id: 11,
+      image: woodenSwing, 
+      title: 'Shoe Rack',
+      description: 'Compact and durable shoe rack with multiple shelves to keep your footwear organized.',
+      price: '$22/month'
+    },
+    {
+      id: 12,
+      image: bedTable, 
+      title: 'Shoe Rack',
+      description: 'Compact and durable shoe rack with multiple shelves to keep your footwear organized.',
+      price: '$22/month'
     }
 
-
-
-
-    
-    
 ];
 
 

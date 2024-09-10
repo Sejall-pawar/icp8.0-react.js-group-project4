@@ -9,6 +9,8 @@ import studyDeskImage from './Furniture Img/study desk.jpg';
 import bedImage from './Furniture Img/bed.jpg';
 import dressingTable from './Furniture Img/dressing table.jpg';
 import wardRobe from './Furniture Img/wardrobe.jpeg';
+import centerTable from './Furniture Img/center table.jpg';
+import shoeRack from './Furniture Img/shoe rack.jpg';
 
 
 
@@ -56,7 +58,26 @@ function Furniture() {
       title: 'Wardrobe',
       description: 'Spacious 2-door wardrobe with ample space for clothes and accessories.',
       price: '$22/month'
+    },
+
+    {
+      id: 7,
+      image: centerTable, 
+      title: 'Center Table',
+      description: 'Stylish wooden center table, perfect for your living room or office space.',
+      price: '$22/month'
+    },
+    {
+      id: 8,
+      image: shoeRack, 
+      title: 'Shoe Rack',
+      description: 'Compact and durable shoe rack with multiple shelves to keep your footwear organized.',
+      price: '$22/month'
     }
+
+
+
+
     
     
 ];

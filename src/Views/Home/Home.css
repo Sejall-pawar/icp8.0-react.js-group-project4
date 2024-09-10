@@ -1,4 +1,29 @@
-.title{
+.title {
     text-align: center;
     color: #758694;
+}
+
+.bg {
+    position: relative;
+    background-image: url('./Img/bg.jpg');
+    height: 600px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    background-position: center;
+    display: inline-block;
+    justify-content: center;
+}
+
+.Tagline {
+    color: #758694;
+    margin-top: 140px;
+    text-align: center;
+}
+
+.Sub-tagline{
+    color: #758694;
+    text-align: center;
 }

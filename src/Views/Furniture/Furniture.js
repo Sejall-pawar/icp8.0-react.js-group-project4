@@ -24,14 +24,14 @@ function Furniture() {
     },
     {
       id: 2,
-      image: diningTableImage,  // Use imported image
+      image: diningTableImage, 
       title: 'Dining Table',
-      description: 'Elegant dining table with 4 chairs.',
+      description: 'Elegant dining table with 4 chairs available for rent',
       price: '$20/month'
     },
     {
       id: 3,
-      image: studyDeskImage,  // Use imported image
+      image: studyDeskImage,  
       title: 'Study Desk',
       description: 'Spacious study desk, ideal for work or study.',
       price: '$15/month'
@@ -39,24 +39,23 @@ function Furniture() {
     {
       id: 4,
       image: bedImage,
-      title: 'Bed',
-      description: 'Spacious study desk, ideal for work or study.',
-      price: '$15/month'
+      title: 'King Size Bed',
+      description: 'Luxurious king size bed with a soft mattress, perfect for a good night\'s sleep.',
+      price: '$30/month'
     },
     {
       id: 5,
       image: dressingTable, 
-      title: 'Study Desk',
-      description: 'Spacious study desk, ideal for work or study.',
-      price: '$15/month'
+      title: 'Dressing Table',
+      description: 'Elegant dressing table with a large mirror and multiple storage compartments.',
+      price: '$18/month'
     },
-
     {
       id: 6,
       image: wardRobe, 
-      title: 'Study Desk',
-      description: 'Spacious study desk, ideal for work or study.',
-      price: '$15/month'
+      title: 'Wardrobe',
+      description: 'Spacious 2-door wardrobe with ample space for clothes and accessories.',
+      price: '$22/month'
     }
     
     

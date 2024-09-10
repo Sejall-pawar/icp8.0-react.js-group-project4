@@ -12,4 +12,30 @@
     margin-top: 30px;
     margin: 20px;
   }
+
+  .furniture-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 250px;
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+    margin: 20px;
+  }
+
+  .furniture-image {
+    width: 100%;      
+    max-width: 250px;
+    height: 200px;    
+    object-fit: cover; 
+    border-radius: 8px;
+  }
+
+  .furniture-price {
+    font-weight: bold;
+    color: #758694;
+    margin-top: 10px;
+    font-size: 18px;
+  }
   

@@ -1,15 +1,19 @@
 body{
-    background-color: gray;
+    background-color: white;
 }
 .big{
     display: flex;
     justify-content: center;
     justify-items: center;
 }
-.container{
+.container-1{
     display: flex;
     flex-wrap: wrap;
-  
+    justify-content: center;
+    margin: 50px;
+    box-shadow: 1px 5px 5px gray;
+    background-color: white;
+    border-radius: 10px;
 }
 .sales{
     background-color: white;
@@ -17,9 +21,9 @@ body{
 .help{
     background-color: white;
 }
-
-h1{
-    padding-left: 40px;
+.title{
+    color: #405D72;
+    font-weight: bold;
 }
 .img{
     width: 400px;

@@ -4,7 +4,8 @@
     border-radius: 15px;
     cursor: pointer;
     padding: 5px 50px;
-    font-size: 15px;
+    font-size: 20px;
     border: none;
     box-shadow: 1px 3px 7px gray;
+    color:#405D72;
 }

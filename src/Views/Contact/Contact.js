@@ -3,10 +3,13 @@ import './contact.css'
 import helpimg from './help.jpg'
 import callimg from './call.png'
 import Button1 from '../../Components/button/button'
+import Footer from '../../Components/Footer/Footer'
+import Header from '../../Components/Header/Header'
 
 function Contact() {
   return (
-    <div className='big'>
+    <div>
+      <Header />
       <div className='container'>
         <div className='sales'>
           <div><h1>Contact Us</h1></div>
@@ -22,6 +25,7 @@ function Contact() {
           <img src={helpimg} alt='img' className='img'></img>
         </div>
       </div>
+      <Footer />
     </div>
   )
 }

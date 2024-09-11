@@ -31,8 +31,9 @@ body{
 .innerbox1{
     margin-left: 100px;
     box-shadow: 1px 5px 5px gray;
-    height: 350px;
+    height: 410px;
     width: 350px;
+    border-radius: 5;
 }
 .callimg{
     height: 60px;

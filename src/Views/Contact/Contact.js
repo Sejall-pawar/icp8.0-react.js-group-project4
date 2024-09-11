@@ -16,19 +16,18 @@ function Contact() {
         <div className='sales'>
           <div><h1 className='title'>Contact Us</h1></div>
           <div className='innerbox1'>
-            <div>          <img src={callimg} alt='img' className='callimg'></img>
+            <div> <img src={callimg} alt='img' className='callimg'></img>
             </div>
             <div style={{textAlign:'center',fontSize:'30px',color:'#405D72',}}>Talk to a member of our sales team.</div>
             <div style={{textAlign:'center',margin:'10px',color:'#758694'}}>We'll help you find out right  product at right pricing.</div>            
             <div style={{margin:'35px'}}><Button1 text='Contact Sales'/></div>
-            <div style={{margin:'35px'}}><Link to='/registration'><Button1 text='Send Inquiry'/></Link></div>
+            <div style={{margin:'35px'}}><Link to='/inquiry'><Button1 text='Send Inquiry'/></Link></div>
            </div>
         </div>
         <div>
           <img src={helpimg} alt='img' className='img'></img>
         </div>
       </div>
-      <Inquiry />
       <Footer />
     </div>
   )

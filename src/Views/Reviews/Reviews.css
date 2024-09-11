@@ -1,0 +1,23 @@
+.review-title{
+    text-align: center;
+    
+    color:#405D72;
+}
+.review-container{
+    height: 300px;
+    width: auto;
+    border: solid;
+    margin: 30px;
+
+}
+.card-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.img{
+    height: 100px;
+    width: 100px;
+}

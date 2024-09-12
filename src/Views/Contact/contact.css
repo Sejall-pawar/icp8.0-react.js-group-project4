@@ -1,15 +1,18 @@
 body{
-    background-color: gray;
 }
 .big{
     display: flex;
     justify-content: center;
     justify-items: center;
 }
-.container{
+.container-1{
     display: flex;
     flex-wrap: wrap;
-  
+    justify-content: center;
+    margin: 50px;
+    box-shadow: 1px 5px 7px gray;
+    background-color: white;
+    border-radius: 5px;
 }
 .sales{
     background-color: white;
@@ -17,21 +20,24 @@ body{
 .help{
     background-color: white;
 }
-
-h1{
-    padding-left: 40px;
+.title{
+    color: #405D72;
+    font-weight: bold;
 }
 .img{
     width: 400px;
+    object-fit: cover;
 }
 .innerbox1{
     margin-left: 100px;
-    box-shadow: 1px 5px 5px gray;
-    height: 350px;
+    box-shadow: 1px 5px 7px gray;
+    height: 410px;
     width: 350px;
+    border-radius: 5px;
+    padding: 10px;
 }
 .callimg{
     height: 60px;
     display: block;
-    margin: 40px auto;
+    margin: 20px auto;
 }

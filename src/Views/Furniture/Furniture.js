@@ -123,7 +123,7 @@ function Furniture() {
       <Header />
       <div className="furniture-container">
         <h1>Furniture on Rent</h1>
-        <div className="furniture-cards"> {/* Corrected here */}
+        <div className="furniture-cards"> {}
           {furnitureItems.map((item) => (
             <div key={item.id} className="furniture-card">
               <img src={item.image} alt={item.title} className="furniture-image" />

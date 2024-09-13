@@ -98,6 +98,24 @@ const ElectronicsCategories = () => {
           </div>
         ))}
       </div>
+
+      {/* Product Details Modal */}
+      {selectedProduct && (
+        <div className="product-details">
+          <h3>{selectedProduct.name}</h3>
+          <img
+            src={selectedProduct.image}
+            alt={selectedProduct.name}
+            className="category-image"
+          />
+          <p><strong>Full Description:</strong> {selectedProduct.fullDescription}</p>
+          <p><strong>Size:</strong> {selectedProduct.size}</p>
+          <p><strong>Price:</strong> ₹{selectedProduct.finalPrice.toFixed(2)}</p>
+          <p><strong>Monthly EMI:</strong> ₹{calculateEMI(selectedProduct.priceInRupees)}</p>
+          <button onClick={() => addToCart(selectedProduct)}>Add to Cart</button>
+          <button onClick={() => setSelectedProduct(null)}>Close</button>
+        </div>
+      )}
       
 
 

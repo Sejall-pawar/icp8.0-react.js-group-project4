@@ -3,7 +3,9 @@ import Header from './../../Components/Header/Header';
 import Footer from './../../Components/Footer/Footer';
 import './ElectronicCategories.css';
 import ElectronicImageLogo from './Electronic-device-img.png'
-// import CategoriesData from '../../Config/CategoriesData';
+import CategoriesData from '../../Config/CategoriesData';
+
+const EMI_RATE = 0.1;
 
 const ElectronicsCategories = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -84,6 +86,12 @@ const increaseQuantity = (productId) => {
     )
     .filter((item) => item.quantity > 0)
   );
+};
+
+// Calculate Monthly EMI
+const calculateEMI = (price, months) => {
+  const interest = price * EMI_RATE;
+  return ((price + interest) / months).toFixed(2);
 };
 
   return (
@@ -198,7 +206,6 @@ const increaseQuantity = (productId) => {
       )}
 
       </div>
-
       <Footer />
     </div>
     

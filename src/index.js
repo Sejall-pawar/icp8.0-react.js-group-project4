@@ -6,7 +6,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from "./Views/Home/Home"
 import Furniture from "./Views/Furniture/Furniture"
 import Garments from "./Views/Garments/Garments"
-import Electronics from "./Views/Electronics/Electronics"
+import Electronics from "./Views/Electronics/ElectronicsCategories"
 import Vehicles from "./Views/Vehicles/Vehicles"
 import Contact from "./Views/Contact/Contact"
 import Registration from "./Views/Registration/Registration"

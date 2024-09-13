@@ -99,6 +99,33 @@ const ElectronicsCategories = () => {
         ))}
       </div>
 
+      {/* Cart Summary */}
+      <h2>Cart Summary</h2>
+      <div className="cart-summary">
+        {cart.length === 0 ? (
+          <p>Your cart is empty</p>
+        ) : (
+          <ul>
+            {cart.map((item) => (
+              <li key={item.id} className="cart-item">
+                <img src={item.image} alt={item.name} className="cart-image" />
+                <div className="cart-details">
+                  <h4>{item.name}</h4>
+                  <p>{item.description}</p>
+                  <p>Size: {item.size}</p>
+                  <p>Quantity: {item.quantity}</p>
+                  <p className='btn-quantity'>
+                    <button onClick={() => increaseQuantity(item.id)} className='btn-inc-dec'>+</button>
+                    <button onClick={() => decreaseQuantity(item.id)} className='btn-inc-dec'>-</button>
+                  </p>
+                  <p className='emi-content'><strong>EMI (12 months):</strong> ₹{calculateEMI(item.priceInRupees, 12)} / month</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+
       {/* Product Details Modal */}
       {selectedProduct && (
         <div className="product-details">
@@ -116,9 +143,6 @@ const ElectronicsCategories = () => {
           <button onClick={() => setSelectedProduct(null)}>Close</button>
         </div>
       )}
-      
-
-
 
       </div>
 

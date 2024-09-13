@@ -11,8 +11,17 @@ const ElectronicsCategories = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [showFullDescription, setShowFullDescription] = useState({});
 
+  // Handle search input and sorting change
   const handleSearch = (e) => setSearchQuery(e.target.value.toLowerCase());
   const handleSort = (e) => setSortOption(e.target.value);
+
+   // Handle full description toggle
+   const toggleFullDescription = (id) => {
+    setShowFullDescription((prevState) => ({
+      ...prevState,
+      [id]: !prevState[id], // Toggle description for the clicked product
+    }));
+  };
 
   // sort function
   const sortCategories = (categories) => {
@@ -32,6 +41,50 @@ const ElectronicsCategories = () => {
     category.name.toLowerCase().includes(searchQuery)
   )
 );
+
+ // Add to Cart functionality
+ const addToCart = (product) => {
+  const existingProduct = cart.find((item) => item.id === product.id);
+  if (existingProduct) {
+    if (existingProduct.quantity < 3) {
+      setCart(
+        cart.map((item) =>
+          item.id === product.id
+            ? { ...item, quantity: item.quantity + 1 }
+            : item
+        )
+      );
+    } else {
+      alert("You can only add this item 3 times.");
+    }
+  } else {
+    setCart([...cart, { ...product, quantity: 1 }]);
+  }
+};
+
+
+// Increase quantity in cart
+const increaseQuantity = (productId) => {
+  setCart(
+    cart.map((item) =>
+      item.id === productId && item.quantity < 3
+        ? { ...item, quantity: item.quantity + 1 }
+        : item
+    )
+  );
+};
+
+ // Decrease quantity in cart
+ const decreaseQuantity = (productId) => {
+  setCart(
+    cart.map((item) =>
+      item.id === productId 
+        ? { ...item, quantity: item.quantity - 1 }
+        : item
+    )
+    .filter((item) => item.quantity > 0)
+  );
+};
 
   return (
     <div>

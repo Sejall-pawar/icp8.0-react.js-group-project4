@@ -10,6 +10,7 @@ const EMI_RATE = 0.1;
 const ElectronicsCategories = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [sortOption, setSortOption] = useState("name");
+  const [cart, setCart] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [showFullDescription, setShowFullDescription] = useState({});
 
@@ -100,7 +101,7 @@ const calculateEMI = (price, months) => {
 
       <div className='main-container'>
         <div className='head-container'>
-        <h2>Electronics on rent</h2>
+        <h2 className='heading'>Electronics On Rent</h2>
       <img 
             src={ElectronicImageLogo} // Replace with your logo URL
             alt="Logo"
@@ -161,7 +162,7 @@ const calculateEMI = (price, months) => {
       </div>
 
       {/* Cart Summary */}
-      <h2>Cart Summary</h2>
+      <h2 className='card-summary-heading'>Cart Summary</h2>
       <div className="cart-summary">
         {cart.length === 0 ? (
           <p>Your cart is empty</p>

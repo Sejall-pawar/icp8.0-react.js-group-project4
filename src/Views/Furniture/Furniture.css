@@ -60,8 +60,15 @@
  }
   
  .out-of-stock-message {
-  color: red;
+  color: #fff;
+  background-color: #ff4c4c; 
+  padding: 8px;
+  border-radius: 5px;
   font-weight: bold;
+  text-align: center;
+  border: 2px solid #cc0000; 
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
 }
 
   

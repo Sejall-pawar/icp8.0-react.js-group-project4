@@ -59,4 +59,9 @@
 
  }
   
+ .out-of-stock-message {
+  color: red;
+  font-weight: bold;
+}
+
   

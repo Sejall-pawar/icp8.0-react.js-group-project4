@@ -87,6 +87,11 @@
   font-weight: bold;
   color: #758694;
 }
+.furniture-total-price {
+  font-size: 0.9rem; 
+  font-weight: bold; 
+  color: #333; 
+}
 
 .error-message {
   color: red;

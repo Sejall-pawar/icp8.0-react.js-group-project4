@@ -1,17 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Header from "./../../Components/Header/Header";
 import Footer from "./../../Components/Footer/Footer";
 import './garments.css';
 import heroImage1 from './GarmentsImages/hero1.png';
-import herImage from './GarmentsImages/forher.jpg';  // Image for her
-import himImage from './GarmentsImages/forhim.jpg';  // Image for him
+import herImage from './GarmentsImages/forher.jpg'; 
+import himImage from './GarmentsImages/forhim.jpg';  
 
 function Garments() {
   return (
     <div>
       <Header />
-
-      {/* Hero section with a single background image */}
       <div 
         className="hero-section"
         style={{ backgroundImage: `url(${heroImage1})` }}
@@ -22,7 +21,7 @@ function Garments() {
         </div>
       </div>
 
-      {/* Cards for Her and Him */}
+     
       <div className="garment-container">
         <h2>Explore Clothing for Everyone</h2>
         <div className="garment-cards">
@@ -31,7 +30,9 @@ function Garments() {
             <h3>For Her</h3>
             <p>Elegant dresses, stylish outfits, and more available for rent.</p>
             <p className="garment-price">Starting at ₹299/day</p>
-            <button className="rent-button">Explore Women's Wear</button>
+            <Link to="/womens-wear">
+              <button className="rent-button">Explore Women's Wear</button>
+            </Link>
           </div>
 
           <div className="garment-card">
@@ -39,7 +40,9 @@ function Garments() {
             <h3>For Him</h3>
             <p>Sharp suits, casual wear, and more available for rent.</p>
             <p className="garment-price">Starting at ₹249/day</p>
-            <button className="rent-button">Explore Men's Wear</button>
+            <Link to="/mens-wear">
+              <button className="rent-button">Explore Men's Wear</button>
+            </Link>
           </div>
         </div>
       </div>

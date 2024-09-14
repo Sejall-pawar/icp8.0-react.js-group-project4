@@ -60,7 +60,8 @@ function home() {
       Name: 'Bed Room',
       Type: 'Furniture',
       Pricetag: 'Starting From',
-      Price: '@1500/mo'
+      Price: '@1500/mo',
+      link: './furniture'
     },
     {
       No: 2,
@@ -68,7 +69,8 @@ function home() {
       Name: 'Living Room',
       Type: 'Furniture',
       Pricetag: 'Starting From',
-      Price: '@1300/mo'
+      Price: '@1300/mo',
+      link: './furniture'
     },
     {
       No: 3,
@@ -76,7 +78,8 @@ function home() {
       Name: 'Garments',
       Type: 'Deals',
       Pricetag: 'Starting From',
-      Price: '@300/day'
+      Price: '@300/day',
+      link: './garments'
     },
     {
       No: 4,
@@ -84,7 +87,8 @@ function home() {
       Name: 'Study Room',
       Type: 'Furniture',
       Pricetag: 'Starting From',
-      Price: '@400/mo'
+      Price: '@400/mo',
+      link: './furniture'
     },
     {
       No: 5,
@@ -92,7 +96,8 @@ function home() {
       Name: 'Appliances',
       Type: 'Premium Quality',
       Pricetag: 'Starting From',
-      Price: '@250/mo'
+      Price: '@250/mo',
+      link: './electronics'
     },
     {
       No: 6,
@@ -100,7 +105,8 @@ function home() {
       Name: 'car & Bikes',
       Type: 'Deals',
       Pricetag: 'Starting From',
-      Price: '@500/day'
+      Price: '@500/day',
+      link: './vehicles'
     },
   ]
 
@@ -128,15 +134,16 @@ function home() {
         <div className='Rent-Item-Contanier'>
 
           {RentItems.map((item) => (
+            <Link to={item.link} key={item.No}  className='Rent-Link'>
             <div
-              key={item.No}
               className='Rent-Item'
-              style={{ backgroundImage: `url(${item.bgImg})`, height: "400px", width: "350px" }}>
+              style={{ backgroundImage : `url(${item.bgImg})`, height: "400px", width: "350px" }}>
               <h1>{item.Name}</h1>
               <h2>{item.Type}</h2>
               <h3>{item.Pricetag}</h3>
               <h1 className='price'>{item.Price}</h1>
             </div>
+            </Link>
           ))}
         </div>
       </div>

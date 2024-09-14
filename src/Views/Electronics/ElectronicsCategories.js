@@ -171,41 +171,32 @@ const decreaseQuantity = (productId) => {
             <p>Your cart is empty</p>
           ) : (
             <ul>
-              {cart.map((item) => (
-                <li key={item.id} className="cart-item">
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                    className="cart-image"
-                  />
+              {cart.map((item) => {
+                const totalPrice = parseInt(item.finalPrice) * item.quantity;
+                return(
+                  <li key={item.id} className="cart-item">
+                  <img src={item.image} alt={item.name} className="cart-image" />
                   <div className="cart-details">
                     <h4>{item.name}</h4>
                     <p>{item.description}</p>
-                    <p>Size: {item.size}</p>
                     <p>Quantity: {item.quantity}</p>
-                    <p className="btn-quantity">
-                      <button
-                        onClick={() => increaseQuantity(item.id)}
-                        className="btn-inc-dec"
-                      >
-                        +
-                      </button>
-                      <button
-                        onClick={() => decreaseQuantity(item.id)}
-                        className="btn-inc-dec"
-                      >
-                        -
-                      </button>
-                    </p>
-                    <p className="emi-content">
-                      <strong>EMI (12 months):</strong> ₹
-                      {calculateEMI(item.priceInRupees, 12)} / month
-                    </p>
-                  </div>
-                </li>
-              ))}
+                    <p>
+                        <strong>Total Price:</strong> ₹{totalPrice} / month
+                      </p>
+                      <p>
+                        <strong>EMI (12 months):</strong> ₹{calculateEMI(totalPrice, 12)} / month
+                      </p>
+                      <div className="btn-quantity">
+                        <button onClick={() => increaseQuantity(item.id)} className="btn-inc-dec">+</button>
+                        <button onClick={() => decreaseQuantity(item.id)} className="btn-inc-dec">-</button>
+                      </div>
+                    </div>
+                  </li>
+                );
+              })}
             </ul>
           )}
+          <p className="error-message">{error}</p>
         </div>
 
         {/* Product Details Modal */}
@@ -217,24 +208,15 @@ const decreaseQuantity = (productId) => {
               alt={selectedProduct.name}
               className="category-image"
             />
-            <p>
-              <strong>Full Description:</strong>{" "}
-              {selectedProduct.fullDescription}
-            </p>
-            <p>
-              <strong>Size:</strong> {selectedProduct.size}
-            </p>
-            <p>
-              <strong>Price:</strong> ₹{selectedProduct.finalPrice.toFixed(2)}
-            </p>
-            <p>
-              <strong>Monthly EMI:</strong> ₹
-              {calculateEMI(selectedProduct.priceInRupees)}
-            </p>
+            <p><strong>Full Description:</strong>{" "}{selectedProduct.fullDescription}</p>
+            <p><strong>Price:</strong> ₹{selectedProduct.finalPrice.toFixed(2)}</p>
+            <p><strong>Monthly EMI:</strong> ₹ {calculateEMI(selectedProduct.priceInRupees)}</p>
             <button onClick={() => addToCart(selectedProduct)}>
               Add to Cart
             </button>
-            <button onClick={() => setSelectedProduct(null)}>Close</button>
+            <button onClick={() => setSelectedProduct(null)}>
+              Close
+              </button>
           </div>
         )}
       </div>

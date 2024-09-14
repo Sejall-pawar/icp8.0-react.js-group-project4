@@ -60,7 +60,7 @@ function home() {
       Name: 'Bed Room',
       Type: 'Furniture',
       Pricetag: 'Starting From',
-      Price: '@200/mo'
+      Price: '@1500/mo'
     },
     {
       No: 2,
@@ -68,7 +68,7 @@ function home() {
       Name: 'Living Room',
       Type: 'Furniture',
       Pricetag: 'Starting From',
-      Price: '@100/mo'
+      Price: '@1300/mo'
     },
     {
       No: 3,
@@ -76,7 +76,7 @@ function home() {
       Name: 'Garments',
       Type: 'Deals',
       Pricetag: 'Starting From',
-      Price: '@350/day'
+      Price: '@300/day'
     },
     {
       No: 4,
@@ -84,7 +84,7 @@ function home() {
       Name: 'Study Room',
       Type: 'Furniture',
       Pricetag: 'Starting From',
-      Price: '@120/mo'
+      Price: '@400/mo'
     },
     {
       No: 5,

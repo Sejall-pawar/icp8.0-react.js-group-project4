@@ -11,7 +11,8 @@ const ElectronicsCategories = () => {
   const [cart, setCart] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [showFullDescription, setShowFullDescription] = useState({});
-
+  const [error, setError] = useState("");
+  
   // Handle search input change
   const handleSearch = (e) => setSearchQuery(e.target.value.toLowerCase());
 
@@ -23,10 +24,10 @@ const ElectronicsCategories = () => {
     }));
   };
 
-  // Filter and sort categories
-  const filteredCategories = CategoriesData.filter((category) =>
-    category.name.toLowerCase().includes(searchQuery)
-  );
+  // // Filter and sort categories
+  // const filteredCategories = CategoriesData.filter((category) =>
+  //   category.name.toLowerCase().includes(searchQuery)
+  // );
 
   // Add to Cart functionality
   const addToCart = (product) => {
@@ -40,37 +41,50 @@ const ElectronicsCategories = () => {
               : item
           )
         );
+        setError("");
       } else {
-        alert("You can only add this item 3 times.");
+        setError("You can only add this item 3 times.");
       }
     } else {
       setCart([...cart, { ...product, quantity: 1 }]);
+      setError("");
     }
   };
 
-  // Increase quantity in cart
-  const increaseQuantity = (productId) => {
+ // Increase quantity in cart
+ const increaseQuantity = (productId) => {
+  const product = cart.find(item => item.id === productId);
+  if (product.quantity < 3) {
     setCart(
       cart.map((item) =>
-        item.id === productId && item.quantity < 3
+        item.id === productId
           ? { ...item, quantity: item.quantity + 1 }
           : item
       )
     );
-  };
+    setError(""); 
+  } else {
+    setError("You cannot add more than 3 items.");
+  }
+};
 
-  // Decrease quantity in cart
-  const decreaseQuantity = (productId) => {
+// Decrease quantity in cart
+const decreaseQuantity = (productId) => {
+  const product = cart.find(item => item.id === productId);
+  if (product.quantity > 1) {
     setCart(
-      cart
-        .map((item) =>
-          item.id === productId
-            ? { ...item, quantity: item.quantity - 1 }
-            : item
-        )
-        .filter((item) => item.quantity > 0)
+      cart.map((item) =>
+        item.id === productId
+          ? { ...item, quantity: item.quantity - 1 }
+          : item
+      )
     );
-  };
+    setError(""); 
+  } else {
+    setCart(cart.filter(item => item.id !== productId)); // Remove if 0
+    setError();
+  }
+};
 
   // Calculate Monthly EMI
   const calculateEMI = (price, months) => {
@@ -101,46 +115,53 @@ const ElectronicsCategories = () => {
 
         {/* Display filtered categories */}
         <div className="categories-list">
-          {filteredCategories.map((category) => (
-            <div key={category.id} className="category-item">
-              <img
-                src={category.image}
-                alt={category.name}
-                className="category-image"
-                onClick={() => setSelectedProduct(category)} // Show product details
-              />
-              <h3>{category.name}</h3>
-              <p>
-                {showFullDescription[category.id]
-                  ? category.fullDescription // Show full description
-                  : `${category.description.substring(0, 60)}...`}{" "}
-                {/* Show partial description */}
-                <button
-                  onClick={() => toggleFullDescription(category.id)}
-                  className="toggle-description-button"
-                >
-                  {showFullDescription[category.id] ? "Show Less" : "Show More"}
-                </button>
-              </p>
-              <p>
-                <strong>Price:</strong> ₹{category.finalPrice.toFixed(2)}{" "}
-                (Original: ₹{category.priceInRupees.toFixed(2)},{" "}
-                {category.discountPercent}% off)
-              </p>
-              {category.inStock ? (
-                <button
-                  onClick={() => addToCart(category)}
-                  className="add-to-cart-button"
-                >
-                  Add to Cart
-                </button>
-              ) : (
-                <div className="out-of-stock-overlay">
-                  <p>Out of Stock</p>
-                </div>
-              )}
-            </div>
-          ))}
+          {CategoriesData.filter((category) =>
+            category.name.toLowerCase().includes(searchQuery)
+          ).map((category) => {
+            const basePrice = parseInt(category.finalPrice);
+            const totalPrice = basePrice * 1; 
+
+            return (
+              <div key={category.id} className="category-item">
+                <img
+                  src={category.image}
+                  alt={category.name}
+                  className="category-image"
+                  onClick={() => setSelectedProduct(category)}
+                />
+                <h3>{category.name}</h3>
+                <p>
+                  {showFullDescription[category.id]
+                    ? category.fullDescription
+                    : `${category.description.substring(0, 60)}...`}
+                  <button
+                    onClick={() => toggleFullDescription(category.id)}
+                    className="toggle-description-button"
+                  >
+                    {showFullDescription[category.id] ? "Show Less" : "Show More"}
+                  </button>
+                </p>
+                <p>
+                  <strong>Price:</strong> ₹{category.finalPrice} / month
+                </p>
+                <p>
+                  <strong>EMI (12 Months):</strong> ₹{calculateEMI(totalPrice, 12)} / month
+                </p>
+                {category.inStock ? (
+                  <button
+                    onClick={() => addToCart(category)}
+                    className="add-to-cart-button"
+                  >
+                    Add to Cart
+                  </button>
+                ) : (
+                  <div className="out-of-stock-overlay">
+                    <p>Out of Stock</p>
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
 
         {/* Cart Summary */}
@@ -150,41 +171,32 @@ const ElectronicsCategories = () => {
             <p>Your cart is empty</p>
           ) : (
             <ul>
-              {cart.map((item) => (
-                <li key={item.id} className="cart-item">
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                    className="cart-image"
-                  />
+              {cart.map((item) => {
+                const totalPrice = parseInt(item.finalPrice) * item.quantity;
+                return(
+                  <li key={item.id} className="cart-item">
+                  <img src={item.image} alt={item.name} className="cart-image" />
                   <div className="cart-details">
                     <h4>{item.name}</h4>
                     <p>{item.description}</p>
-                    <p>Size: {item.size}</p>
                     <p>Quantity: {item.quantity}</p>
-                    <p className="btn-quantity">
-                      <button
-                        onClick={() => increaseQuantity(item.id)}
-                        className="btn-inc-dec"
-                      >
-                        +
-                      </button>
-                      <button
-                        onClick={() => decreaseQuantity(item.id)}
-                        className="btn-inc-dec"
-                      >
-                        -
-                      </button>
-                    </p>
-                    <p className="emi-content">
-                      <strong>EMI (12 months):</strong> ₹
-                      {calculateEMI(item.priceInRupees, 12)} / month
-                    </p>
-                  </div>
-                </li>
-              ))}
+                    <p>
+                        <strong>Total Price:</strong> ₹{totalPrice} / month
+                      </p>
+                      <p>
+                        <strong>EMI (12 months):</strong> ₹{calculateEMI(totalPrice, 12)} / month
+                      </p>
+                      <div className="btn-quantity">
+                        <button onClick={() => increaseQuantity(item.id)} className="btn-inc-dec">+</button>
+                        <button onClick={() => decreaseQuantity(item.id)} className="btn-inc-dec">-</button>
+                      </div>
+                    </div>
+                  </li>
+                );
+              })}
             </ul>
           )}
+          <p className="error-message">{error}</p>
         </div>
 
         {/* Product Details Modal */}
@@ -196,24 +208,15 @@ const ElectronicsCategories = () => {
               alt={selectedProduct.name}
               className="category-image"
             />
-            <p>
-              <strong>Full Description:</strong>{" "}
-              {selectedProduct.fullDescription}
-            </p>
-            <p>
-              <strong>Size:</strong> {selectedProduct.size}
-            </p>
-            <p>
-              <strong>Price:</strong> ₹{selectedProduct.finalPrice.toFixed(2)}
-            </p>
-            <p>
-              <strong>Monthly EMI:</strong> ₹
-              {calculateEMI(selectedProduct.priceInRupees)}
-            </p>
+            <p><strong>Full Description:</strong>{" "}{selectedProduct.fullDescription}</p>
+            <p><strong>Price:</strong> ₹{selectedProduct.finalPrice.toFixed(2)}</p>
+            <p><strong>Monthly EMI:</strong> ₹ {calculateEMI(selectedProduct.priceInRupees)}</p>
             <button onClick={() => addToCart(selectedProduct)}>
               Add to Cart
             </button>
-            <button onClick={() => setSelectedProduct(null)}>Close</button>
+            <button onClick={() => setSelectedProduct(null)}>
+              Close
+              </button>
           </div>
         )}
       </div>

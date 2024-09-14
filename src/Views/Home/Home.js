@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import Header from "./../../Components/Header/Header";
 import Footer from "./../../Components/Footer/Footer";
 import one from "./Img/1.jpg";
@@ -10,9 +11,17 @@ import R2 from "./Img/R2.jpg";
 import R3 from "./Img/R3.jpg";
 import R4 from "./Img/R4.jpg";
 import R5 from "./Img/R5.avif";
-import R6 from "./Img/R6.avif";
+import R6 from "./Img/R6.jpg";
+import trust from "./Img/trust.png";
+import cheers from "./Img/cheers.png";
+import CD1 from "./Img/CD1.avif";
+import CD2 from "./Img/CD2.avif";
+import CD3 from "./Img/CD3.jpg";
+import CD4 from "./Img/CD4.jpg";
+import msg from "./Img/msg.png";
 import "./Home.css";
 import "./../../index.css"
+import { THEME} from '../../Config/Data';
 
 
 function home() {
@@ -51,7 +60,7 @@ function home() {
       Name: 'Bed Room',
       Type: 'Furniture',
       Pricetag: 'Starting From',
-      Price: '@200/mo'
+      Price: '@1500/mo'
     },
     {
       No: 2,
@@ -59,7 +68,7 @@ function home() {
       Name: 'Living Room',
       Type: 'Furniture',
       Pricetag: 'Starting From',
-      Price: '@100/mo'
+      Price: '@1300/mo'
     },
     {
       No: 3,
@@ -67,7 +76,7 @@ function home() {
       Name: 'Garments',
       Type: 'Deals',
       Pricetag: 'Starting From',
-      Price: '@350/day'
+      Price: '@300/day'
     },
     {
       No: 4,
@@ -75,7 +84,7 @@ function home() {
       Name: 'Study Room',
       Type: 'Furniture',
       Pricetag: 'Starting From',
-      Price: '@120/mo'
+      Price: '@400/mo'
     },
     {
       No: 5,
@@ -88,10 +97,10 @@ function home() {
     {
       No: 6,
       bgImg: R6,
-      Name: 'Discounted',
+      Name: 'car & Bikes',
       Type: 'Deals',
       Pricetag: 'Starting From',
-      Price: '@99/mo'
+      Price: '@500/day'
     },
   ]
 
@@ -117,12 +126,12 @@ function home() {
         <h3 className='Rent-subtitle'>Explore by categories</h3>
 
         <div className='Rent-Item-Contanier'>
-          
+
           {RentItems.map((item) => (
-            <div 
-            key={item.No} 
-            className='Rent-Item'
-            style={{backgroundImage: `url(${item.bgImg})`, height:"400px", width:"350px"}}>
+            <div
+              key={item.No}
+              className='Rent-Item'
+              style={{ backgroundImage: `url(${item.bgImg})`, height: "400px", width: "350px" }}>
               <h1>{item.Name}</h1>
               <h2>{item.Type}</h2>
               <h3>{item.Pricetag}</h3>
@@ -143,6 +152,66 @@ function home() {
               <h2>{item.SubTitle}</h2>
             </div>
           ))}
+        </div>
+      </div>
+
+      <div className='CD-contanier'>
+
+        <div className='CD1'>
+          <img src={trust} className='CD-img' />
+          <h1>150K+</h1>
+          <h2>We are trusted by more than 150K Indians</h2>
+          <hr />
+          <img src={cheers} className='CD-img' />
+          <h1>15K+</h1>
+          <h2>Almost over 12K Furnitures and Appliances are rented every month</h2>
+        </div>
+        <div className='CD2'>
+
+          <div className='CD2-1'>
+
+            <h3>How it works</h3>
+            <h1>You are just 4 steps away.!</h1>
+
+            <div className='CD2-1sub'>
+
+              <div className='CD2-1-1'>
+                <img src={CD1} className='step-img'/>
+                <h1>Step 1</h1>
+                <h3>Select a product & tenure to start renting</h3>
+              </div>
+
+              <div className='CD2-1-1'>
+                <img src={CD2} className='step-img'/>
+                <h1>Step 2</h1>
+                <h3>Pay the amount & do KYC</h3>
+              </div>
+
+              <div className='CD2-1-1'>
+                <img src={CD3} className='step-img'/>
+                <h1>Step 3</h1>
+                <h3>Get items delivered & assembled within 72 hrs</h3>
+              </div>
+
+              <div className='CD2-1-1'>
+                <img src={CD4} className='step-img'/>
+                <h1>Step 4</h1>
+                <h3>Experience the firsthand magic of furniture</h3>
+              </div>
+
+            </div>
+
+          </div>
+          <div className='CD2-2'>
+              <h3>Have a query? Need help?</h3>
+              <h1 style={{color : THEME.primary}}>Chat With Us</h1>
+              <h2>Write to us at  <a href="mailto:hello@rentifyhub.com">hello@rentifyhub.com </a> or talk to our customer care 
+              representative at &emsp;<a href="tel:070-70984830 "> 070-70984830 </a>(9 AM - 9 PM)</h2>
+              <Link to="/contact"><button className='msg-btn'>
+                <img src={msg} className='msg-img'/> 
+                <h3>Write to us</h3>
+              </button></Link>
+          </div>
         </div>
       </div>
 

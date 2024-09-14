@@ -51,29 +51,40 @@ const ElectronicsCategories = () => {
     }
   };
 
-  // Increase quantity in cart
-  const increaseQuantity = (productId) => {
+ // Increase quantity in cart
+ const increaseQuantity = (productId) => {
+  const product = cart.find(item => item.id === productId);
+  if (product.quantity < 3) {
     setCart(
       cart.map((item) =>
-        item.id === productId && item.quantity < 3
+        item.id === productId
           ? { ...item, quantity: item.quantity + 1 }
           : item
       )
     );
-  };
+    setError(""); // Clear error if valid
+  } else {
+    setError("You cannot add more than 3 items.");
+  }
+};
 
-  // Decrease quantity in cart
-  const decreaseQuantity = (productId) => {
+// Decrease quantity in cart
+const decreaseQuantity = (productId) => {
+  const product = cart.find(item => item.id === productId);
+  if (product.quantity > 1) {
     setCart(
-      cart
-        .map((item) =>
-          item.id === productId
-            ? { ...item, quantity: item.quantity - 1 }
-            : item
-        )
-        .filter((item) => item.quantity > 0)
+      cart.map((item) =>
+        item.id === productId
+          ? { ...item, quantity: item.quantity - 1 }
+          : item
+      )
     );
-  };
+    setError(""); // Clear error if valid
+  } else {
+    setCart(cart.filter(item => item.id !== productId)); // Remove if 0
+    setError();
+  }
+};
 
   // Calculate Monthly EMI
   const calculateEMI = (price, months) => {

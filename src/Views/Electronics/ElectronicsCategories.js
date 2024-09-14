@@ -3,6 +3,7 @@ import Header from "./../../Components/Header/Header";
 import Footer from "./../../Components/Footer/Footer";
 import "./ElectronicCategories.css";
 import CategoriesData from "../../Config/CategoriesData";
+const [error, setError] = useState("");
 
 const EMI_RATE = 0.1;
 
@@ -40,11 +41,13 @@ const ElectronicsCategories = () => {
               : item
           )
         );
+        setError("");
       } else {
-        alert("You can only add this item 3 times.");
+        setError("You can only add this item 3 times.");
       }
     } else {
       setCart([...cart, { ...product, quantity: 1 }]);
+      setError("");
     }
   };
 

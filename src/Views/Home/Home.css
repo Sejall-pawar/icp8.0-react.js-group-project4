@@ -113,6 +113,7 @@
     border-radius: 10px;
     margin-bottom: 10px;
     flex-wrap: wrap;
+    padding: 5px;
 }
 
 .Rent-Item:hover {
@@ -127,6 +128,10 @@
     margin-right: 5px;
     margin-bottom: 0;
     line-height: 0.5;
+}
+.Rent-Link{
+    text-decoration: none;
+    color: #000;
 }
 
 .price {

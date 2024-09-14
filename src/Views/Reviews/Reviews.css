@@ -22,7 +22,7 @@
 }
 
 .card-container1{
-    height: 300px;
+    height: 320px;
     width: 900px;
     display: flex;
     margin: 30px;
@@ -32,7 +32,7 @@
     padding: 5px;
 }
 .card-container2{
-    height: 300px;
+    height: 320px;
     width: 900px;
     display: flex;
     margin: 30px;
@@ -46,9 +46,10 @@
     border-color: #405D72;
     border-radius: 5px;
     box-shadow: 5px 0px 5px 0px gray;
-    height: 300px;
+    height: 320px;
     width: 900px;
    margin: 10px;
+   background-color:white;
 }
 .review-container:hover{
     transform: scale(1.1);
@@ -59,14 +60,13 @@
     margin: 5px;
     padding: 5px;
 }
-.reviews{
-  color: blue;
-}
 .rating-img{
-    height: 200px;
-    width: 200px;
+    height: 120px;
+    width: 120px;
 }
 .cust-reviews{
     color: #405D72;
-    text-align: center;
+    text-align:justify;
+    margin: 5px;
+    padding: 5px;
 }

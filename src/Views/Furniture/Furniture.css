@@ -24,7 +24,7 @@
     margin: 20px;
   }
   .furniture-card:hover {
-    transform: scale(1.05); /* Slight zoom on hover */
+    transform: scale(1.05); 
   }
 
   .furniture-image {
@@ -58,7 +58,44 @@
 
 
  }
-  
+ 
+ .counter-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.counter-button {
+  background-color: #405D72;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  margin: 0 10px;
+  transition: background-color 0.3s ease;
+}
+
+.counter-button:hover {
+  background-color: #253643;
+}
+
+.quantity-display {
+  font-size: 18px;
+  font-weight: bold;
+  color: #758694;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+
+
  .out-of-stock-message {
   color: #fff;
   background-color: #ff4c4c; 

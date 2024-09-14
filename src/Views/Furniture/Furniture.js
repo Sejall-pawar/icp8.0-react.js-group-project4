@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Furniture.css';
 import Header from './../../Components/Header/Header'; 
 import Footer from './../../Components/Footer/Footer';
@@ -98,7 +98,6 @@ function Furniture() {
       price: '$15/month',
       isAvailable: false
     },
-
     {
       id: 11,
       image: dressingTable,
@@ -107,11 +106,10 @@ function Furniture() {
       price: '$18/month',
       isAvailable: true
     },
-
     {
       id: 12,
       image: wardRobe,
-      title: 'Ward Robe',
+      title: 'Wardrobe',
       description: 'Spacious 2-door wardrobe with ample space for clothes and accessories.',
       price: '$22/month',
       isAvailable: true
@@ -123,23 +121,61 @@ function Furniture() {
       <Header />
       <div className="furniture-container">
         <h1>Furniture on Rent</h1>
-        <div className="furniture-cards"> {}
+        <div className="furniture-cards">
           {furnitureItems.map((item) => (
-            <div key={item.id} className="furniture-card">
-              <img src={item.image} alt={item.title} className="furniture-image" />
-              <h3>{item.title}</h3>
-              <p>{item.description}</p>
-              <p className="furniture-price">{item.price}</p>
-              {!item.isAvailable ? (
-              <p className="out-of-stock-message">Out of Stock</p>
-                  ) : (
-              <button className="rent-button">Rent Now</button>
-                   )}
-            </div>
+            <FurnitureCard key={item.id} item={item} />
           ))}
         </div>
       </div>
       <Footer /> 
+    </div>
+  );
+}
+
+function FurnitureCard({ item }) {
+  const [count, setCount] = useState(1);
+  const [error, setError] = useState('');
+
+  const handleIncrement = () => {
+    if (count < 5) {
+      setCount(count + 1);
+      setError(''); 
+    } else {
+      setError('Maximum limit reached (5 items).');
+    }
+  };
+
+  const handleDecrement = () => {
+    if (count > 1) {
+      setCount(count - 1);
+      setError(''); 
+    } else {
+      setError('Minimum quantity is 1.');
+    }
+  };
+
+  return (
+    <div className="furniture-card">
+      <img src={item.image} alt={item.title} className="furniture-image" />
+      <h3>{item.title}</h3>
+      <p>{item.description}</p>
+      <p className="furniture-price">{item.price}</p>
+
+      {!item.isAvailable ? (
+        <p className="out-of-stock-message">Out of Stock</p>
+      ) : (
+        <>
+          <div className="counter-container">
+            <button className="counter-button" onClick={handleDecrement}>-</button>
+            <span className="quantity-display">{count}</span>
+            <button className="counter-button" onClick={handleIncrement}>+</button>
+          </div>
+          <p className="error-message">
+            {error || (count > 5 ? 'You cannot add more than 5 items.' : '')}
+          </p>
+          <button className="rent-button">Rent Now</button>
+        </>
+      )}
     </div>
   );
 }

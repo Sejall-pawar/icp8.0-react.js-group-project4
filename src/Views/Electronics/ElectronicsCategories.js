@@ -62,7 +62,7 @@ const ElectronicsCategories = () => {
           : item
       )
     );
-    setError(""); // Clear error if valid
+    setError(""); 
   } else {
     setError("You cannot add more than 3 items.");
   }
@@ -79,7 +79,7 @@ const decreaseQuantity = (productId) => {
           : item
       )
     );
-    setError(""); // Clear error if valid
+    setError(""); 
   } else {
     setCart(cart.filter(item => item.id !== productId)); // Remove if 0
     setError();
@@ -115,46 +115,53 @@ const decreaseQuantity = (productId) => {
 
         {/* Display filtered categories */}
         <div className="categories-list">
-          {filteredCategories.map((category) => (
-            <div key={category.id} className="category-item">
-              <img
-                src={category.image}
-                alt={category.name}
-                className="category-image"
-                onClick={() => setSelectedProduct(category)} // Show product details
-              />
-              <h3>{category.name}</h3>
-              <p>
-                {showFullDescription[category.id]
-                  ? category.fullDescription // Show full description
-                  : `${category.description.substring(0, 60)}...`}{" "}
-                {/* Show partial description */}
-                <button
-                  onClick={() => toggleFullDescription(category.id)}
-                  className="toggle-description-button"
-                >
-                  {showFullDescription[category.id] ? "Show Less" : "Show More"}
-                </button>
-              </p>
-              <p>
-                <strong>Price:</strong> ₹{category.finalPrice.toFixed(2)}{" "}
-                (Original: ₹{category.priceInRupees.toFixed(2)},{" "}
-                {category.discountPercent}% off)
-              </p>
-              {category.inStock ? (
-                <button
-                  onClick={() => addToCart(category)}
-                  className="add-to-cart-button"
-                >
-                  Add to Cart
-                </button>
-              ) : (
-                <div className="out-of-stock-overlay">
-                  <p>Out of Stock</p>
-                </div>
-              )}
-            </div>
-          ))}
+          {CategoriesData.filter((category) =>
+            category.name.toLowerCase().includes(searchQuery)
+          ).map((category) => {
+            const basePrice = parseInt(category.finalPrice);
+            const totalPrice = basePrice * 1; 
+
+            return (
+              <div key={category.id} className="category-item">
+                <img
+                  src={category.image}
+                  alt={category.name}
+                  className="category-image"
+                  onClick={() => setSelectedProduct(category)}
+                />
+                <h3>{category.name}</h3>
+                <p>
+                  {showFullDescription[category.id]
+                    ? category.fullDescription
+                    : `${category.description.substring(0, 60)}...`}
+                  <button
+                    onClick={() => toggleFullDescription(category.id)}
+                    className="toggle-description-button"
+                  >
+                    {showFullDescription[category.id] ? "Show Less" : "Show More"}
+                  </button>
+                </p>
+                <p>
+                  <strong>Price:</strong> ₹{category.finalPrice} / month
+                </p>
+                <p>
+                  <strong>EMI (12 Months):</strong> ₹{calculateEMI(totalPrice, 12)} / month
+                </p>
+                {category.inStock ? (
+                  <button
+                    onClick={() => addToCart(category)}
+                    className="add-to-cart-button"
+                  >
+                    Add to Cart
+                  </button>
+                ) : (
+                  <div className="out-of-stock-overlay">
+                    <p>Out of Stock</p>
+                  </div>
+                )}
+              </div>
+            );
+          })}
         </div>
 
         {/* Cart Summary */}

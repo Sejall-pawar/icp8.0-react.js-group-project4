@@ -124,29 +124,45 @@ header {
   }
   
 
-  @media (max-width: 768px) {
+  @media (max-width: 500px) {
     header nav ul {
-      display: none;
-      flex-direction: column;
-      align-items: flex-start;
-      background-color: #405D72;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      padding: 20px 0;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        background-color: #405D72;
+        position: absolute;
+        top: 100%;
+        right: 0; 
+        width: 50%; 
+        padding: 20px 0;
     }
-  
+
     header nav ul.open {
-      display: flex;
+        display: flex;
     }
-  
+
     header nav ul li {
-      margin: 10px 0;
+        margin: 10px 0;
+        position: relative; 
     }
-  
+
     .nav-toggle-label {
-      display: block;
+        display: block;
     }
-  }
-  
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #758694;
+        min-width: 160px;
+        z-index: 1;
+        top: 0; 
+        right: 100%; 
+        transform: translateX(-160px); 
+        margin-right: 10px; 
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+}

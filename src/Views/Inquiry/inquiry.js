@@ -1,5 +1,5 @@
 import React from "react";
-import './inquiry.css'
+import './Inquiry.css'
 import Input from "../../Components/input/input";
 import Header from "../../Components/Header/Header";
 import Footer from "../../Components/Footer/Footer";

@@ -14,7 +14,11 @@
     color: #405D72;
     font-family:Georgia, 'Times New Roman', Times, serif ;
   }
-  .search-input, .sort-select, .size-select, .quantity-input {
+  .sub-heading{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #758694;
+  }
+  .search-input, .size-select, .quantity-input {
     margin-bottom: 20px;
     padding: 8px;
     width: 100%;
@@ -24,7 +28,7 @@
   }
   
   .search-input{
-    margin-left: 26%;
+    margin-left: 38%;
   }
  
   .categories-list {
@@ -72,11 +76,12 @@
   }
   
   .add-to-cart-button:hover {
-    background-color: #218838;
+    background-color: #758694;
   }
   
   .card-summary-heading{
     text-align: center;
+    color: #405D72;
   }
   .cart-summary {
     margin-top: 30px;

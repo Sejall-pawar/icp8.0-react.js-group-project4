@@ -1,5 +1,5 @@
 import React from 'react'
-import "./reviews.css"
+import "./Reviews.css"
 import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
 import Card from '../../Components/reviewcard/reviewcard'

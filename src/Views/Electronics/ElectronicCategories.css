@@ -6,6 +6,7 @@
   }
   .main-container{
     background-color: #F7E7DC;
+    margin: 150px;
   }
   .head-container{
     text-align: center;
@@ -28,7 +29,7 @@
   }
   
   .search-input{
-    margin-left: 38%;
+    margin-left: 35%;
   }
  
   .categories-list {

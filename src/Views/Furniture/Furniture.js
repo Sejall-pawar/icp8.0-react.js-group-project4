@@ -120,7 +120,7 @@ function Furniture() {
     <div>
       <Header />
       <div className="furniture-container">
-        <h1>Furniture on Rent</h1>
+        <h1 className='Headline'>Furniture on Rent</h1>
         <div className="furniture-cards">
           {furnitureItems.map((item) => (
             <FurnitureCard key={item.id} item={item} />
@@ -167,7 +167,12 @@ function FurnitureCard({ item }) {
       <p className="furniture-total-price">Total Price: ₹{totalPrice}/month</p> 
 
       {!item.isAvailable ? (
-        <p className="out-of-stock-message">Out of Stock</p>
+
+        <div className='out-of-stock-message'>
+        <p >Out of Stock</p>
+        </div>
+        
+      
       ) : (
         <>
           <div className="counter-container">

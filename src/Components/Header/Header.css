@@ -1,4 +1,4 @@
-/* General styles */
+
 body {
     display: flex;
     flex-direction: column;
@@ -8,7 +8,7 @@ body {
     padding: 0;
   }
   
-  /* Container */
+
   .container {
     width: 80%;
     margin: 0 auto;
@@ -18,20 +18,23 @@ body {
     align-items: center;
   }
   
-  /* Header */
-  header {
-    background-color: #405D72;
-    color: white;
-    padding: 20px 0;
-  }
-  
-  /* Header title */
+
+header {
+  background-color: #405D72;
+  color: white;
+  padding: 20px 0;
+  position: fixed; 
+  width: 100%; 
+  top: 0; 
+  z-index: 1000; 
+}
+
   header h1 {
     margin: 0;
     font-size: 2rem;
   }
   
-  /* Navigation */
+ 
   header nav ul {
     list-style: none;
     padding: 0;
@@ -40,7 +43,7 @@ body {
     align-items: center;
   }
   
-  /* Navbar Links */
+  
   header nav ul li {
     position: relative;
     margin: 0 10px;
@@ -54,7 +57,7 @@ body {
     display: block;
   }
   
-  /* Dropdown Menu */
+ 
   .dropdown-content {
     display: none;
     position: absolute;
@@ -80,7 +83,7 @@ body {
     display: block;
   }
   
-  /* Checkbox Hack */
+  
   .nav-toggle {
     display: none;
   }
@@ -95,7 +98,7 @@ body {
     cursor: pointer;
   }
   
-  /* Add a span to create bars in the label */
+  
   .nav-toggle-label span,
   .nav-toggle-label span::before,
   .nav-toggle-label span::after {
@@ -109,7 +112,7 @@ body {
     transition: 0.3s ease;
   }
   
-  /* Position of the bars */
+
   .nav-toggle-label span::before {
     content: '';
     top: -10px;
@@ -120,7 +123,7 @@ body {
     top: 10px;
   }
   
-  /* Displaying navbar for small screens */
+
   @media (max-width: 768px) {
     header nav ul {
       display: none;

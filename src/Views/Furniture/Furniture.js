@@ -47,7 +47,7 @@ function Furniture() {
       image: bedImage,
       title: 'King Size Bed',
       description: 'Luxurious king size bed with a soft mattress, perfect for a  sleep.',
-      price: '₹ 1150/month',
+      price: '₹1150/month',
       isAvailable: true
     },
     {
@@ -136,6 +136,10 @@ function FurnitureCard({ item }) {
   const [count, setCount] = useState(1);
   const [error, setError] = useState('');
 
+  
+  const basePrice = parseInt(item.price.replace('₹', '').replace('/month', ''));
+  const totalPrice = basePrice * count;
+
   const handleIncrement = () => {
     if (count < 5) {
       setCount(count + 1);
@@ -159,7 +163,8 @@ function FurnitureCard({ item }) {
       <img src={item.image} alt={item.title} className="furniture-image" />
       <h3>{item.title}</h3>
       <p>{item.description}</p>
-      <p className="furniture-price">{item.price}</p>
+      <p className="furniture-price">Base Price: {item.price}</p>
+      <p className="furniture-total-price">Total Price: ₹{totalPrice}/month</p> 
 
       {!item.isAvailable ? (
         <p className="out-of-stock-message">Out of Stock</p>
@@ -170,9 +175,7 @@ function FurnitureCard({ item }) {
             <span className="quantity-display">{count}</span>
             <button className="counter-button" onClick={handleIncrement}>+</button>
           </div>
-          <p className="error-message">
-            {error || (count > 5 ? 'You cannot add more than 5 items.' : '')}
-          </p>
+          <p className="error-message">{error}</p>
           <button className="rent-button">Rent Now</button>
         </>
       )}

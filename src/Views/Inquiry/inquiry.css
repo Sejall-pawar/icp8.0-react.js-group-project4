@@ -1,0 +1,12 @@
+.inquiry-container{
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    margin: 80px;
+    box-shadow: 1px 5px 7px gray;
+    flex-wrap: wrap;
+}
+.box-img{
+    height: 450px;
+    padding: 0;
+}

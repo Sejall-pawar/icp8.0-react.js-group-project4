@@ -1,40 +1,54 @@
-body{
-}
 .big{
     display: flex;
     justify-content: center;
     justify-items: center;
 }
 .container-1{
+    width: 1135px;
+    height: 500px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    margin: 50px;
+    justify-content: baseline;
     box-shadow: 1px 5px 7px gray;
     background-color: white;
-    border-radius: 5px;
-}
-.sales{
-    background-color: white;
-}
-.help{
-    background-color: white;
+    border-radius: 10px;
+    margin: 50px auto;
+    padding: 0;
 }
 .title{
     color: #405D72;
     font-weight: bold;
 }
-.img{
-    width: 400px;
-    object-fit: cover;
+.innerbox{
+    color:#405D72;
+    background-color: white;
+    width: 40%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+}
+.items{
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+.icons{
+    height: 50px;
+    margin-right: 10px;
+}
+.button1{
+    margin-left: 110px;
+    margin-top: 20px;
 }
 .innerbox1{
-    margin-left: 100px;
     box-shadow: 1px 5px 7px gray;
-    height: 410px;
-    width: 350px;
     border-radius: 5px;
     padding: 10px;
+    background-color: white;
+    height: 400px;
+    margin-top: 30px;
 }
 .callimg{
     height: 60px;

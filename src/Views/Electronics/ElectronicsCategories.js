@@ -4,7 +4,7 @@ import Footer from "./../../Components/Footer/Footer";
 import "./ElectronicCategories.css";
 import CategoriesData from "../../Config/CategoriesData";
 
-const EMI_RATE = 0.1;
+const EMI_RATE = 0.1; // 10% interest rate
 
 const ElectronicsCategories = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -12,7 +12,7 @@ const ElectronicsCategories = () => {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [showFullDescription, setShowFullDescription] = useState({});
   const [error, setError] = useState("");
-  
+
   // Handle search input change
   const handleSearch = (e) => setSearchQuery(e.target.value.toLowerCase());
 
@@ -23,11 +23,6 @@ const ElectronicsCategories = () => {
       [id]: !prevState[id],
     }));
   };
-
-  // // Filter and sort categories
-  // const filteredCategories = CategoriesData.filter((category) =>
-  //   category.name.toLowerCase().includes(searchQuery)
-  // );
 
   // Add to Cart functionality
   const addToCart = (product) => {
@@ -142,7 +137,7 @@ const decreaseQuantity = (productId) => {
                   </button>
                 </p>
                 <p>
-                  <strong>Price:</strong> ₹{category.finalPrice} / month
+                  <strong>Price:</strong> ₹{category.finalPrice} 
                 </p>
                 <p>
                   <strong>EMI (12 Months):</strong> ₹{calculateEMI(totalPrice, 12)} / month
@@ -152,7 +147,7 @@ const decreaseQuantity = (productId) => {
                     onClick={() => addToCart(category)}
                     className="add-to-cart-button"
                   >
-                    Add to Cart
+                    Rent Now
                   </button>
                 ) : (
                   <div className="out-of-stock-overlay">

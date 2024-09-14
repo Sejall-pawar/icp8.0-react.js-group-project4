@@ -6,7 +6,7 @@
 .bg {
     position: relative;
     background-image: url('./Img/bg.jpg');
-    height: 600px;
+    height: 610px;
     width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -15,7 +15,9 @@
     background-position: center;
     display: inline-block;
     justify-content: center;
+    margin-top: 119px; 
 }
+
 
 .Tagline {
     color: #758694;
@@ -168,8 +170,8 @@
 
 .CD2 {
     display: block;
-    width: calc(100% - 370px); /* Adjust width to fit within available space */
-    max-width: 800px; /* Set a maximum width to prevent overflow */
+    width: calc(100% - 370px); 
+    max-width: 800px; 
     box-sizing: border-box;
 }
 

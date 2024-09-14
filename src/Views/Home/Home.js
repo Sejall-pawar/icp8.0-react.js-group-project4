@@ -207,10 +207,10 @@ function home() {
               <h1 style={{color : THEME.primary}}>Chat With Us</h1>
               <h2>Write to us at  <a href="mailto:hello@rentifyhub.com">hello@rentifyhub.com </a> or talk to our customer care 
               representative at &emsp;<a href="tel:070-70984830 "> 070-70984830 </a>(9 AM - 9 PM)</h2>
-              <button className='msg-btn'>
+              <Link to="/contact"><button className='msg-btn'>
                 <img src={msg} className='msg-img'/> 
                 <h3>Write to us</h3>
-              </button>
+              </button></Link>
           </div>
         </div>
       </div>

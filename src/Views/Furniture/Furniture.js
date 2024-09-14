@@ -23,15 +23,15 @@ function Furniture() {
       image: sofaImage,
       title: 'Sofa Set',
       description: 'Comfortable 3-seater sofa set available for rent.',
-      price: '$25/month',
+      price: '₹1330/month',
       isAvailable: true
     },
     {
       id: 2,
       image: diningTableImage,
       title: 'Dining Table',
-      description: 'Elegant dining table with 4 chairs.',
-      price: '$20/month',
+      description: 'Elegant dining table with 4 chairs available for rent.',
+      price: '₹889/month',
       isAvailable: true
     },
     {
@@ -39,15 +39,15 @@ function Furniture() {
       image: studyDeskImage,
       title: 'Study Desk',
       description: 'Spacious study desk, ideal for work or study.',
-      price: '$15/month',
+      price: '₹469/month',
       isAvailable: true
     },
     {
       id: 4,
       image: bedImage,
       title: 'King Size Bed',
-      description: 'Luxurious king size bed with a soft mattress, perfect for a good night\'s sleep.',
-      price: '$30/month',
+      description: 'Luxurious king size bed with a soft mattress, perfect for a  sleep.',
+      price: '₹ 1150/month',
       isAvailable: true
     },
     {
@@ -55,7 +55,7 @@ function Furniture() {
       image: centerTable,
       title: 'Center Table',
       description: 'Modern center table, perfect for your living room.',
-      price: '$10/month',
+      price: '₹549/month',
       isAvailable: true
     },
     {
@@ -63,7 +63,7 @@ function Furniture() {
       image: shoeRack,
       title: 'Shoe Rack',
       description: 'Spacious shoe rack to keep your footwear organized.',
-      price: '$8/month',
+      price: '₹380/month',
       isAvailable: false
     },
     {
@@ -71,7 +71,7 @@ function Furniture() {
       image: restChair,
       title: 'Wooden Chair',
       description: 'Elegant wooden chair for comfort and style.',
-      price: '$12/month',
+      price: '₹430/month',
       isAvailable: true
     },
     {
@@ -79,7 +79,7 @@ function Furniture() {
       image: bookShelf,
       title: 'Bookshelf',
       description: 'Wooden bookshelf with multiple shelves for your books.',
-      price: '$18/month',
+      price: '₹660/month',
       isAvailable: false
     },
     {
@@ -87,7 +87,7 @@ function Furniture() {
       image: woodenSwing,
       title: 'Wooden Swing',
       description: 'Traditional wooden swing for your home.',
-      price: '$20/month',
+      price: '₹980/month',
       isAvailable: false
     },
     {
@@ -95,7 +95,7 @@ function Furniture() {
       image: bedTable,
       title: 'Bedside Table',
       description: 'Compact bedside table with a drawer for storage.',
-      price: '$15/month',
+      price: '₹380/month',
       isAvailable: false
     },
     {
@@ -103,7 +103,7 @@ function Furniture() {
       image: dressingTable,
       title: 'Dressing Table',
       description: 'Elegant dressing table with a large mirror and multiple storage compartments.',
-      price: '$18/month',
+      price: '₹750/month',
       isAvailable: true
     },
     {
@@ -111,7 +111,7 @@ function Furniture() {
       image: wardRobe,
       title: 'Wardrobe',
       description: 'Spacious 2-door wardrobe with ample space for clothes and accessories.',
-      price: '$22/month',
+      price: '₹805/month',
       isAvailable: true
     }
   ];

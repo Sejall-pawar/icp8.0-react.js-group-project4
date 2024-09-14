@@ -3,7 +3,6 @@ import Header from "./../../Components/Header/Header";
 import Footer from "./../../Components/Footer/Footer";
 import "./ElectronicCategories.css";
 import CategoriesData from "../../Config/CategoriesData";
-const [error, setError] = useState("");
 
 const EMI_RATE = 0.1;
 
@@ -12,7 +11,8 @@ const ElectronicsCategories = () => {
   const [cart, setCart] = useState([]);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [showFullDescription, setShowFullDescription] = useState({});
-
+  const [error, setError] = useState("");
+  
   // Handle search input change
   const handleSearch = (e) => setSearchQuery(e.target.value.toLowerCase());
 
@@ -24,10 +24,10 @@ const ElectronicsCategories = () => {
     }));
   };
 
-  // Filter and sort categories
-  const filteredCategories = CategoriesData.filter((category) =>
-    category.name.toLowerCase().includes(searchQuery)
-  );
+  // // Filter and sort categories
+  // const filteredCategories = CategoriesData.filter((category) =>
+  //   category.name.toLowerCase().includes(searchQuery)
+  // );
 
   // Add to Cart functionality
   const addToCart = (product) => {

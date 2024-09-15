@@ -1,7 +1,11 @@
 import React from 'react'
 import './Contact.css'
 import sales from './sales.png'
+<<<<<<< HEAD
+import Button1 from '../../Components/Button/Button'
+=======
 import Button1 from './../../Components/Button/Button'
+>>>>>>> 419e3534758b6f841c0f5fe5ca359a2f8cbc83ba
 import Footer from '../../Components/Footer/Footer'
 import Header from '../../Components/Header/Header'
 import { Link} from 'react-router-dom'

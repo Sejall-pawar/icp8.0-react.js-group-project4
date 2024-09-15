@@ -1,93 +1,169 @@
-/* Hero Section */
-.hero-section {
-  height: 400px;
-  background-size: cover;
-  display: flex;
-  align-items: center;
-  margin-top: 100px;
-  justify-content: center;
-  color: white;
-  text-align: center;
+.logo-image{
+  width: 50px;
+  border: 1px solid grey;
+  padding: 5px;
+  margin-right: 10px;
 }
-
-.hero-text h1 {
-  font-size: 2.5rem;
-}
-
-.hero-text p {
-  font-size: 1.2rem;
-  margin-top: 10px;
-}
-
-/* Garment Section */
-.garment-section {
-  text-align: center;
-  padding: 40px;
+.main-container{
   background-color: #F7E7DC;
+  margin: 150px;
+}
+.head-container{
+  text-align: center;
+}
+.heading{
+  color: #405D72;
+  font-family:Georgia, 'Times New Roman', Times, serif ;
+}
+.sub-heading{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: #758694;
+}
+.search-input, .size-select, .quantity-input {
+  margin-bottom: 20px;
+  padding: 8px;
+  width: 100%;
+  max-width: 300px;
+  font-size: 16px;
+  margin-left: 10px;
 }
 
-.garment-cards {
+.search-input{
+  margin-left: 35%;
+}
+
+.categories-list {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 10px;
+  justify-content: center;
   margin-top: 30px;
   margin: 20px;
 }
 
-/* Individual Garment Card */
-.garment-card {
+.category-item {
   background-color: #FFF8F3;
+  border: 1px solid #ddd;
   border-radius: 8px;
+  padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 10px;
-  max-width: 300px;
+  max-width: 200px;
   text-align: center;
   transition: transform 0.2s ease-in-out;
   margin: 20px;
+  position: relative;
 }
-
-.garment-card:hover {
+.category-item:hover{
   transform: scale(1.05);
 }
 
-/* Garment Image */
-.garment-image {
-  width: 300px;
-  height: 300px;
+.category-image {
+  width: 100%;
+  height: 150px;
+  max-width: 250px;
   object-fit: cover;
   border-radius: 8px;
 }
 
-/* Quantity Controls */
-.quantity-controls {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 20px 0;
-}
-
-.decrement-button,
-.increment-button {
+.add-to-cart-button {
+  padding: 10px 20px;
+  margin-top: 10px;
   background-color: #405D72;
   color: white;
   border: none;
-  padding: 10px 20px;
   border-radius: 5px;
-  cursor: pointer;
-  font-size: 18px;
-  margin: 0 10px;
   transition: background-color 0.3s ease;
+  cursor: pointer;
 }
 
-.decrement-button:hover,
-.increment-button:hover {
-  background-color: #253643;
+.add-to-cart-button:hover {
+  background-color: #758694;
 }
 
-.quantity {
-  font-size: 18px;
-  font-weight: bold;
-  color: #758694;
+.card-summary-heading{
+  text-align: center;
+  color: #405D72;
+}
+.cart-summary {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #FFF8F3;
+  border-radius: 8px;
+  max-width: 500px;
+  margin-left: 25%;
+  margin-bottom: 30px;
 }
 
+.cart-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid;
+}
+
+.cart-image {
+  width: 40%;
+  margin-right: 20px;
+  object-fit: cover;
+}
+
+.cart-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-details h4 {
+  margin: 0 0 5px;
+}
+
+.cart-details p {
+  margin: 2px 0;
+}
+
+.btn-quantity{
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.btn-inc-dec{
+  width: 20%;
+  border-radius: 10px;
+  border: 1px solid;
+  margin-right: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.emi-content{
+  padding-bottom: 10px;
+}
+
+.out-of-stock-overlay {
+  position: absolute;
+  top: 85%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4); 
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.toggle-description-button {
+  background-color: transparent;
+  color: #405D72;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0;
+}
+
+.toggle-description-button:hover {
+  text-decoration: underline;
+}

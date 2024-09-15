@@ -2,7 +2,11 @@ import React from 'react'
 import "./Reviews.css"
 import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
+<<<<<<< HEAD
 import Card from '../../Components/reviewcard/Reviewcard'
+=======
+import Card from '../../Components/reviewcard/reviewcard'
+>>>>>>> e1b053004a4cc2ff1d0957eec5988f59e866332a
 import profile from './profile.png'
 import rating from './rating.png'
 import woman from './woman.png'

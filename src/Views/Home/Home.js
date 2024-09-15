@@ -57,8 +57,7 @@ function home() {
     {
       No: 1,
       bgImg: R1,
-      Name: 'Bed Room',
-      Type: 'Furniture',
+      Name: 'Bed Room Furniture',
       Pricetag: 'Starting From',
       Price: '@1500/mo',
       link: './furniture'
@@ -66,8 +65,7 @@ function home() {
     {
       No: 2,
       bgImg: R2,
-      Name: 'Living Room',
-      Type: 'Furniture',
+      Name: 'Living Room Furniture',
       Pricetag: 'Starting From',
       Price: '@1300/mo',
       link: './furniture'
@@ -75,8 +73,7 @@ function home() {
     {
       No: 3,
       bgImg: R3,
-      Name: 'Garments',
-      Type: 'Deals',
+      Name: 'Garments Deals',
       Pricetag: 'Starting From',
       Price: '@300/day',
       link: './garments'
@@ -84,8 +81,7 @@ function home() {
     {
       No: 4,
       bgImg: R4,
-      Name: 'Study Room',
-      Type: 'Furniture',
+      Name: 'Study Room Furniture',
       Pricetag: 'Starting From',
       Price: '@400/mo',
       link: './furniture'
@@ -93,8 +89,7 @@ function home() {
     {
       No: 5,
       bgImg: R5,
-      Name: 'Appliances',
-      Type: 'Premium Quality',
+      Name: 'AppliancesPremium Quality',
       Pricetag: 'Starting From',
       Price: '@250/mo',
       link: './electronics'
@@ -102,8 +97,7 @@ function home() {
     {
       No: 6,
       bgImg: R6,
-      Name: 'car & Bikes',
-      Type: 'Deals',
+      Name: 'car & Bikes Deals',
       Pricetag: 'Starting From',
       Price: '@500/day',
       link: './vehicles'
@@ -139,7 +133,6 @@ function home() {
               className='Rent-Item'
               style={{ backgroundImage : `url(${item.bgImg})`, height: "400px", width: "350px" }}>
               <h1>{item.Name}</h1>
-              <h2>{item.Type}</h2>
               <h3>{item.Pricetag}</h3>
               <h1 className='price'>{item.Price}</h1>
             </div>

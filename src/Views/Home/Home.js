@@ -89,7 +89,7 @@ function home() {
     {
       No: 5,
       bgImg: R5,
-      Name: 'AppliancesPremium Quality',
+      Name: 'Appliances Quality',
       Pricetag: 'Starting From',
       Price: '@250/mo',
       link: './electronics'

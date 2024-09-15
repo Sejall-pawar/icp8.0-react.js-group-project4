@@ -15,7 +15,7 @@
     background-position: center;
     display: inline-block;
     justify-content: center;
-    margin-top: 90px; 
+    margin-top: 90px;
 }
 
 
@@ -123,23 +123,25 @@
     transform: scale(1.05);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-.Rent-Item h1{
+
+.Rent-Item h1 {
     text-align: center;
     font-size: 25px;
     display: inline-flex;
 }
-.Rent-Item h2{
+
+.Rent-Item h2 {
     text-align: right;
     margin-right: 5px;
     font-size: 20px;
 }
 
-.Rent-Item h3{
+.Rent-Item h3 {
     text-align: left;
     font-size: 20px;
 }
 
-.Rent-Link{
+.Rent-Link {
     text-decoration: none;
     color: #000;
 }
@@ -176,7 +178,8 @@
     margin-top: 50px;
 }
 
-.CD1 h1, .CD1 h2 {
+.CD1 h1,
+.CD1 h2 {
     color: white;
 }
 
@@ -187,8 +190,8 @@
 
 .CD2 {
     display: block;
-    width: calc(100% - 370px); 
-    max-width: 800px; 
+    width: calc(100% - 370px);
+    max-width: 800px;
     box-sizing: border-box;
 }
 
@@ -215,15 +218,14 @@
 .CD2-1sub {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
     gap: 20px;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
 }
 
 .CD2-1-1 {
     text-align: center;
     flex: 1;
-    min-width: 150px; 
+    min-width: 150px;
 }
 
 .CD2-1-1 h1 {
@@ -255,13 +257,17 @@
     box-sizing: border-box;
 }
 
-.CD2-2 h3, .CD2-2 h1, .CD2-2 h2 {
+.CD2-2 h3,
+.CD2-2 h1,
+.CD2-2 h2 {
     margin-bottom: 10px;
     color: #758694;
 }
-.CD2-2 h2{
+
+.CD2-2 h2 {
     font-size: 20px;
 }
+
 .CD2-2 h2 a {
     color: #405D72;
     text-decoration: none;
@@ -277,13 +283,13 @@
     margin-top: 20px;
     border-radius: 5px;
     border: 2px solid #405D72;
-    background-color: #f0f0f0; 
+    background-color: #f0f0f0;
     cursor: pointer;
-    transition: background-color 0.3s ease; 
+    transition: background-color 0.3s ease;
 }
 
 .msg-btn:hover {
-    background-color: #e0e0e0; 
+    background-color: #e0e0e0;
 }
 
 
@@ -296,3 +302,95 @@
     color: #405D72;
     margin: 0;
 }
+
+@media screen and (max-width: 500px) {
+    .Tagline {
+        margin-top: 115px;
+        font-size: 25px;
+    }
+
+    .Rent-title {
+        font-size: 30px;
+    }
+
+    .Rent-Item-Contanier {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .Rent-Item {
+        height: 400px;
+        width: 100%;
+        max-width: 250px;
+    }
+
+    .Rent-Item h1 {
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+
+    .Rent-Item h2 {
+        font-size: 15px;
+        margin-top: 25px;
+    }
+
+    .Rent-Item h3 {
+        font-size: 20px;
+    }
+ 
+    .CD1 {
+        height: 450px;
+        width: 300px;
+        padding: 0;
+    }
+    .CD1 h1{
+        font-size: 20px;
+    }
+    .CD-img {
+        height: 40px;
+        margin-bottom: 8px;
+        margin-top: 5px;
+    }
+    
+    .CD1 hr {
+        margin: 5px 0;
+    }
+    
+    .CD2 {
+        width: calc(100% - 1px);
+        max-width: 350px;
+    }
+    
+    .CD2-1 {
+        height: 650px;
+        width: 350px;
+        padding: 10px;
+    }
+    
+    .CD2-1 h3 {
+        font-size: 20px;
+    }
+    
+    .CD2-1 h1 {
+        margin-top: 10px;
+        margin-bottom: 30px;
+    }
+    
+    .CD2-1-1 h3 {
+        font-size: 15px;
+        margin: 5px 20px;
+    }
+    
+    .CD2-2 {
+        height: 350px;
+        width: 350px;
+    }    
+}
+
+@media screen and (min-width: 500px) and (max-width: 768px) {}
+
+@media screen and (min-width: 769px) and (max-width: 992px) {}
+
+@media screen and (min-width: 993px) and (max-width: 1200px) {}

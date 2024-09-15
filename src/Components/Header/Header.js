@@ -33,7 +33,6 @@ function Header() {
                 <Link to="/furniture">Furniture</Link>
                 <Link to="/garments">Garments</Link>
                 <Link to="/electronics">Electronics</Link>
-                <Link to="/vehicles">Vehicles</Link>
               </div>
             </li>
             <li><Link to="/contact" className='nav-names'>Contact</Link></li>

@@ -146,5 +146,4 @@ const GarmentsCategories = () => {
     </div>
   );
 };
-
 export default GarmentsCategories;

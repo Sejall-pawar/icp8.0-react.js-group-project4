@@ -25,8 +25,8 @@ function Furniture() {
     { id: 5, image: centerTable, title: 'Center Table', description: 'Modern center table, perfect for your living room.', price: 549, isAvailable: true },
     { id: 6, image: shoeRack, title: 'Shoe Rack', description: 'Spacious shoe rack to keep your footwear organized.', price: 380, isAvailable: false },
     { id: 7, image: restChair, title: 'Wooden Chair', description: 'Elegant wooden chair for comfort and style.', price: 430, isAvailable: true },
-    { id: 8, image: bookShelf, title: 'Bookshelf', description: 'Wooden bookshelf with multiple shelves for your books.', price: 660, isAvailable: false },
-    { id: 9, image: woodenSwing, title: 'Wooden Swing', description: 'Traditional wooden swing for your home.', price: 980, isAvailable: false },
+    { id: 8, image: bookShelf, title: 'Bookshelf', description: 'Wooden bookshelf with multiple shelves.', price: 660, isAvailable: false },
+    { id: 9, image: woodenSwing, title: 'Wooden Swing', description: 'Traditional wooden swing for your home.', price: 980, isAvailable: true },
     { id: 10, image: bedTable, title: 'Bedside Table', description: 'Compact bedside table with a drawer for storage.', price: 380, isAvailable: false },
     { id: 11, image: dressingTable, title: 'Dressing Table', description: 'Elegant dressing table with a large mirror and multiple storage compartments.', price: 750, isAvailable: true },
     { id: 12, image: wardRobe, title: 'Wardrobe', description: 'Spacious 2-door wardrobe with ample space for clothes and accessories.', price: 805, isAvailable: true }
@@ -79,7 +79,7 @@ function Furniture() {
     <div>
       <Header />
       <div className="furniture-container">
-        <h1 className='Headline'>Furniture on Rent</h1>
+        <h1 className='Headline'>Elevate Your Home with Our Premium Furniture Rentals</h1>
         <div className="furniture-cards">
           {furnitureItems.map((item) => (
             <FurnitureCard key={item.id} item={item} addToCart={addToCart} />
@@ -136,16 +136,20 @@ function CartSummary({ cart, increaseQuantity, decreaseQuantity }) {
               <div className="cart-details">
                 <h4>{item.title}</h4>
                 <p>Price: ₹{item.price}</p>
-                <p>Quantity: {item.quantity}</p>
-                <p>Total: ₹{item.price * item.quantity}</p>
+               
+                
                 <div className="btn-quantity">
                   <button className="btn-inc-dec" onClick={() => decreaseQuantity(item.id)}>-</button>
+                  <span>{item.quantity}</span>
                   <button className="btn-inc-dec" onClick={() => increaseQuantity(item.id)}>+</button>
                 </div>
+                <p>Total: ₹{item.price * item.quantity}</p>
               </div>
             </div>
           ))}
+          <div className='cart-total'>
           <h3>Total Price: ₹{totalCartPrice}</h3>
+          </div>
         </>
       )}
     </div>

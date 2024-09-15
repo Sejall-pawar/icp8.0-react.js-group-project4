@@ -27,13 +27,13 @@ function Footer() {
                         <Link to="/furniture">Furniture</Link>
                         <Link to="/garments">Garments</Link>
                         <Link to="/electronics">Electronics</Link>
-                        <Link to="/vehicles">Vehicles</Link>
                     </div>
                     <div className='pages'>
                         <Link to="/contact">Contact</Link>
                         <Link to="/reviews">Reviews</Link>
                         <Link to="/registration">User Registration</Link>
                     </div>
+                    <div></div>
                     <div>
                         <h1 className='type'>Furniture On Rent</h1>
                         <h3 className='type-name'>Bedroom Furniture</h3>

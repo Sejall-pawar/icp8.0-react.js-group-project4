@@ -1,139 +1,150 @@
-import React, { useState } from 'react';
-import Header from './../../Components/Header/Header'; 
-import Footer from './../../Components/Footer/Footer';
-import './garments.css'; 
-import heroImage1 from './GarmentsImages/hero1.png';
+import React, { useState } from "react";
+import Header from "./../../Components/Header/Header";
+import Footer from "./../../Components/Footer/Footer";
+import "./Garments.css";
+import CategoriesData from "../../Config/GarmentsData";
 
-// Import images for the garments
-import lehengaImage from './GarmentsImages/lehenga.jpg';
-import formalWearImage from './GarmentsImages/formalwere.jpg';
-import bridalGownImage from './GarmentsImages/bridalgown.jpeg';
-import sherwaniImage from './GarmentsImages/sherwani.jpeg';
-import suitImage from './GarmentsImages/suit.jpg';
-import kurtaImage from './GarmentsImages/kurta.jpeg';
+const GarmentsCategories = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [cart, setCart] = useState([]);
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [showFullDescription, setShowFullDescription] = useState({});
+  const [error, setError] = useState("");
 
-function Garments() {
-  const womensWearItems = [
-    {
-      id: 1,
-      image: lehengaImage,
-      title: 'Lehenga',
-      description: 'Traditional Lehenga for weddings and special occasions.',
-      price: 1500,
-    },
-    {
-      id: 2,
-      image: formalWearImage,
-      title: 'Formal Wear',
-      description: 'Elegant formal wear for business events.',
-      price: 1000,
-    },
-    {
-      id: 3,
-      image: bridalGownImage,
-      title: 'Bridal Gown',
-      description: 'Stunning bridal gown for your special day.',
-      price: 5000,
+  // Function to handle search input changes
+  const handleSearch = (e) => setSearchQuery(e.target.value.toLowerCase());
+
+  // Function to toggle full description visibility
+  const toggleFullDescription = (id) => setShowFullDescription(prevState => ({
+    ...prevState,
+    [id]: !prevState[id]
+  }));
+
+  // Function to update the cart: add or remove items
+  const updateCart = (product, increment) => {
+    const exists = cart.find((item) => item.id === product.id);
+    if (exists) {
+      if (exists.quantity + increment > 3 || exists.quantity + increment < 1) {
+        setError(increment > 0 ? "You cannot add more than 3 items." : "");
+        return;
+      }
+      setCart(cart.map((item) =>
+        item.id === product.id ? { ...item, quantity: item.quantity + increment } : item
+      ));
+      setError(""); // Clear error message on successful update
+    } else {
+      setCart([...cart, { ...product, quantity: 1 }]);
     }
-  ];
-
-  const mensWearItems = [
-    {
-      id: 4,
-      image: sherwaniImage,
-      title: 'Sherwani',
-      description: 'Royal sherwani for weddings and ceremonies.',
-      price: 2000,
-    },
-    {
-      id: 5,
-      image: suitImage,
-      title: 'Suit',
-      description: 'Classic suit for formal and business events.',
-      price: 1200,
-    },
-    {
-      id: 6,
-      image: kurtaImage,
-      title: 'Kurta Pajama',
-      description: 'Comfortable and stylish kurta pajama for casual occasions.',
-      price: 800,
-    }
-  ];
+  };
 
   return (
     <div>
       <Header />
-      
-      {/* Hero Section */}
-      <div
-        className="hero-section"
-        style={{ backgroundImage: `url(${heroImage1})` }}
-      >
-        <div className="hero-text">
-          <h1>"Rent the latest styles, no commitment needed. Look great, save more!"</h1>
-          <p>Find the best outfits for every occasion.</p>
-        </div>
-      </div>
 
-      {/* Women's Wear Section */}
-      <div className="garment-section">
-        <h2>Women's Wear Collection</h2>
-        <div className="garment-cards">
-          {womensWearItems.map((item) => (
-            <GarmentCard key={item.id} item={item} />
+      <div className="main-container">
+        <div className="head-container">
+          <h2 className="heading">Garments On Rent</h2>
+          <p className="sub-heading">
+            Browse through our wide range of Garments categories.
+          </p>
+        </div>
+
+        {/* Search input */}
+        <input
+          type="text"
+          placeholder="Search Categories"
+          value={searchQuery}
+          onChange={handleSearch}
+          className="search-input"
+        />
+
+        {/* Display list of categories based on search query */}
+        <div className="categories-list">
+          {CategoriesData.filter((category) =>
+            category.name && category.name.toLowerCase().includes(searchQuery) // Ensure category.name exists and is defined
+          ).map((category) => (
+            <div key={category.id} className="category-item">
+              <img
+                src={category.image}
+                alt={category.name}
+                className="category-image"
+                onClick={() => setSelectedProduct(category)}
+              />
+              <h3>{category.name}</h3>
+              <p>
+                {showFullDescription[category.id]
+                  ? category.fullDescription
+                  : `${category.description ? category.description.substring(0, 60) : ''}...`} {/* Ensure description is defined */}
+                <button
+                  onClick={() => toggleFullDescription(category.id)}
+                  className="toggle-description-button"
+                >
+                  {showFullDescription[category.id] ? "Show Less" : "Show More"}
+                </button>
+              </p>
+              <p><strong>Price:</strong> ₹{category.finalPrice.toFixed(2)}</p>
+              {category.inStock ? (
+                <button
+                  onClick={() => updateCart(category, 1)}
+                  className="add-to-cart-button"
+                >
+                  Rent Now
+                </button>
+              ) : (
+                <div className="out-of-stock-overlay"><p>Out of Stock</p></div>
+              )}
+            </div>
           ))}
         </div>
-      </div>
 
-      {/* Men's Wear Section */}
-      <div className="garment-section">
-        <h2>Men's Wear Collection</h2>
-        <div className="garment-cards">
-          {mensWearItems.map((item) => (
-            <GarmentCard key={item.id} item={item} />
-          ))}
+        {/* Cart Summary Section */}
+        <h2 className="card-summary-heading">Cart Summary</h2>
+        <div className="cart-summary">
+          {cart.length === 0 ? (
+            <p>Your cart is empty</p>
+          ) : (
+            <>
+              <ul>
+                {cart.map((item) => (
+                  <li key={item.id} className="cart-item">
+                    <img src={item.image} alt={item.name} className="cart-image" />
+                    <div className="cart-details">
+                      <h4>{item.name}</h4>
+                      <p>{item.description}</p>
+                      <p>Quantity: {item.quantity}</p>
+                      <p><strong>Total Price:</strong> ₹{(item.finalPrice * item.quantity).toFixed(2)}</p>
+                      <div className="btn-quantity">
+                        <button onClick={() => updateCart(item, 1)} className="btn-inc-dec">+</button>
+                        <button onClick={() => updateCart(item, -1)} className="btn-inc-dec">-</button>
+                      </div>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+              <p className="error-message">{error}</p>
+              <div className="total-price">
+                <h3>Total Price: ₹{cart.reduce((total, item) => total + (item.finalPrice * item.quantity), 0).toFixed(2)}</h3>
+              </div>
+            </>
+          )}
         </div>
+
+        {/* Product Details Modal */}
+        {selectedProduct && (
+          <div className="product-details">
+            <h3>{selectedProduct.name}</h3>
+            <img src={selectedProduct.image} alt={selectedProduct.name} className="category-image" />
+            <p><strong>Full Description:</strong> {selectedProduct.fullDescription}</p>
+            <p><strong>Price:</strong> ₹{selectedProduct.finalPrice.toFixed(2)}</p>
+            <button onClick={() => updateCart(selectedProduct, 1)}>Add to Cart</button>
+            <button onClick={() => setSelectedProduct(null)}>Close</button>
+          </div>
+        )}
       </div>
 
       <Footer />
     </div>
   );
-}
+};
 
-function GarmentCard({ item }) {
-  const [quantity, setQuantity] = useState(1);
-
-  const incrementQuantity = () => {
-    if (quantity < 5) {
-      setQuantity(prevQuantity => prevQuantity + 1);
-    }
-  };
-
-  const decrementQuantity = () => {
-    if (quantity > 1) {
-      setQuantity(prevQuantity => prevQuantity - 1);
-    }
-  };
-
-  return (
-    <div className="garment-card">
-      <img src={item.image} alt={item.title} className="garment-image" />
-      <h3>{item.title}</h3>
-      <p>{item.description}</p>
-      <p className="garment-price">Price: ₹{item.price}/day</p>
-
-      {/* Quantity controls */}
-      <div className="quantity-controls">
-        <button className="decrement-button" onClick={decrementQuantity}>-</button>
-        <span className="quantity">{quantity}</span>
-        <button className="increment-button" onClick={incrementQuantity}>+</button>
-      </div>
-
-      <p>Total: ₹{item.price * quantity}</p>
-      <button className="rent-button">Rent Now</button>
-    </div>
-  );
-}
-
-export default Garments;
+export default GarmentsCategories;

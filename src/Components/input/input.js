@@ -1,10 +1,10 @@
 import React from "react";
-import './input.css'
+import './Input.css'
 
-function Input(){
+function Input(props){
     return(
         <div>
-            <input type="text" id="id" placeholder="put text" className="input-box"></input>
+            <input type={props.type} id="id" placeholder={props.placeholder} className="input-box"></input>
         </div>
     )
 }

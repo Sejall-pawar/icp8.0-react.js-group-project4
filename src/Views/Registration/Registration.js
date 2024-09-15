@@ -3,13 +3,15 @@ import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
 import RegInput from '../../Components/RegistrationInput/RegInput'
 import './Registration.css'
+import register from './register.jpg'
 function Registration() {
   return (
     <div>
       <div><Header/></div>
 
+
       <div class="container-reg">
-        <h1>Register</h1>
+        <h2>Register</h2>
         <form id="registrationForm">
             <label for="username">Username:</label>
             <input type="text" id="username"  />
@@ -28,7 +30,7 @@ function Registration() {
         </form>
         <RegInput />
     </div>
-
+   
 
       <div><Footer/></div>
     </div>

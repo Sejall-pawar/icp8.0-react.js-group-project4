@@ -47,12 +47,12 @@
     margin-top: 20px;
 }
 .innerbox-2{
-    box-shadow: 1px 5px 7px gray;
-    border-radius: 5px;
+    box-shadow: 3px 4px 8px gray;
+    border-radius: 10px;
     padding: 10px;
     background-color: white;
     height: 400px;
-    margin-top: 30px;
+    margin-top: 40px;
 }
 .callimg{
     height: 60px;

@@ -11,7 +11,7 @@ import Vehicles from "./Views/Vehicles/Vehicles"
 import Contact from "./Views/Contact/Contact"
 import Registration from "./Views/Registration/Registration"
 import Reviews from "./Views/Reviews/Reviews"
-import Inquiry from './Views/Inquiry/inquiry'
+import Inquiry from './Views/Inquiry/Inquiry';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 

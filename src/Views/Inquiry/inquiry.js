@@ -1,8 +1,6 @@
 import React from "react";
-
-import './inquiry.css'
-import Input from "../../Components/input/input";
-
+import './Inquiry.css'
+import Input from "../../Components/Input/Input";
 import Header from "../../Components/Header/Header";
 import Footer from "../../Components/Footer/Footer";
 import Box from './box.jpg'

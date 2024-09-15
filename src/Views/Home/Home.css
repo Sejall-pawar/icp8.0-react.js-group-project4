@@ -115,21 +115,30 @@
     margin-bottom: 10px;
     flex-wrap: wrap;
     padding: 5px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .Rent-Item:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-
-.Rent-Item h1,
-.Rent-Item h2,
-.Rent-Item h3 {
+.Rent-Item h1{
+    text-align: center;
+    font-size: 25px;
+    display: inline-flex;
+}
+.Rent-Item h2{
     text-align: right;
     margin-right: 5px;
-    margin-bottom: 0;
-    line-height: 0.5;
+    font-size: 20px;
 }
+
+.Rent-Item h3{
+    text-align: left;
+    font-size: 20px;
+}
+
 .Rent-Link{
     text-decoration: none;
     color: #000;
@@ -154,7 +163,7 @@
 
 .CD1 {
     text-align: center;
-    height: auto;
+    height: 650px;
     width: 350px;
     background-color: #405D72;
     padding: 20px;
@@ -164,6 +173,7 @@
 .CD-img {
     height: 70px;
     margin-bottom: 10px;
+    margin-top: 50px;
 }
 
 .CD1 h1, .CD1 h2 {
@@ -267,9 +277,15 @@
     margin-top: 20px;
     border-radius: 5px;
     border: 2px solid #405D72;
-    background-color: #f0f0f0;
+    background-color: #f0f0f0; 
     cursor: pointer;
+    transition: background-color 0.3s ease; 
 }
+
+.msg-btn:hover {
+    background-color: #e0e0e0; 
+}
+
 
 .msg-img {
     height: 30px;

@@ -1,13 +1,16 @@
+.container{
+    display: flex;
+}
 footer {
     background-color: #405D72;
     color: white;
     text-align: center;
     padding: 10px 0;
-    margin-top: auto; 
+    margin-top: auto;
     bottom: 0;
 }
 
-.social-img{
+.social-img {
     height: 30px;
     width: 30px;
     padding: 5px;
@@ -16,35 +19,138 @@ footer {
 
 .pages {
     display: flex;
-    flex-direction: column; 
-    align-items: flex-start; 
+    flex-direction: column;
+    align-items: flex-start;
+    flex-wrap: wrap;
 }
 
 .pages a {
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
     text-decoration: none;
-    color: white; 
+    color: white;
 }
 
-.type{
+.type {
     font-size: 17px;
     display: flex;
     align-items: flex-start;
     text-decoration: underline;
+    flex-wrap: wrap;
 }
 
-.type-name{
+.type-name {
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     align-items: flex-start;
     font-size: 13px;
+    flex-wrap: wrap
 }
 
-.footer-line{
+.footer-line {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .footer-line h1 {
     font-size: 15px;
+}
+
+@media (max-width: 500px) {
+    .container {
+        display: block;
+        text-align: center;
+    }
+
+    .pages {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .pages a {
+        text-align: center;
+    }
+
+    .type {
+        display: block;
+        text-align: center;
+    }
+
+    .type-name {
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 500px) and (max-width: 800px) {
+    .pages {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .pages a {
+        text-align: center;
+    }
+
+    .type {
+        display: block;
+        text-align: center;
+    }
+
+    .type-name {
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 992px) {
+    .container {
+        display: block;
+        text-align: center;
+    }
+
+    .pages {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .pages a {
+        text-align: center;
+    }
+
+    .type {
+        display: block;
+        text-align: center;
+    }
+
+    .type-name {
+        text-align: center;
+    }
+}
+
+@media screen and (min-width: 993px) and (max-width: 1200px) {
+    .container {
+        display: block;
+        text-align: center;
+    }
+
+    .pages {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .pages a {
+        text-align: center;
+    }
+
+    .type {
+        display: block;
+        text-align: center;
+    }
+
+    .type-name {
+        text-align: center;
+    }
 }

@@ -21,7 +21,7 @@ import CD4 from "./Img/CD4.jpg";
 import msg from "./Img/msg.png";
 import "./Home.css";
 import "./../../index.css"
-import { THEME} from '../../Config/Data';
+import { THEME } from '../../Config/Data';
 
 
 function home() {
@@ -89,7 +89,7 @@ function home() {
     {
       No: 5,
       bgImg: R5,
-      Name: 'AppliancesPremium Quality',
+      Name: 'Appliances Quality',
       Pricetag: 'Starting From',
       Price: '@250/mo',
       link: './electronics'
@@ -128,14 +128,26 @@ function home() {
         <div className='Rent-Item-Contanier'>
 
           {RentItems.map((item) => (
-            <Link to={item.link} key={item.No}  className='Rent-Link'>
-            <div
-              className='Rent-Item'
-              style={{ backgroundImage : `url(${item.bgImg})`, height: "400px", width: "350px" }}>
-              <h1>{item.Name}</h1>
-              <h3>{item.Pricetag}</h3>
-              <h1 className='price'>{item.Price}</h1>
-            </div>
+            <Link to={item.link} key={item.No} className='Rent-Link'>
+              <div
+                className='Rent-Item'
+                style={{
+                  backgroundImage: `url(${item.bgImg})`,
+                  height: "400px",
+                  width: "350px",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  alignItems: "center",
+                  padding: "20px"
+                }}>
+                <h1 style={{ textAlign: "center", marginBottom: "auto" }}>{item.Name}</h1>
+                <div style={{ display: "flex", justifyContent: "space-between", width: "100%",marginBottom: "290px" }}>
+                  <h3>{item.Pricetag}</h3>
+                  <h2 className='price'>{item.Price}</h2>
+                </div>
+              </div>
+
             </Link>
           ))}
         </div>
@@ -176,25 +188,25 @@ function home() {
             <div className='CD2-1sub'>
 
               <div className='CD2-1-1'>
-                <img src={CD1} className='step-img'/>
+                <img src={CD1} className='step-img' />
                 <h1>Step 1</h1>
                 <h3>Select a product & tenure to start renting</h3>
               </div>
 
               <div className='CD2-1-1'>
-                <img src={CD2} className='step-img'/>
+                <img src={CD2} className='step-img' />
                 <h1>Step 2</h1>
                 <h3>Pay the amount & do KYC</h3>
               </div>
 
               <div className='CD2-1-1'>
-                <img src={CD3} className='step-img'/>
+                <img src={CD3} className='step-img' />
                 <h1>Step 3</h1>
                 <h3>Get items delivered & assembled within 72 hrs</h3>
               </div>
 
               <div className='CD2-1-1'>
-                <img src={CD4} className='step-img'/>
+                <img src={CD4} className='step-img' />
                 <h1>Step 4</h1>
                 <h3>Experience the firsthand magic of furniture</h3>
               </div>
@@ -203,14 +215,14 @@ function home() {
 
           </div>
           <div className='CD2-2'>
-              <h3>Have a query? Need help?</h3>
-              <h1 style={{color : THEME.primary}}>Chat With Us</h1>
-              <h2>Write to us at  <a href="mailto:hello@rentifyhub.com">hello@rentifyhub.com </a> or talk to our customer care 
+            <h3>Have a query? Need help?</h3>
+            <h1 style={{ color: THEME.primary }}>Chat With Us</h1>
+            <h2>Write to us at  <a href="mailto:hello@rentifyhub.com">hello@rentifyhub.com </a> or talk to our customer care
               representative at &emsp;<a href="tel:070-70984830 "> 070-70984830 </a>(9 AM - 9 PM)</h2>
-              <Link to="/contact"><button className='msg-btn'>
-                <img src={msg} className='msg-img'/> 
-                <h3>Write to us</h3>
-              </button></Link>
+            <Link to="/contact"><button className='msg-btn'>
+              <img src={msg} className='msg-img' />
+              <h3>Write to us</h3>
+            </button></Link>
           </div>
         </div>
       </div>

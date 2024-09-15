@@ -10,3 +10,7 @@
     color:white;
     background-color: #405D72;
 }
+
+.button:hover{
+    background-color: #1a4f74;
+}

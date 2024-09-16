@@ -5,6 +5,7 @@
   }
   .Headline{
     padding-top: 80px;
+    color: #405D72;
   }
 
   .furniture-cards {
@@ -71,7 +72,15 @@
   justify-content: center;
   margin: 20px 0;
 }
-
+.toggle-description-button {
+  background: none !important;
+  border: none !important; 
+  color: #007bff; 
+  cursor: pointer;
+  font-size: 14px;
+  text-decoration: underline;
+  padding: 0;
+}
 .counter-button {
   background-color: #405D72;
   color: white;
@@ -84,8 +93,11 @@
   transition: background-color 0.3s ease;
 }
 
-.counter-button:hover {
+.btn-inc-dec:hover {
   background-color: #253643;
+}
+.btn-inc-dec{
+  background-color: #405D72;
 }
 
 .quantity-display {

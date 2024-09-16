@@ -11,6 +11,11 @@
     margin-right: auto;
     align-content: center;
 }
+.imgReg{
+    height: 200px;
+    width: 300px;
+    
+}
 h2 {
     margin-bottom: 20px;
     text-align: center;

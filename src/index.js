@@ -7,7 +7,6 @@ import Home from "./Views/Home/Home"
 import Furniture from "./Views/Furniture/Furniture"
 import Garments from "./Views/Garments/Garments"
 import Electronics from "./Views/Electronics/ElectronicsCategories"
-import Vehicles from "./Views/Vehicles/Vehicles"
 import Contact from "./Views/Contact/Contact"
 import Registration from "./Views/Registration/Registration"
 import Reviews from "./Views/Reviews/Reviews"
@@ -32,10 +31,6 @@ const router = createBrowserRouter([
   {
     path: '/electronics',
     element: <Electronics/>,
-  },
-  {
-    path: '/vehicles',
-    element: <Vehicles/>,
   },
   {
     path: '/contact',

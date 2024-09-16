@@ -4,7 +4,7 @@
 ## ***Welcome to Rentify Hub!***
 #### Discover the ultimate rental experience with Rentify Hub! This vibrant and user-friendly platform is designed to offer a wide range of rental items including furniture, garments, electronics, and vehicles. Whether you’re looking to furnish your home, update your wardrobe, or find the latest tech gadgets, Rentify Hub makes renting easy and enjoyable 🌟.
 
-![screenshots](./src/Views/Home/IMG/Web.png)
+![screenshots](./src/Views/Home/Img/Web.png)
 
 
 ## Features

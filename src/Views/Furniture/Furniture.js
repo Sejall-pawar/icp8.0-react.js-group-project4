@@ -18,21 +18,29 @@ import bedTable from './Furniture Img/bed side table.jpeg';
 
 function Furniture() {
   const furnitureItems = [
-    { id: 1, image: sofaImage, title: 'Sofa Set', description: 'Comfortable 3-seater sofa set available for rent.', price: 1330, isAvailable: true },
-    { id: 2, image: diningTableImage, title: 'Dining Table', description: 'Elegant dining table with 4 chairs available for rent.', price: 889, isAvailable: true },
-    { id: 3, image: studyDeskImage, title: 'Study Desk', description: 'Spacious study desk, ideal for work or study.', price: 469, isAvailable: true },
-    { id: 4, image: bedImage, title: 'King Size Bed', description: 'Luxurious king size bed with a soft mattress, perfect for a sleep.', price: 1150, isAvailable: true },
-    { id: 5, image: centerTable, title: 'Center Table', description: 'Modern center table, perfect for your living room.', price: 549, isAvailable: true },
-    { id: 6, image: shoeRack, title: 'Shoe Rack', description: 'Spacious shoe rack to keep your footwear organized.', price: 380, isAvailable: false },
-    { id: 7, image: restChair, title: 'Wooden Chair', description: 'Elegant wooden chair for comfort and style.', price: 430, isAvailable: true },
-    { id: 8, image: bookShelf, title: 'Bookshelf', description: 'Wooden bookshelf with multiple shelves.', price: 660, isAvailable: false },
-    { id: 9, image: woodenSwing, title: 'Wooden Swing', description: 'Traditional wooden swing for your home.', price: 980, isAvailable: true },
-    { id: 10, image: bedTable, title: 'Bedside Table', description: 'Compact bedside table with a drawer for storage.', price: 380, isAvailable: false },
-    { id: 11, image: dressingTable, title: 'Dressing Table', description: 'Elegant dressing table with a large mirror and multiple storage compartments.', price: 750, isAvailable: true },
-    { id: 12, image: wardRobe, title: 'Wardrobe', description: 'Spacious 2-door wardrobe with ample space for clothes and accessories.', price: 805, isAvailable: true }
+    { id: 1, image: sofaImage, title: 'Sofa Set', description: 'Comfortable 3-seater sofa set available for rent.', fullDescription: 'Comfortable 3-seater sofa set available for rent. Perfect for cozy living spaces.', price: 1330, isAvailable: true },
+    { id: 2, image: diningTableImage, title: 'Dining Table', description: 'Elegant dining table with 4 chairs available for rent.', fullDescription: 'Elegant dining table with 4 chairs available for rent. Made from premium wood, perfect for family meals.', price: 889, isAvailable: true },
+    { id: 3, image: studyDeskImage, title: 'Study Desk', description: 'Spacious study desk, ideal for work or study.', fullDescription: 'Spacious study desk, ideal for work or study. Provides ample space and storage.', price: 469, isAvailable: false },
+    { id: 4, image: bedImage, title: 'King Size Bed', description: 'Luxurious king size bed with a soft mattress, perfect for a sleep.', fullDescription: 'Luxurious king size bed with a soft mattress, perfect for a restful night’s sleep.', price: 1150, isAvailable: true },
+    { id: 5, image: dressingTable, title: 'Dressing Table', description: 'Stylish dressing table with ample storage.', fullDescription: 'Stylish dressing table with ample storage space for your beauty essentials.', price: 600, isAvailable: true },
+    { id: 6, image: wardRobe, title: 'Wardrobe', description: 'Spacious wardrobe with 3 compartments.', fullDescription: 'Spacious wardrobe with 3 compartments, perfect for storing clothes and accessories.', price: 980, isAvailable: false },
+    { id: 7, image: centerTable, title: 'Center Table', description: 'Modern center table, ideal for living rooms.', fullDescription: 'Modern center table, ideal for living rooms, made with durable material.', price: 450, isAvailable: true },
+    { id: 8, image: shoeRack, title: 'Shoe Rack', description: 'Sleek shoe rack for compact spaces.', fullDescription: 'Sleek shoe rack for compact spaces, holds up to 8 pairs of shoes.', price: 350, isAvailable: true },
+    { id: 9, image: restChair, title: 'Arm Rest Chair', description: 'Comfortable arm rest chair for relaxing.', fullDescription: 'Comfortable arm rest chair for relaxing in living rooms or patios.', price: 700, isAvailable: true },
+    { id: 10, image: bookShelf, title: 'Bookshelf', description: 'Stylish wooden bookshelf with 4 shelves.', fullDescription: 'Stylish wooden bookshelf with 4 shelves, perfect for organizing books.', price: 540, isAvailable: true },
+    { id: 11, image: woodenSwing, title: 'Wooden Swing', description: 'Traditional wooden swing, perfect for patios.', fullDescription: 'Traditional wooden swing, perfect for patios and indoor decor.', price: 1200, isAvailable: false },
+    { id: 12, image: bedTable, title: 'Bedside Table', description: 'Compact bedside table with a drawer.', fullDescription: 'Compact bedside table with a drawer for convenient storage.', price: 300, isAvailable: true },
   ];
 
   const [cart, setCart] = useState([]);
+  const [showFullDescription, setShowFullDescription] = useState({});
+
+  const toggleFullDescription = (id) => {
+    setShowFullDescription((prevState) => ({
+      ...prevState,
+      [id]: !prevState[id],
+    }));
+  };
 
   const addToCart = (product) => {
     const existingProduct = cart.find((item) => item.id === product.id);
@@ -75,20 +83,32 @@ function Furniture() {
     );
   };
 
+  const totalCartPrice = cart.reduce(
+    (total, item) => total + item.price * item.quantity,
+    0
+  );
+
   return (
     <div>
       <Header />
       <div className="furniture-container">
-        <h1 className='Headline'>Elevate Your Home with Our Premium Furniture Rentals</h1>
+        <h1 className="Headline">Elevate Your Home with Our Premium Furniture Rentals</h1>
         <div className="furniture-cards">
           {furnitureItems.map((item) => (
-            <FurnitureCard key={item.id} item={item} addToCart={addToCart} />
+            <FurnitureCard
+              key={item.id}
+              item={item}
+              addToCart={addToCart}
+              showFullDescription={showFullDescription}
+              toggleFullDescription={toggleFullDescription}
+            />
           ))}
         </div>
         <CartSummary 
           cart={cart} 
           increaseQuantity={increaseQuantity} 
           decreaseQuantity={decreaseQuantity} 
+          totalCartPrice={totalCartPrice}
         />
       </div>
       <Footer />
@@ -96,16 +116,26 @@ function Furniture() {
   );
 }
 
-function FurnitureCard({ item, addToCart }) {
+function FurnitureCard({ item, addToCart, showFullDescription, toggleFullDescription }) {
   return (
     <div className="furniture-card">
       <img src={item.image} alt={item.title} className="furniture-image" />
       <h3>{item.title}</h3>
-      <p>{item.description}</p>
+      <p>
+        {showFullDescription[item.id]
+          ? item.fullDescription
+          : `${item.description.substring(0, 50)}...`}
+        <button
+          onClick={() => toggleFullDescription(item.id)}
+          className="toggle-description-button"
+        >
+          {showFullDescription[item.id] ? "Show Less" : "Show More"}
+        </button>
+      </p>
       <p className="furniture-price">Price: ₹{item.price}/month</p>
 
       {!item.isAvailable ? (
-        <div className='out-of-stock-message'>
+        <div className="out-of-stock-message">
           <p>Out of Stock</p>
         </div>
       ) : (
@@ -117,12 +147,7 @@ function FurnitureCard({ item, addToCart }) {
   );
 }
 
-function CartSummary({ cart, increaseQuantity, decreaseQuantity }) {
-  const totalCartPrice = cart.reduce(
-    (total, item) => total + item.price * item.quantity,
-    0
-  );
-
+function CartSummary({ cart, increaseQuantity, decreaseQuantity, totalCartPrice }) {
   return (
     <div className="cart-summary">
       <h2 className="cart-summary-heading">Cart Summary</h2>
@@ -136,8 +161,6 @@ function CartSummary({ cart, increaseQuantity, decreaseQuantity }) {
               <div className="cart-details">
                 <h4>{item.title}</h4>
                 <p>Price: ₹{item.price}</p>
-               
-                
                 <div className="btn-quantity">
                   <button className="btn-inc-dec" onClick={() => decreaseQuantity(item.id)}>-</button>
                   <span>{item.quantity}</span>
@@ -147,8 +170,8 @@ function CartSummary({ cart, increaseQuantity, decreaseQuantity }) {
               </div>
             </div>
           ))}
-          <div className='cart-total'>
-          <h3>Total Price: ₹{totalCartPrice}</h3>
+          <div className="cart-total">
+            <h3>Total Price: ₹{totalCartPrice}</h3>
           </div>
         </>
       )}

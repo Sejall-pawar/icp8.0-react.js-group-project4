@@ -1,5 +1,7 @@
 .container{
     display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 footer {
     background-color: #405D72;
@@ -57,36 +59,48 @@ footer {
 }
 
 @media (max-width: 500px) {
-    .container {
+ .container {
         display: block;
         text-align: center;
     }
-
+.container h1{
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
     .pages {
         text-align: center;
+    }
+
+    .pages a {
+        display: inline-block;
+        text-align: justify;
         margin-left: auto;
         margin-right: auto;
     }
 
-    .pages a {
-        text-align: center;
-    }
-
     .type {
-        display: block;
         text-align: center;
     }
 
     .type-name {
         text-align: center;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
     }
+    
 }
 
 @media screen and (min-width: 500px) and (max-width: 800px) {
+    .container{
+        padding: 20px;
+    }
     .pages {
         text-align: center;
         margin-left: auto;
         margin-right: auto;
+        padding: 0 20px;
     }
 
     .pages a {
@@ -104,15 +118,14 @@ footer {
 }
 
 @media screen and (min-width: 769px) and (max-width: 992px) {
-    .container {
-        display: block;
-        text-align: center;
+    .container{
+        padding: 20px;
     }
-
     .pages {
         text-align: center;
         margin-left: auto;
         margin-right: auto;
+        padding: 0 10px;
     }
 
     .pages a {
@@ -120,25 +133,29 @@ footer {
     }
 
     .type {
-        display: block;
         text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 10px;
     }
 
     .type-name {
         text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 10px;
     }
 }
 
 @media screen and (min-width: 993px) and (max-width: 1200px) {
-    .container {
-        display: block;
-        text-align: center;
+    .container{
+        padding: 20px;
     }
-
     .pages {
         text-align: center;
         margin-left: auto;
         margin-right: auto;
+        padding: 0 10px;
     }
 
     .pages a {
@@ -146,11 +163,16 @@ footer {
     }
 
     .type {
-        display: block;
         text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 20px;
     }
 
     .type-name {
         text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 20px;
     }
 }

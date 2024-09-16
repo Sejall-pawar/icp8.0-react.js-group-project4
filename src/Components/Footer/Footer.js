@@ -15,10 +15,22 @@ function Footer() {
                         <div>
                             <h1>Rentify Hub</h1>
                             <div>
-                                <img className='social-img' src={facebook} />
-                                <img className='social-img' src={instagram} />
-                                <img className='social-img' src={twitter} />
-                                <img className='social-img' src={linkedin} />
+                                <a href="https://www.facebook.com/share/BCmLBnUqxAWAk4Re/?mibextid=qi2Omg" target="_blank" rel="noopener noreferrer">
+                                    <img className='social-img' src={facebook} alt="Facebook" />
+                                </a>
+
+                                <a href="https://www.instagram.com/appliancesonrent_?igsh=MW1kczQ2YnNoYWN5bQ==" target="_blank" rel="noopener noreferrer">
+                                    <img className='social-img' src={instagram} alt="Instagram" />
+                                </a>
+
+                                <a href="https://x.com/rentomojo" target="_blank" rel="noopener noreferrer">
+                                    <img className='social-img' src={twitter} alt="Twitter" />
+                                </a>
+
+                                <a href="https://www.linkedin.com/company/rentomojo/?originalSubdomain=in" target="_blank" rel="noopener noreferrer">
+                                    <img className='social-img' src={linkedin} alt="LinkedIn" />
+                                </a>
+
                             </div>
                         </div>
                     </div>
@@ -32,6 +44,7 @@ function Footer() {
                         <Link to="/contact">Contact</Link>
                         <Link to="/reviews">Reviews</Link>
                         <Link to="/registration">User Registration</Link>
+                        <Link to="/inquiry">Inquiry</Link>
                     </div>
                     <div></div>
                     <div>
@@ -42,7 +55,7 @@ function Footer() {
                         <h3 className='type-name'>Dining Table</h3>
                     </div>
                     <div>
-                    <h1 className='type'>Appliances On Rent</h1>
+                        <h1 className='type'>Appliances On Rent</h1>
                         <h3 className='type-name'>Refrigerator</h3>
                         <h3 className='type-name'>Air Cooler</h3>
                         <h3 className='type-name'>Washing Mschine</h3>
@@ -53,7 +66,7 @@ function Footer() {
                 <div className='footer-line'>
                     <h1>&copy; 2024  Rentify Hub Products & Services Pvt. Ltd</h1>
                     <h1>
-                    All Rights Reserved | Terms and Conditions | Privacy Policy
+                        All Rights Reserved | Terms and Conditions | Privacy Policy
                     </h1>
                 </div>
             </footer>

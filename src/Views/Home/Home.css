@@ -389,8 +389,215 @@
     }    
 }
 
-@media screen and (min-width: 500px) and (max-width: 768px) {}
+@media screen and (min-width: 500px) and (max-width: 768px) {
+    .Tagline {
+        margin-top: 150px;
+        font-size: 25px;
+    }
 
-@media screen and (min-width: 769px) and (max-width: 992px) {}
+    .Rent-title {
+        font-size: 35px;
+    }
 
-@media screen and (min-width: 993px) and (max-width: 1200px) {}
+    .Rent-Item-Contanier {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .Rent-Item {
+        height: 400px;
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .Rent-Item h1 {
+        font-size: 25px;
+        margin-bottom: 40px;
+    }
+
+    .Rent-Item h2 {
+        font-size: 25px;
+        margin-top: 13px;
+    }
+
+    .Rent-Item h3 {
+        font-size: 20px;
+    }
+ 
+    .CD1 {
+        height: 450px;
+        width: 300px;
+        padding: 0;
+    }
+    .CD1 h1{
+        font-size: 20px;
+    }
+    .CD-img {
+        height: 40px;
+        margin-bottom: 8px;
+        margin-top: 5px;
+    }
+    
+    .CD1 hr {
+        margin: 5px 0;
+    }
+    
+    .CD2 {
+        width: calc(100% - 200px);
+        max-width: 350px;
+    }
+    
+    .CD2-1 {
+        height: 650px;
+        width: 350px;
+        padding: 10px;
+    }
+    
+    .CD2-1 h3 {
+        font-size: 20px;
+    }
+    
+    .CD2-1 h1 {
+        margin-top: 10px;
+        margin-bottom: 30px;
+    }
+    
+    .CD2-1-1 h3 {
+        font-size: 15px;
+        margin: 5px 20px;
+    }
+    
+    .CD2-2 {
+        height: 350px;
+        width: 350px;
+    }    
+}
+
+@media screen and (min-width: 769px) and (max-width: 992px) {
+    .Tagline {
+        margin-top: 150px;
+        font-size: 25px;
+    }
+
+    .Rent-title {
+        font-size: 35px;
+    }
+
+    .Rent-Item-Contanier {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        gap: 30px;
+    }
+
+    .Rent-Item {
+        height: 400px;
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .Rent-Item h1 {
+        font-size: 25px;
+        margin-bottom: 40px;
+    }
+
+    .Rent-Item h2 {
+        font-size: 25px;
+        margin-top: 13px;
+    }
+
+    .Rent-Item h3 {
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width: 993px) and (max-width: 1200px) {
+    .Tagline {
+        margin-top: 150px;
+        font-size: 25px;
+    }
+
+    .Rent-title {
+        font-size: 35px;
+    }
+
+    .Rent-Item-Contanier {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        gap: 30px;
+    }
+
+    .Rent-Item {
+        height: 400px;
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .Rent-Item h1 {
+        font-size: 25px;
+        margin-bottom: 40px;
+    }
+
+    .Rent-Item h2 {
+        font-size: 25px;
+        margin-top: 13px;
+    }
+
+    .Rent-Item h3 {
+        font-size: 20px;
+    }
+    .CD-contanier {
+        justify-content: center;
+    }
+    .CD1 {
+        height: 750px;
+        width: 400px;
+        padding: 0;
+    }
+    .CD1 h1{
+        font-size: 30px;
+        padding: 15px 0;
+    }
+    .CD-img {
+        height: 70px;
+        margin-bottom: 10px;
+        margin-top: 50px;
+    }
+    
+    .CD1 hr {
+        margin: 5px 0;
+    }
+    
+    .CD2 {
+        width: calc(100% - 200px);
+        max-width: 350px;
+    }
+    
+    .CD2-1 {
+        height: 550px;
+        width: 450px;
+        padding: 10px;
+    }
+    
+    .CD2-1 h3 {
+        font-size: 20px;
+    }
+    
+    .CD2-1 h1 {
+        margin-top: 10px;
+        margin-bottom: 30px;
+    }
+    
+    .CD2-1-1 h3 {
+        font-size: 15px;
+        margin: 5px 20px;
+    }
+    
+    .CD2-2 {
+        height: 300px;
+        width: 450px;
+    }    
+}

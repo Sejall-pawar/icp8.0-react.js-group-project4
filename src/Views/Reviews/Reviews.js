@@ -2,7 +2,7 @@ import React from 'react'
 import "./Reviews.css"
 import Header from '../../Components/Header/Header'
 import Footer from '../../Components/Footer/Footer'
-import Card from '../../Components/Reviewcard/Reviewcard'
+import Card from '../../Components/ReviewCard/ReviewCard'
 import profile from './profile.png'
 import rating from './rating.png'
 import woman from './woman.png'
@@ -26,11 +26,9 @@ function Reviews() {
       </div>
       
       
-
-      
       <div><Footer/></div>
     </div>
   )
 }
 
-export default Reviews
+export default Reviews;

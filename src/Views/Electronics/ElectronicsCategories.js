@@ -4,6 +4,10 @@ import Footer from "./../../Components/Footer/Footer";
 import "./ElectronicCategories.css";
 import CategoriesData from "../../Config/CategoriesData";
 
+// Import your custom icons
+import priceIcon from './price.png';
+import emiIcon from './EMI.png';
+
 const EMI_RATE = 0.1; // 10% interest rate
 
 const ElectronicsCategories = () => {
@@ -72,8 +76,8 @@ const ElectronicsCategories = () => {
                 className="category-image"
                 onClick={() => setSelectedProduct(category)}
               />
-              <h3>{category.name}</h3>
-              <p>
+              <h3 className="category-name">{category.name}</h3>
+              <p className="category-fulldescriprion">
                 {showFullDescription[category.id]
                   ? category.fullDescription
                   : `${category.description.substring(0, 60)}...`}
@@ -84,8 +88,13 @@ const ElectronicsCategories = () => {
                   {showFullDescription[category.id] ? "Show Less" : "Show More"}
                 </button>
               </p>
-              <p><strong>Price:</strong> ₹{category.finalPrice}</p>
-              <p><strong>EMI (12 Months):</strong> ₹{calculateEMI(category.finalPrice, 12)} / month</p>
+              {/* Price with Custom Icon */}
+              <p className="price">
+                <img src={priceIcon} alt="Price Icon" className="icon" />
+                <strong>₹{category.finalPrice.toFixed(2)}</strong>
+              </p>
+              <p className="emi">
+                <strong>EMI (12 Months):</strong> ₹{calculateEMI(category.finalPrice, 12)} / month</p>
               {category.inStock ? (
                 <button
                   onClick={() => updateCart(category, 1)}
@@ -141,7 +150,7 @@ const ElectronicsCategories = () => {
           </div>
         )}
       </div>
-      
+
       <Footer />
     </div>
   );

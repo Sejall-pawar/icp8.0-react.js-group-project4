@@ -1,170 +1,219 @@
-.logo-image{
-    width: 50px;
-    border: 1px solid grey;
-    padding: 5px;
-    margin-right: 10px;
-  }
-  .main-container{
-    background-color: #F7E7DC;
-    margin: 150px;
-  }
-  .head-container{
-    text-align: center;
-  }
-  .heading{
-    color: #405D72;
-    font-family:Georgia, 'Times New Roman', Times, serif ;
-  }
-  .sub-heading{
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    color: #758694;
-  }
-  .search-input, .size-select, .quantity-input {
-    margin-bottom: 20px;
-    padding: 8px;
-    width: 100%;
-    max-width: 300px;
-    font-size: 16px;
-    margin-left: 10px;
-  }
-  
-  .search-input{
-    margin-left: 35%;
-  }
+.main-container {
+  background-color: #F7E7DC;
+  margin: 150px;
+}
+
+.head-container {
+  text-align: center;
+}
+
+.heading {
+  color: #405D72;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.sub-heading {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: #758694;
+}
+
+.search-input,
+.size-select,
+.quantity-input {
+  margin-bottom: 20px;
+  padding: 8px;
+  width: 100%;
+  max-width: 300px;
+  font-size: 16px;
+  margin-left: 10px;
+}
+
+.search-input {
+  margin-left: 35%;
+}
+
+.categories-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 30px;
+  margin: 20px;
+}
+
+.category-item {
+  background-color: #FFF8F3;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 200px;
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+  margin: 20px;
+  position: relative;
+}
+
+.category-item:hover {
+  transform: scale(1.05);
+}
+
+.category-image {
+  width: 100%;
+  height: 150px;
+  max-width: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.category-name{
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 20px;
+}
+
+.category-fulldescriprion{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.icon {
+  width: 20px;  
+  height: 20px;
+  margin-right: 10px;  
+}
+
+.price{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: black;
+  font-size: 16px;
+}
+
+.emi{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: black;
+  font-size: 14px;
+}
+
+.toggle-description-button {
+  color: #405D72;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0;
+  text-decoration: underline;
+}
+
+.toggle-description-button:hover {
+  background: none;
+}
+
+.add-to-cart-button {
+  padding: 10px 20px;
+  margin-top: 10px;
+  background-color: #405D72;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.add-to-cart-button:hover {
+  background-color: #758694;
+}
+
+.card-summary-heading {
+  text-align: center;
+  color: #405D72;
+}
+
+.cart-summary {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #FFF8F3;
+  border-radius: 8px;
+  max-width: 500px;
+  margin-left: 25%;
+  margin-bottom: 30px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid;
+}
+
+.cart-image {
+  width: 40%;
+  margin-right: 20px;
+  object-fit: cover;
+}
+
+.cart-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-details h4 {
+  margin: 0 0 5px;
+}
+
+.cart-details p {
+  margin: 2px 0;
+}
+
+.btn-quantity {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.btn-inc-dec {
+  width: 20%;
+  border-radius: 10px;
+  border: 1px solid;
+  margin-right: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.emi-content {
+  padding-bottom: 10px;
+}
+
+.out-of-stock-overlay {
+  position: absolute;
+  top: 85%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 1.5rem;
+}
+
+
+/* Media Queries */
+
+/* Small Devices  */
+@media screen and (max-width: 500px) {
  
-  .categories-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-    margin-top: 30px;
-    margin: 20px;
-  }
   
-  .category-item {
-    background-color: #FFF8F3;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 200px;
-    text-align: center;
-    transition: transform 0.2s ease-in-out;
-    margin: 20px;
-    position: relative;
-  }
-  .category-item:hover{
-    transform: scale(1.05);
-  }
-  
-  .category-image {
-    width: 100%;
-    height: 150px;
-    max-width: 250px;
-    object-fit: cover;
-    border-radius: 8px;
-  }
+}
 
-  .add-to-cart-button {
-    padding: 10px 20px;
-    margin-top: 10px;
-    background-color: #405D72;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    cursor: pointer;
-  }
-  
-  .add-to-cart-button:hover {
-    background-color: #758694;
-  }
-  
-  .card-summary-heading{
-    text-align: center;
-    color: #405D72;
-  }
-  .cart-summary {
-    margin-top: 30px;
-    padding: 20px;
-    background-color: #FFF8F3;
-    border-radius: 8px;
-    max-width: 500px;
-    margin-left: 25%;
-    margin-bottom: 30px;
-  }
-  
-  .cart-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-    border-bottom: 1px solid;
-  }
-  
-  .cart-image {
-    width: 40%;
-    margin-right: 20px;
-    object-fit: cover;
-  }
-  
-  .cart-details {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .cart-details h4 {
-    margin: 0 0 5px;
-  }
-  
-  .cart-details p {
-    margin: 2px 0;
-  }
-  
-  .btn-quantity{
-    display: flex;
-    justify-content: center;
-    cursor: pointer;
-  }
-  
-  .btn-inc-dec{
-    width: 20%;
-    border-radius: 10px;
-    border: 1px solid;
-    margin-right: 10px;
-    margin-top: 5px;
-    margin-bottom: 10px;
-    cursor: pointer;
-  }
-  
-  .emi-content{
-    padding-bottom: 10px;
-  }
+/* Normal Devices  */
+@media screen and (min-width: 601px) and (max-width: 768px) {}
 
-  .out-of-stock-overlay {
-    position: absolute;
-    top: 85%;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.4); 
-    border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 1.5rem;
-  }
-  
-  .toggle-description-button {
-    background-color: transparent;
-    color: #405D72;
-    border: none;
-    cursor: pointer;
-    font-size: 0.9rem;
-    padding: 0;
-  }
-  
-  .toggle-description-button:hover {
-    text-decoration: underline;
-  }
-  
+/* Tablets Devices  */
+@media screen and (min-width: 769px) and (max-width: 992px) {}
+
+/* Large Devices  */
+@media screen and (min-width: 993px) and (max-width: 1200px) {}
+
+

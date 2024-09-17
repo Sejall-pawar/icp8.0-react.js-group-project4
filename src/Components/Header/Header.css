@@ -7,6 +7,9 @@ body {
   padding: 0;
 }
 
+.nav-names.active {
+  border-bottom: 4px solid #758694;
+}
 
 .container {
   width: 80%;
@@ -21,6 +24,7 @@ body {
 header {
   background-color: #405D72;
   color: white;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   padding: 20px 0;
   position: fixed;
   width: 100%;
@@ -32,7 +36,10 @@ header h1 {
   margin: 0;
   font-size: 2rem;
 }
-
+.nav-names{
+  font-size: 25px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
 
 header nav ul {
   list-style: none;

@@ -11,7 +11,7 @@ import R2 from "./Img/R2.jpg";
 import R3 from "./Img/R3.jpg";
 import R4 from "./Img/R4.jpg";
 import R5 from "./Img/R5.avif";
-import R6 from "./Img/R6.jpg";
+import R6 from "./Img/R6.avif";
 import trust from "./Img/trust.png";
 import cheers from "./Img/cheers.png";
 import CD1 from "./Img/CD1.avif";
@@ -97,7 +97,7 @@ function home() {
     {
       No: 6,
       bgImg: R6,
-      Name: 'car & Bikes Deals',
+      Name: 'Deals & Offers',
       Pricetag: 'Starting From',
       Price: '@500/day',
       link: './vehicles'

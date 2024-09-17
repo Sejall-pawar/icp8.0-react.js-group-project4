@@ -19,7 +19,7 @@
 - Deployment: Netlify
 - Version Control: GitHub
 
-#### Usage####
+## Usage
 - Open your browser and go to http://localhost:3000 to view the application locally.
 - Explore the different categories and items available for rent.
 

@@ -24,6 +24,7 @@ body {
 header {
   background-color: #405D72;
   color: white;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   padding: 20px 0;
   position: fixed;
   width: 100%;
@@ -37,6 +38,7 @@ header h1 {
 }
 .nav-names{
   font-size: 25px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 header nav ul {

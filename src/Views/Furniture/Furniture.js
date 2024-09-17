@@ -15,6 +15,8 @@ import restChair from './Furniture Img/Arm rest chair.jpg';
 import bookShelf from './Furniture Img/book shelf.jpg';
 import woodenSwing from './Furniture Img/wooden swing.jpg';
 import bedTable from './Furniture Img/bed side table.jpeg';
+import priceIcon from './../Electronics/price.png';  
+
 
 function Furniture() {
   const furnitureItems = [
@@ -32,8 +34,20 @@ function Furniture() {
     { id: 12, image: bedTable, title: 'Bedside Table', description: 'Compact bedside table with a drawer.', fullDescription: 'Compact bedside table with a drawer for convenient storage.', price: 300, isAvailable: true },
   ];
 
+  
+  const [searchQuery, setSearchQuery] = useState("");  
   const [cart, setCart] = useState([]);
   const [showFullDescription, setShowFullDescription] = useState({});
+
+ 
+  const handleSearch = (e) => {
+    setSearchQuery(e.target.value.toLowerCase());
+  };
+
+  
+  const filteredItems = furnitureItems.filter(item =>
+    item.title.toLowerCase().includes(searchQuery)
+  );
 
   const toggleFullDescription = (id) => {
     setShowFullDescription((prevState) => ({
@@ -93,8 +107,19 @@ function Furniture() {
       <Header />
       <div className="furniture-container">
         <h1 className="Headline">Elevate Your Home with Our Premium Furniture Rentals</h1>
+        
+        {/* Add search input */}
+        <input 
+          type="text" 
+          placeholder="Search furniture..." 
+          value={searchQuery} 
+          onChange={handleSearch} 
+          className="search-input"  // Add this in CSS
+        />
+
         <div className="furniture-cards">
-          {furnitureItems.map((item) => (
+          {/* Map over filtered items instead of all items */}
+          {filteredItems.map((item) => (
             <FurnitureCard
               key={item.id}
               item={item}
@@ -132,7 +157,10 @@ function FurnitureCard({ item, addToCart, showFullDescription, toggleFullDescrip
           {showFullDescription[item.id] ? "Show Less" : "Show More"}
         </button>
       </p>
-      <p className="furniture-price">Price: ₹{item.price}/month</p>
+      <p className="furniture-price">
+    <img src={priceIcon} alt="Price Icon" className="icon" /> 
+    <strong>₹{item.price}/month</strong>
+  </p>
 
       {!item.isAvailable ? (
         <div className="out-of-stock-message">
@@ -140,7 +168,7 @@ function FurnitureCard({ item, addToCart, showFullDescription, toggleFullDescrip
         </div>
       ) : (
         <button className="rent-button" onClick={() => addToCart(item)}>
-          Add to Cart
+          Rent Now
         </button>
       )}
     </div>
@@ -152,31 +180,32 @@ function CartSummary({ cart, increaseQuantity, decreaseQuantity, totalCartPrice 
     <div className="cart-summary">
       <h2 className="cart-summary-heading">Cart Summary</h2>
       {cart.length === 0 ? (
-        <p>No items in the cart.</p>
+        <p>Your cart is empty.</p>
       ) : (
-        <>
+        <div>
           {cart.map((item) => (
             <div className="cart-item" key={item.id}>
-              <img src={item.image} alt={item.title} className="cart-image" />
-              <div className="cart-details">
-                <h4>{item.title}</h4>
-                <p>Price: ₹{item.price}</p>
-                <div className="btn-quantity">
-                  <button className="btn-inc-dec" onClick={() => decreaseQuantity(item.id)}>-</button>
-                  <span>{item.quantity}</span>
-                  <button className="btn-inc-dec" onClick={() => increaseQuantity(item.id)}>+</button>
+              {/* Add the image for each item */}
+              <img src={item.image} alt={item.title} className="cart-item-image" />
+              <div className="cart-item-details">
+                <p>{item.title}</p>
+                <p>Price: ₹{item.price * item.quantity}</p>
+                <div className="quantity-controls">
+                  <button onClick={() => decreaseQuantity(item.id)} className="quantity-btn">-</button>
+                  <p className="item-quantity">{item.quantity}</p>
+                  <button onClick={() => increaseQuantity(item.id)} className="quantity-btn">+</button>
                 </div>
-                <p>Total: ₹{item.price * item.quantity}</p>
               </div>
             </div>
           ))}
-          <div className="cart-total">
-            <h3>Total Price: ₹{totalCartPrice}</h3>
+          <div className="total-price">
+            <h3>Total: ₹{totalCartPrice}</h3>
           </div>
-        </>
+        </div>
       )}
     </div>
   );
 }
+
 
 export default Furniture;

@@ -2,11 +2,27 @@
     text-align: center;
     padding: 40px;
     background-color: #F7E7DC;
+    
   }
   .Headline{
     padding-top: 80px;
     color: #405D72;
   }
+  .search-input, .size-select, .quantity-input {
+    margin-bottom: 20px;
+    padding: 8px;
+    width: 100%;
+    max-width: 300px;
+    font-size: 16px;
+    margin-left: 50px;
+    
+  }
+  
+  .search-input {
+    margin-left: 60px;
+    
+  }
+  
 
   .furniture-cards {
     display: flex;
@@ -48,6 +64,18 @@
     margin-top: 10px;
     font-size: 18px;
   }
+  .furniture-price {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .furniture-price .icon {
+    width: 20px;
+    height: 20px;
+    margin-left: 45px;
+  }
+  
 
   .rent-button {
     background-color: #405D72;
@@ -147,32 +175,47 @@
 .cart-item {
   display: flex;
   align-items: center;
-  margin-bottom: 20px;
-  border: 1px solid #ddd;
-  padding: 10px;
-  border-radius: 8px;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
 }
 
-.cart-image {
-  width: 100px;
-  height: auto;
-  margin-right: 20px;
+.cart-item-image {
+  width: 80px; /* Adjust the size as needed */
+  height: 80px;
+  object-fit: cover;
+  margin-right: 10px;
 }
 
-.cart-details {
+.cart-item-details {
   flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.btn-quantity {
+.quantity-controls {
   display: flex;
   align-items: center;
-  gap: 10px;
 }
 
-.cart-total {
-  font-size: 20px;
-  font-weight: bold;
-  margin-top: 20px;
+.quantity-btn {
+  background-color: #405D72;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 3px;
+}
+
+.quantity-btn:hover {
+  background-color: #253643;
+}
+
+.item-quantity {
+  margin: 0 10px;
+  font-size: 16px;
 }
 
 @media screen and (max-width: 820px) {

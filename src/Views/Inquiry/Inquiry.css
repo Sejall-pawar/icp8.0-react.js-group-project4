@@ -1,33 +1,40 @@
 .inquiry-container{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     background-color: white;
-    margin: 80px auto;
+    margin: 150px auto;
     box-shadow: 1px 5px 7px gray;
-    flex-wrap: wrap;
     margin-top: 150px;
     width: 905px;
     border-radius: 10px;
+    color: #405D72;
+    margin-bottom: 100px;
+    padding: 40px;
 }
 .input-container{
     color: #405D72;
     padding: 50px;
 }
-.inner-container-1{
-    display: flex;
-    justify-content: space-between;
+.box-1{
+   display: flex;
+   flex-direction: column;
 }
 
-.inner-container-2{
+.box-2{
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    padding-top: 75px;
 }
 
-.input-box{
-    width: 250px;
+.input-box-1{
+    width: 450px;
     height: 100px;
     box-shadow: 1px 5px 7px gray;
     border-radius: 10px;
     border: none;
     margin: 20px;
+}
+
+.submit{
+    margin: 50px auto;
 }

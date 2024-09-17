@@ -106,17 +106,24 @@ function Furniture() {
     <div>
       <Header />
       <div className="furniture-container">
-        <h1 className="Headline">Elevate Your Home with Our Premium Furniture Rentals</h1>
-        
-        {/* Add search input */}
-        <input 
-          type="text" 
-          placeholder="Search furniture..." 
-          value={searchQuery} 
-          onChange={handleSearch} 
-          className="search-input"  // Add this in CSS
-        />
+       {/* Add your centered heading and search bar here */}
+       <div className="main-container">
+          <div className="head-container">
+            <h2 className="heading">Furniture On Rent</h2>
+            <p className="sub-heading">
+              Browse through our wide range of Furniture categories.
+            </p>
+          </div>
 
+          {/* Search input */}
+          <input
+            type="text"
+            placeholder="Search Categories"
+            value={searchQuery}
+            onChange={handleSearch}
+            className="search-input"
+          />
+        </div>
         <div className="furniture-cards">
           {/* Map over filtered items instead of all items */}
           {filteredItems.map((item) => (

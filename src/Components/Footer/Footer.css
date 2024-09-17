@@ -6,6 +6,7 @@
 footer {
     background-color: #405D72;
     color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     text-align: center;
     padding: 10px 0;
     margin-top: auto;
@@ -30,6 +31,7 @@ footer {
     margin-bottom: 10px;
     text-decoration: none;
     color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .type {
@@ -38,6 +40,7 @@ footer {
     align-items: flex-start;
     text-decoration: underline;
     flex-wrap: wrap;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .type-name {
@@ -45,7 +48,8 @@ footer {
     flex-direction: column;
     align-items: flex-start;
     font-size: 13px;
-    flex-wrap: wrap
+    flex-wrap: wrap;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .footer-line {
@@ -56,6 +60,7 @@ footer {
 
 .footer-line h1 {
     font-size: 15px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 @media (max-width: 500px) {

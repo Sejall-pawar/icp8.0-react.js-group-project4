@@ -3,7 +3,7 @@ body {
 }
 .furniture-container {
     text-align: center;
-    padding: 40px;
+    padding: 20px;
     background-color: #F7E7DC;
     
   }
@@ -20,20 +20,25 @@ body {
   }
   
   .search-input {
-    margin: 0 auto 10px auto;
-    padding: 8px;
+    margin: 0 auto;
+    padding: 0px;
     width: 100%;
     max-width: 300px;
     font-size: 16px;
+    margin-right: 50%;
+    width: 60%;
+    padding: 8px; 
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    text-align: center;
+    margin-bottom: 0px; 
   }
   
   
-  .Headline{
-    padding-top: 80px;
-    color: #405D72;
-  }
+  
   .search-input, .size-select, .quantity-input {
-    margin-bottom: 20px;
+    margin-bottom: 0;
     padding: 8px;
     width: 100%;
     max-width: 300px;
@@ -41,10 +46,7 @@ body {
     margin-left: 50px;
     
   }
-  .search-input{
-    margin-right: 50%;
-  }
- 
+  
   
   .heading {
     font-size: 2rem;
@@ -57,16 +59,6 @@ body {
     font-size: 1.2rem;
     color: #666;
     margin-bottom: 5px; 
-  }
-  
-  .search-input {
-    width: 60%;
-    padding: 8px; 
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    font-size: 1rem;
-    text-align: center;
-    margin-bottom: 15px; 
   }
   
   .furniture-cards {
@@ -85,7 +77,7 @@ body {
     max-width: 250px;
     text-align: center;
     transition: transform 0.2s ease-in-out;
-    margin: 20px;
+    margin: 10px;
     position: relative;
     overflow: hidden;
     
@@ -138,12 +130,7 @@ body {
 
  }
  
- .counter-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 20px 0;
-}
+
 .toggle-description-button {
   background: none !important;
   border: none !important; 
@@ -164,27 +151,8 @@ body {
   margin: 0 10px;
   transition: background-color 0.3s ease;
 }
-.heading {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: #333;
-}
 
-.sub-heading {
-  font-size: 1.2rem;
-  color: #666;
- 
-}
 
-.search-input {
-  width: 60%;
-  padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
-  text-align: center;
-}
 
 .btn-inc-dec:hover {
   background-color: #253643;
@@ -233,9 +201,6 @@ body {
   border-radius: 8px;
 }
 
-.cart-summary {
-  margin-top: 40px;
-}
 
 .cart-item {
   display: flex;
@@ -284,6 +249,16 @@ body {
 }
 
 @media screen and (max-width: 820px) {
+  .search-input {
+    margin: 0 auto;
+    width: 80%;
+    max-width: 90%;
+    font-size: 1rem;
+    padding: 8px;
+    margin: 0 auto;
+  }
+
+  
   .furniture-card {
     position: relative;
     display: flex;
@@ -347,5 +322,11 @@ body {
     margin-top: 10px;
     padding: 10px;
     font-size: 1rem;
+  }
+}
+@media (max-width: 768px) {
+  .search-input {
+      width: 90%; 
+      max-width: none; 
   }
 }

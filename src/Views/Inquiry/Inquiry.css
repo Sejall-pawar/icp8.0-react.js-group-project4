@@ -38,3 +38,28 @@
 .submit{
     margin: 50px auto;
 }
+
+@media screen and (min-width:300px) and (max-width:900px) {
+    .inquiry-container{
+        flex-direction: column;
+        width: 400px;
+        justify-content: space-evenly;
+        margin-top: 200px;
+    }
+    .input-box-1{
+        width: 394px;
+        height: 201px;
+        margin: 0;
+    }
+    .box-2{
+        padding: 10px;
+    }
+}
+
+@media screen and (min-width:901px) and (max-width:1180px) {
+    .inquiry-container{
+        margin-top: 200px;
+        padding: 0px;
+        justify-content: center;
+    }
+}

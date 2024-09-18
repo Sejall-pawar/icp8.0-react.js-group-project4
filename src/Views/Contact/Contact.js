@@ -8,6 +8,7 @@ import { Link} from 'react-router-dom'
 import location from './location.png'
 import call from './call.png'
 import mail from './mail.png'
+import phone from './phone.png'
 
 function Contact() {
   return (
@@ -30,7 +31,7 @@ function Contact() {
             </div>
             <div style={{textAlign:'center',fontSize:'30px',color:'#405D72',padding:'10px'}}>Talk to a member of our sales team.</div>
             <div style={{textAlign:'center',margin:'10px',color:'#758694'}}>We'll help you find out right  product at right pricing.</div>            
-            <div className='button1'><Button1 text='Contact Sales'/></div>
+            <div className='button1'><a href='tel:+91 2226146184' ><Button1 text='Contact Sales' /></a></div>
             <div className='button1'><Link to='/inquiry'><Button1 text='Send Inquiry'/></Link></div>
         </div>
         </div>

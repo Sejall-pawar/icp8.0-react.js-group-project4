@@ -60,7 +60,7 @@
     margin: 20px auto;
 }
 
-@media screen and (min-width:200px) and (max-width:700px) {
+@media screen and (min-width:200px) and (max-width:900px) {
     .container-1{
         display: flex;
         flex-direction: column-reverse;
@@ -83,5 +83,16 @@
         padding-left: 55px;
         margin: 8px;
         margin-top: 20px;
+    }
+}
+
+@media screen and (min-width:901px) and (max-width:1200px) {
+    .container-1{
+       margin: 10px;
+       width: 1000px;
+       margin-top: 200px;
+    }
+    .innerbox-1{
+        padding: 10px;
     }
 }

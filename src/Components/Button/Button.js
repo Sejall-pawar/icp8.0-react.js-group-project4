@@ -3,7 +3,7 @@ import './Button.css'
 
 function Button(props){
     return(
-        <button type={props.type} className="button">{props.text}</button>
+        <button type={props.type} className="button"><img src={props.img} height='25px'/>{props.text}</button>
     )
 }
 

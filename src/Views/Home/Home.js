@@ -100,7 +100,7 @@ function home() {
       Name: 'Deals & Offers',
       Pricetag: 'Starting From',
       Price: '@500/day',
-      link: './vehicles'
+      link: './furniture'
     },
   ]
 

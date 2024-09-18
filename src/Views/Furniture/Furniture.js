@@ -106,7 +106,7 @@ function Furniture() {
     <div>
       <Header />
       <div className="furniture-container">
-       {/* Add your centered heading and search bar here */}
+       {}
        <div className="main-container">
           <div className="head-container">
             <h2 className="heading">Furniture On Rent</h2>
@@ -115,7 +115,7 @@ function Furniture() {
             </p>
           </div>
 
-          {/* Search input */}
+          {}
           <input
             type="text"
             placeholder="Search Categories"
@@ -125,7 +125,7 @@ function Furniture() {
           />
         </div>
         <div className="furniture-cards">
-          {/* Map over filtered items instead of all items */}
+          {}
           {filteredItems.map((item) => (
             <FurnitureCard
               key={item.id}
@@ -192,7 +192,7 @@ function CartSummary({ cart, increaseQuantity, decreaseQuantity, totalCartPrice 
         <div>
           {cart.map((item) => (
             <div className="cart-item" key={item.id}>
-              {/* Add the image for each item */}
+              {}
               <img src={item.image} alt={item.title} className="cart-item-image" />
               <div className="cart-item-details">
                 <p>{item.title}</p>

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Header from "./../../Components/Header/Header";
 import Footer from "./../../Components/Footer/Footer";
@@ -19,12 +19,13 @@ import CD2 from "./Img/CD2.avif";
 import CD3 from "./Img/CD3.jpg";
 import CD4 from "./Img/CD4.jpg";
 import msg from "./Img/msg.png";
+import closeIcon from "./Img/close.png";
 import "./Home.css";
 import "./../../index.css"
 import { THEME } from '../../Config/Data';
 
-
-function home() {
+function Home() {
+  const [showPopup, setShowPopup] = useState(true);
 
   const KeyItems = [
     {
@@ -109,6 +110,19 @@ function home() {
 
       <Header />
 
+      {showPopup && (
+        <div className="popup-box">
+          <div className="popup-content">
+            <img src={closeIcon} alt="close" className="popup-close" onClick={() => setShowPopup(false)} />
+            <h2>Register Now!</h2>
+            <p>Sign up today to get exclusive rental deals and offers.</p>
+            <Link to="/registration">
+              <button className="popup-button">Go to Registration</button>
+            </Link>
+          </div>
+        </div>
+      )}
+
       <div className='bg'>
 
         <h1 className='Tagline'>
@@ -126,28 +140,28 @@ function home() {
         <h3 className='Rent-subtitle'>Explore by categories</h3>
 
         <div className='Rent-Item-Contanier'>
-
           {RentItems.map((item) => (
-            <Link to={item.link} key={item.No} className='Rent-Link'>
-              <div
-                className='Rent-Item'
-                style={{
-                  backgroundImage: `url(${item.bgImg})`,
-                  height: "400px",
-                  width: "350px",
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  padding: "20px"
-                }}>
+            <Link to={item.link} key={item.No} className="Rent-Link">
+              <div className="Rent-Item">
+                <div
+                  className="background-blur"
+                  style={{
+                    backgroundImage: `url(${item.bgImg})`,
+                  }}
+                ></div>
                 <h1 style={{ textAlign: "center", marginBottom: "auto" }}>{item.Name}</h1>
-                <div style={{ display: "flex", justifyContent: "space-between", width: "100%",marginBottom: "290px" }}>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    width: "100%",
+                    marginBottom: "290px",
+                  }}
+                >
                   <h3>{item.Pricetag}</h3>
-                  <h2 className='price'>{item.Price}</h2>
+                  <h2 className="price">{item.Price}</h2>
                 </div>
               </div>
-
             </Link>
           ))}
         </div>
@@ -166,7 +180,6 @@ function home() {
           ))}
         </div>
       </div>
-
       <div className='CD-contanier'>
 
         <div className='CD1'>
@@ -229,7 +242,7 @@ function home() {
 
       <Footer />
     </div>
-  )
+  );
 }
 
-export default home
+export default Home;

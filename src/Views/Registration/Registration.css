@@ -4,7 +4,7 @@
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    width: 350px;
     margin-top: 150px;
     margin-bottom: 130px;
     margin-left: auto;
@@ -14,7 +14,7 @@
 
 .imgReg {
     height: 200px;
-    width: 300px;
+    width: 350px;
 }
 
 h2 {
@@ -138,4 +138,46 @@ button:hover {
 
 .modal button:hover {
     background-color: #2E4C58;
+}
+@media screen and (min-width: 601px) and (max-width: 768px){
+     /* Container styling */
+     .container-reg {
+        width: 350px; /* Increase width to fit smaller screens */
+        margin-top: 150px; /* Adjust margin for better spacing */
+        padding: 15px; /* Reduce padding for space efficiency */
+    }
+
+    .imgReg {
+        height: 180px; /* Slightly reduce image height */
+        width: 350px; /* Make image responsive */
+    }
+
+    h2 {
+        font-size: 24px; /* Increase font size for better readability */
+    }
+
+    input {
+        width: 320px; /* Increase input width for a better fit */
+    }
+
+    button {
+        font-size: 18px; /* Increase button font size for easier tapping */
+    }
+
+    #message {
+        font-size: 16px; /* Increase message font size for visibility */
+    }
+
+    .terms p {
+        font-size: 16px; /* Increase font size for terms and links */
+    }
+
+    .modal-content {
+        width: 300px; /* Make modal responsive */
+        padding: 15px; /* Adjust padding */
+    }
+
+    .modal h2 {
+        font-size: 22px; /* Adjust heading size in modal */
+    }
 }

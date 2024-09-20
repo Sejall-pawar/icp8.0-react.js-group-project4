@@ -6,7 +6,6 @@ import CategoriesData from "../../Config/CategoriesData";
 
 // Import your custom icons
 import priceIcon from './price.png';
-import emiIcon from './EMI.png';
 
 const EMI_RATE = 0.1; // 10% interest rate
 
@@ -115,16 +114,19 @@ const ElectronicsCategories = () => {
           {cart.length === 0 ? (
             <p>Your cart is empty</p>
           ) : (
-            <ul>
+            <ul className="cart-summary-container">
               {cart.map((item) => (
                 <li key={item.id} className="cart-item">
                   <img src={item.image} alt={item.name} className="cart-image" />
                   <div className="cart-details">
                     <h4>{item.name}</h4>
                     <p>{item.description}</p>
-                    <p>Quantity: {item.quantity}</p>
-                    <p><strong>Total Price:</strong> ₹{item.finalPrice * item.quantity}</p>
-                    <p><strong>EMI (12 months):</strong> ₹{calculateEMI(item.finalPrice * item.quantity, 12)} / month</p>
+                    <p><strong>Quantity:</strong> {item.quantity}</p>
+                    <p>
+                      <img src={priceIcon} alt="Price Icon" className="icon" />
+                      <strong>Total Price:</strong> ₹{item.finalPrice * item.quantity}
+                    </p>
+                    <p><strong>EMI (12 months):</strong> ₹ {calculateEMI(item.finalPrice * item.quantity, 12)} / month</p>
                     <div className="btn-quantity">
                       <button onClick={() => updateCart(item, 1)} className="btn-inc-dec">+</button>
                       <button onClick={() => updateCart(item, -1)} className="btn-inc-dec">-</button>

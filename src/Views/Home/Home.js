@@ -1,17 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Header from "./../../Components/Header/Header";
 import Footer from "./../../Components/Footer/Footer";
-import one from "./Img/1.jpg";
-import two from "./Img/2.avif";
-import three from "./Img/3.avif";
-import four from "./Img/4.avif";
-import R1 from "./Img/R1.jpg";
-import R2 from "./Img/R2.jpg";
-import R3 from "./Img/R3.jpg";
-import R4 from "./Img/R4.jpg";
-import R5 from "./Img/R5.avif";
-import R6 from "./Img/R6.avif";
 import trust from "./Img/trust.png";
 import cheers from "./Img/cheers.png";
 import CD1 from "./Img/CD1.avif";
@@ -19,95 +9,31 @@ import CD2 from "./Img/CD2.avif";
 import CD3 from "./Img/CD3.jpg";
 import CD4 from "./Img/CD4.jpg";
 import msg from "./Img/msg.png";
+import closeIcon from "./Img/close.png";
 import "./Home.css";
 import "./../../index.css"
-import { THEME } from '../../Config/Data';
+import { THEME, RentItems, KeyItems } from '../../Config/Data';
+import { Toaster, toast } from 'react-hot-toast';
 
-
-function home() {
-
-  const KeyItems = [
-    {
-      No: 1,
-      Img: one,
-      Title: 'Wide Range of Items',
-      SubTitle: 'From furniture to electronics, find everything you need in one place.'
-    },
-    {
-      No: 2,
-      Img: two,
-      Title: 'Affordable Prices',
-      SubTitle: 'Quality rentals at prices that fit your budget.'
-    },
-    {
-      No: 3,
-      Img: three,
-      Title: 'Flexible Terms',
-      SubTitle: 'Rent items for as long or as short as you need.'
-    },
-    {
-      No: 4,
-      Img: four,
-      Title: 'Convenient Delivery',
-      SubTitle: 'Get items delivered to your doorstep hassle-free.'
-    }
-  ];
-
-  const RentItems = [
-    {
-      No: 1,
-      bgImg: R1,
-      Name: 'Bed Room Furniture',
-      Pricetag: 'Starting From',
-      Price: '@1500/mo',
-      link: './furniture'
-    },
-    {
-      No: 2,
-      bgImg: R2,
-      Name: 'Living Room Furniture',
-      Pricetag: 'Starting From',
-      Price: '@1300/mo',
-      link: './furniture'
-    },
-    {
-      No: 3,
-      bgImg: R3,
-      Name: 'Garments Deals',
-      Pricetag: 'Starting From',
-      Price: '@300/day',
-      link: './garments'
-    },
-    {
-      No: 4,
-      bgImg: R4,
-      Name: 'Study Room Furniture',
-      Pricetag: 'Starting From',
-      Price: '@400/mo',
-      link: './furniture'
-    },
-    {
-      No: 5,
-      bgImg: R5,
-      Name: 'Appliances Quality',
-      Pricetag: 'Starting From',
-      Price: '@250/mo',
-      link: './electronics'
-    },
-    {
-      No: 6,
-      bgImg: R6,
-      Name: 'Deals & Offers',
-      Pricetag: 'Starting From',
-      Price: '@500/day',
-      link: './furniture'
-    },
-  ]
-
+function Home() {
+  const [showPopup, setShowPopup] = useState(true);
   return (
     <div>
-
       <Header />
+
+      {showPopup && (
+        <div className="popup-box">
+          <div className="popup-content">
+            <img src={closeIcon} alt="close" className="popup-close" onClick={() => {setShowPopup(false); 
+              toast.success("See you soon! Your registration awaits.👋")}} />
+            <h2>Register Now!</h2>
+            <p>Sign up today to get exclusive rental deals and offers.</p>
+            <Link to="/registration">
+              <button className="popup-button">Go to Registration</button>
+            </Link>
+          </div>
+        </div>
+      )}
 
       <div className='bg'>
 
@@ -126,28 +52,28 @@ function home() {
         <h3 className='Rent-subtitle'>Explore by categories</h3>
 
         <div className='Rent-Item-Contanier'>
-
           {RentItems.map((item) => (
-            <Link to={item.link} key={item.No} className='Rent-Link'>
-              <div
-                className='Rent-Item'
-                style={{
-                  backgroundImage: `url(${item.bgImg})`,
-                  height: "400px",
-                  width: "350px",
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  padding: "20px"
-                }}>
+            <Link to={item.link} key={item.No} className="Rent-Link">
+              <div className="Rent-Item">
+                <div
+                  className="background-blur"
+                  style={{
+                    backgroundImage: `url(${item.bgImg})`,
+                  }}
+                ></div>
                 <h1 style={{ textAlign: "center", marginBottom: "auto" }}>{item.Name}</h1>
-                <div style={{ display: "flex", justifyContent: "space-between", width: "100%",marginBottom: "290px" }}>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    width: "100%",
+                    marginBottom: "290px",
+                  }}
+                >
                   <h3>{item.Pricetag}</h3>
-                  <h2 className='price'>{item.Price}</h2>
+                  <h2 className="price">{item.Price}</h2>
                 </div>
               </div>
-
             </Link>
           ))}
         </div>
@@ -166,7 +92,6 @@ function home() {
           ))}
         </div>
       </div>
-
       <div className='CD-contanier'>
 
         <div className='CD1'>
@@ -228,8 +153,9 @@ function home() {
       </div>
 
       <Footer />
+      <Toaster/>
     </div>
-  )
+  );
 }
 
-export default home
+export default Home;

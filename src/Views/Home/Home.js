@@ -23,6 +23,7 @@ import closeIcon from "./Img/close.png";
 import "./Home.css";
 import "./../../index.css"
 import { THEME } from '../../Config/Data';
+import { Toaster, toast } from 'react-hot-toast';
 
 function Home() {
   const [showPopup, setShowPopup] = useState(true);
@@ -113,7 +114,8 @@ function Home() {
       {showPopup && (
         <div className="popup-box">
           <div className="popup-content">
-            <img src={closeIcon} alt="close" className="popup-close" onClick={() => setShowPopup(false)} />
+            <img src={closeIcon} alt="close" className="popup-close" onClick={() => {setShowPopup(false); 
+              toast.success("See you soon! Your registration awaits.👋")}} />
             <h2>Register Now!</h2>
             <p>Sign up today to get exclusive rental deals and offers.</p>
             <Link to="/registration">
@@ -241,6 +243,7 @@ function Home() {
       </div>
 
       <Footer />
+      <Toaster/>
     </div>
   );
 }

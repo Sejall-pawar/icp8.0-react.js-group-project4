@@ -62,15 +62,7 @@ function Header() {
                 Registration
               </NavLink>
             </li>
-            <li>
-              <NavLink 
-                to="/reviews" 
-                className='nav-names' 
-                activeClassName="active"
-              >
-                Reviews
-              </NavLink>
-            </li>
+            
             <li>
               <NavLink 
                 to="/inquiry" 

@@ -87,6 +87,7 @@ const ElectronicsCategories = () => {
                   {showFullDescription[category.id] ? "Show Less" : "Show More"}
                 </button>
               </p>
+              
               {/* Price with Custom Icon */}
               <p className="price">
                 <img src={priceIcon} alt="Price Icon" className="icon" />

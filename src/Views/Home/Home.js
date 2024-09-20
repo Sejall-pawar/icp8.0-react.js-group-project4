@@ -17,12 +17,8 @@ import { Toaster, toast } from 'react-hot-toast';
 
 function Home() {
   const [showPopup, setShowPopup] = useState(true);
-
- 
-
   return (
     <div>
-
       <Header />
 
       {showPopup && (

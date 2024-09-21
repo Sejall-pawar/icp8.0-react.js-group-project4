@@ -91,7 +91,9 @@ header nav ul li a {
   display: block;
 }
 
-
+.nav-names{
+ cursor: pointer;
+}
 .nav-toggle {
   display: none;
 }

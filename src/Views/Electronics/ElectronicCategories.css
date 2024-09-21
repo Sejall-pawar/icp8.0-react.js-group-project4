@@ -190,7 +190,17 @@
 /* Media Queries */
 
 /* Small Devices  */
-@media screen and (max-width: 415px) {
+@media screen and (max-width: 320px){
+  .search-input {
+    padding: 5px;
+    max-width: 203px;
+    font-size: 12px;
+    margin-top: 15px;
+    margin-left: 13% !important;
+  }
+}
+
+@media screen and (max-width: 425px) {
   .main-container {
     margin: 12px;
   }
@@ -211,10 +221,10 @@
   
   .search-input {
     padding: 5px;
-    max-width: 150px;
+    max-width: 203px;
     font-size: 12px;
     margin-top: 15px;
-    margin-left: 28%;
+    margin-left: 23%;
   }
 
   .categories-list {
@@ -344,10 +354,10 @@
   }
   
   .search-input {
-    max-width: 190px;
+    max-width: 230px;
     font-size: 14px;
     margin-top: 15px;
-    margin-left: 35%;
+    margin-left: 33%;
   }
 
   .cart-summary {
@@ -466,9 +476,9 @@
 }
 
 /* Large Devices  */
-@media screen and (min-width: 745px) and (max-width: 1024px) {
+@media screen and (min-width: 992px) and (max-width: 1024px) {
   .main-container {
-    margin: 35px;
+    margin: 15px;
   }
   .head-container {
     text-align: center;
@@ -484,15 +494,16 @@
     text-align: center;
   }
   .search-input {
-    font-size: 16px;
+    font-size: 17px;
     margin-top: 18px;
     margin-left: 34%;
   }
 
   .cart-summary {
-    margin: 0 220px;
+    margin: 0 262px;
     padding: 0;
     font-size: 18px;
+    margin-bottom: 20px;
   }
 
   .category-item {

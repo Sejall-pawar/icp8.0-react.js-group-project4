@@ -3,8 +3,9 @@ import Header from "./../../Components/Header/Header";
 import Footer from "./../../Components/Footer/Footer";
 import "./ElectronicCategories.css";
 import CategoriesData from "../../Config/CategoriesData";
+import toast, { Toaster } from 'react-hot-toast';
 
-// Import your custom icons
+// Import price icon
 import priceIcon from './price.png';
 
 const EMI_RATE = 0.1; // 10% interest rate
@@ -25,22 +26,38 @@ const ElectronicsCategories = () => {
   // Function to update the cart: add or remove items
   const updateCart = (product, increment) => {
     const exists = cart.find((item) => item.id === product.id);
+    
     if (exists) {
-      if (exists.quantity + increment > 3 || exists.quantity + increment < 1) {
-        setError(increment > 0 ? "You cannot add more than 3 items." : "");
+      const newQuantity = exists.quantity + increment;
+
+      // Check for exceeding limits
+      if (newQuantity > 3) {
+        setError("You can only add this item 3 times.");
         return;
       }
-      setCart(cart.map((item) =>
-        item.id === product.id ? { ...item, quantity: item.quantity + increment } : item
-      ));
+
+      // Remove if quantity falls below 1
+      if (newQuantity < 1) {
+        setCart(cart.filter((item) => item.id !== product.id));
+        toast.success(`${product.name} removed from cart!`);
+        setError("");
+      } else {
+        // Update quantity
+        setCart(cart.map((item) =>
+          item.id === product.id ? { ...item, quantity: newQuantity } : item
+        ));
+        setError("");
+      }
     } else {
+      // Add new item to cart
       setCart([...cart, { ...product, quantity: 1 }]);
+      toast.success(`${product.name} added to cart!`);
+      setError("");
     }
   };
 
    //Function to calculate EMI for a given price and number of months
   const calculateEMI = (price, months) => ((price * (1 + EMI_RATE)) / months).toFixed(2);
-
 
   return (
     <div>
@@ -155,6 +172,7 @@ const ElectronicsCategories = () => {
       </div>
 
       <Footer />
+      <Toaster />
     </div>
   );
 };

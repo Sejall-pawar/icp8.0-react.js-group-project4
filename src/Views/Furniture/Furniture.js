@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Furniture.css';
 import Header from './../../Components/Header/Header';
 import Footer from './../../Components/Footer/Footer';
+import toast, { Toaster } from 'react-hot-toast';
 
 import sofaImage from './Furniture Img/sofa.jpeg';
 import diningTableImage from './Furniture Img/dinning table.jpeg';
@@ -16,7 +17,6 @@ import bookShelf from './Furniture Img/book shelf.jpg';
 import woodenSwing from './Furniture Img/wooden swing.jpg';
 import bedTable from './Furniture Img/bed side table.jpeg';
 import priceIcon from './../Electronics/price.png';  
-
 
 function Furniture() {
   const furnitureItems = [
@@ -34,17 +34,14 @@ function Furniture() {
     { id: 12, image: bedTable, title: 'Bedside Table', description: 'Compact bedside table with a drawer.', fullDescription: 'Compact bedside table with a drawer for convenient storage.', price: 300, isAvailable: true },
   ];
 
-  
   const [searchQuery, setSearchQuery] = useState("");  
   const [cart, setCart] = useState([]);
   const [showFullDescription, setShowFullDescription] = useState({});
 
- 
   const handleSearch = (e) => {
     setSearchQuery(e.target.value.toLowerCase());
   };
 
-  
   const filteredItems = furnitureItems.filter(item =>
     item.title.toLowerCase().includes(searchQuery)
   );
@@ -67,11 +64,13 @@ function Furniture() {
               : item
           )
         );
+        toast.success(`${product.title} added to cart!`);
       } else {
-        alert('You can only add this item 3 times.');
+        toast.error('You can only add this item 3 times.');
       }
     } else {
       setCart([...cart, { ...product, quantity: 1 }]);
+      toast.success(`${product.title} added to cart!`);
     }
   };
 
@@ -106,16 +105,13 @@ function Furniture() {
     <div>
       <Header />
       <div className="furniture-container">
-       {/* Add your centered heading and search bar here */}
-       <div className="main-container">
+        <div className="main-container">
           <div className="head-container">
             <h2 className="heading">Furniture On Rent</h2>
             <p className="sub-heading">
               Browse through our wide range of Furniture categories.
             </p>
           </div>
-
-          {/* Search input */}
           <input
             type="text"
             placeholder="Search Categories"
@@ -125,7 +121,6 @@ function Furniture() {
           />
         </div>
         <div className="furniture-cards">
-          {/* Map over filtered items instead of all items */}
           {filteredItems.map((item) => (
             <FurnitureCard
               key={item.id}
@@ -144,6 +139,7 @@ function Furniture() {
         />
       </div>
       <Footer />
+      <Toaster />
     </div>
   );
 }
@@ -165,9 +161,9 @@ function FurnitureCard({ item, addToCart, showFullDescription, toggleFullDescrip
         </button>
       </p>
       <p className="furniture-price">
-    <img src={priceIcon} alt="Price Icon" className="icon" /> 
-    <strong>₹{item.price}/month</strong>
-  </p>
+        <img src={priceIcon} alt="Price Icon" className="icon" /> 
+        <strong>₹{item.price}/month</strong>
+      </p>
 
       {!item.isAvailable ? (
         <div className="out-of-stock-message">
@@ -192,22 +188,21 @@ function CartSummary({ cart, increaseQuantity, decreaseQuantity, totalCartPrice 
         <div>
           {cart.map((item) => (
             <div className="cart-item" key={item.id}>
-              {/* Add the image for each item */}
               <img src={item.image} alt={item.title} className="cart-item-image" />
               <div className="cart-item-details">
-                <p>{item.title}</p>
-                <p>Price: ₹{item.price * item.quantity}</p>
+                <h3>{item.title}</h3>
+                <p>
+                  <strong>₹{item.price * item.quantity}</strong>
+                </p>
                 <div className="quantity-controls">
-                  <button onClick={() => decreaseQuantity(item.id)} className="quantity-btn">-</button>
-                  <p className="item-quantity">{item.quantity}</p>
-                  <button onClick={() => increaseQuantity(item.id)} className="quantity-btn">+</button>
+                  <button className="quantity-btn" onClick={() => decreaseQuantity(item.id)}>-</button>
+                  <span className="item-quantity">{item.quantity}</span>
+                  <button className="quantity-btn" onClick={() => increaseQuantity(item.id)}>+</button>
                 </div>
               </div>
             </div>
           ))}
-          <div className="total-price">
-            <h3>Total: ₹{totalCartPrice}</h3>
-          </div>
+          <h3>Total Price: ₹{totalCartPrice}</h3>
         </div>
       )}
     </div>

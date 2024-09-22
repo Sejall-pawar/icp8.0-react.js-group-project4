@@ -6,7 +6,7 @@
 .bg {
     position: relative;
     background-image: url('./Img/bg.jpg');
-    height: 610px;
+    height: 640px;
     width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -38,6 +38,7 @@
     margin-bottom: 10;
     padding-top: 40px;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    animation: fadeInTitle 1.5s ease-in-out;
 }
 
 .Key-main-contanier {
@@ -52,6 +53,7 @@
     flex-wrap: wrap;
     padding: 20px;
     gap: 20px;
+    animation: slideInContainer 1.5s ease-out;
 }
 
 .key-detail {
@@ -66,6 +68,11 @@
     padding: 20px;
     text-align: center;
     margin-top: 0;
+    animation: popIn 0.8s ease-out; /* Animation */
+    transition: transform 0.3s ease-in-out; 
+}
+.key-detail:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
 }
 
 .key-img {
@@ -74,6 +81,7 @@
     object-fit: cover;
     border-radius: 5px;
     margin-bottom: 15px;
+    animation: fadeInImage 1s ease-in-out; 
 }
 
 .key-detail h1 {
@@ -88,6 +96,50 @@
     margin: 5px 0;
     color: #7A8E9B;
     font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+@keyframes fadeInTitle {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInContainer {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeInImage {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
 
 .Rent-title {
@@ -111,44 +163,58 @@
 }
 
 .Rent-Item {
-    height: 400px;
-    width: 100%;
-    max-width: 350px;
     position: relative;
-    background-repeat: no-repeat;
+    height: 400px;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow: hidden; 
+    background-color: rgba(255, 255, 255, 0.2); 
+  }
+.background-blur {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-size: cover;
     background-position: center;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    flex-wrap: wrap;
-    padding: 5px;
-    display: flex;
-    justify-content: space-between;
-}
-
+    filter: blur(4px); 
+    z-index: -1; 
+  }
 .Rent-Item:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: 0.5s;
 }
 
 .Rent-Item h1 {
-    text-align: center;
     font-size: 25px;
-    display: inline-flex;
+    text-align: center;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    color: white;
+    margin-bottom: 10px;
+    margin-top: 250px;
+}
+
+.Rent-Item h2,
+.Rent-Item h3 {
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: white;
 }
 
 .Rent-Item h2 {
     text-align: right;
     margin-right: 5px;
-    font-size: 20px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .Rent-Item h3 {
     text-align: left;
-    font-size: 20px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-bottom: 10px;
 }
 
 .Rent-Link {
@@ -320,8 +386,65 @@
     margin: 0;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
-
+.popup-box {
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 20px;
+  }
+  
+  .popup-content {
+    position: relative;
+  }
+  
+  .popup-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+  }
+  
+  .popup-button {
+    background-color: #405D72;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .popup-button:hover {
+    background-color: #758694;
+  }
+  
 @media screen and (max-width: 500px) {
+    .popup-box {
+        width: 200px;
+        padding: 10px;
+      }
+      
+    
+      .popup-close {
+        width: 10px;
+        height: 10px;
+      }
+      
+      .popup-button {
+        padding: 5px 10px;
+        margin-top: 10px;
+      }
+      
     .Tagline {
         margin-top: 115px;
         font-size: 25px;
@@ -357,54 +480,56 @@
     .Rent-Item h3 {
         font-size: 20px;
     }
- 
+
     .CD1 {
         height: 450px;
         width: 300px;
         padding: 0;
     }
-    .CD1 h1{
+
+    .CD1 h1 {
         font-size: 20px;
     }
+
     .CD-img {
         height: 40px;
         margin-bottom: 8px;
         margin-top: 5px;
     }
-    
+
     .CD1 hr {
         margin: 5px 0;
     }
-    
+
     .CD2 {
         width: calc(100% - 1px);
         max-width: 350px;
     }
-    
+
     .CD2-1 {
         height: 650px;
         width: 350px;
         padding: 10px;
     }
-    
+
     .CD2-1 h3 {
         font-size: 20px;
     }
-    
+
     .CD2-1 h1 {
         margin-top: 10px;
         margin-bottom: 30px;
     }
-    
+
     .CD2-1-1 h3 {
         font-size: 15px;
         margin: 5px 20px;
     }
-    
+
     .CD2-2 {
         height: 350px;
         width: 350px;
-    }    
+    }
 }
 
 @media screen and (min-width: 500px) and (max-width: 768px) {
@@ -443,54 +568,56 @@
     .Rent-Item h3 {
         font-size: 20px;
     }
- 
+
     .CD1 {
         height: 450px;
         width: 300px;
         padding: 0;
     }
-    .CD1 h1{
+
+    .CD1 h1 {
         font-size: 20px;
     }
+
     .CD-img {
         height: 40px;
         margin-bottom: 8px;
         margin-top: 5px;
     }
-    
+
     .CD1 hr {
         margin: 5px 0;
     }
-    
+
     .CD2 {
         width: calc(100% - 200px);
         max-width: 350px;
     }
-    
+
     .CD2-1 {
         height: 650px;
         width: 350px;
         padding: 10px;
     }
-    
+
     .CD2-1 h3 {
         font-size: 20px;
     }
-    
+
     .CD2-1 h1 {
         margin-top: 10px;
         margin-bottom: 30px;
     }
-    
+
     .CD2-1-1 h3 {
         font-size: 15px;
         margin: 5px 20px;
     }
-    
+
     .CD2-2 {
         height: 350px;
         width: 350px;
-    }    
+    }
 }
 
 @media screen and (min-width: 769px) and (max-width: 992px) {
@@ -567,55 +694,60 @@
     .Rent-Item h3 {
         font-size: 20px;
     }
+
     .CD-contanier {
         justify-content: center;
     }
+
     .CD1 {
         height: 750px;
         width: 400px;
         padding: 0;
     }
-    .CD1 h1{
+
+    .CD1 h1 {
         font-size: 30px;
         padding: 15px 0;
     }
+
     .CD-img {
         height: 70px;
         margin-bottom: 10px;
         margin-top: 50px;
     }
-    
+
     .CD1 hr {
         margin: 5px 0;
     }
-    
+
     .CD2 {
         width: calc(100% - 200px);
         max-width: 350px;
     }
-    
+
     .CD2-1 {
         height: 550px;
         width: 450px;
         padding: 10px;
     }
-    
+
     .CD2-1 h3 {
         font-size: 20px;
     }
-    
+
     .CD2-1 h1 {
         margin-top: 10px;
         margin-bottom: 30px;
     }
-    
+
     .CD2-1-1 h3 {
         font-size: 15px;
         margin: 5px 20px;
     }
-    
+
     .CD2-2 {
         height: 300px;
         width: 450px;
-    }    
+    }
 }
+

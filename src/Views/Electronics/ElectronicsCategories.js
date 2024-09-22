@@ -3,10 +3,10 @@ import Header from "./../../Components/Header/Header";
 import Footer from "./../../Components/Footer/Footer";
 import "./ElectronicCategories.css";
 import CategoriesData from "../../Config/CategoriesData";
+import toast, { Toaster } from 'react-hot-toast';
 
-// Import your custom icons
+// Import price icon
 import priceIcon from './price.png';
-import emiIcon from './EMI.png';
 
 const EMI_RATE = 0.1; // 10% interest rate
 
@@ -26,22 +26,38 @@ const ElectronicsCategories = () => {
   // Function to update the cart: add or remove items
   const updateCart = (product, increment) => {
     const exists = cart.find((item) => item.id === product.id);
+    
     if (exists) {
-      if (exists.quantity + increment > 3 || exists.quantity + increment < 1) {
-        setError(increment > 0 ? "You cannot add more than 3 items." : "");
+      const newQuantity = exists.quantity + increment;
+
+      // Check for exceeding limits
+      if (newQuantity > 3) {
+        setError("You can only add this item 3 times.");
         return;
       }
-      setCart(cart.map((item) =>
-        item.id === product.id ? { ...item, quantity: item.quantity + increment } : item
-      ));
+
+      // Remove if quantity falls below 1
+      if (newQuantity < 1) {
+        setCart(cart.filter((item) => item.id !== product.id));
+        toast.success(`${product.name} removed from cart!`);
+        setError("");
+      } else {
+        // Update quantity
+        setCart(cart.map((item) =>
+          item.id === product.id ? { ...item, quantity: newQuantity } : item
+        ));
+        setError("");
+      }
     } else {
+      // Add new item to cart
       setCart([...cart, { ...product, quantity: 1 }]);
+      toast.success(`${product.name} added to cart!`);
+      setError("");
     }
   };
 
    //Function to calculate EMI for a given price and number of months
   const calculateEMI = (price, months) => ((price * (1 + EMI_RATE)) / months).toFixed(2);
-
 
   return (
     <div>
@@ -88,6 +104,7 @@ const ElectronicsCategories = () => {
                   {showFullDescription[category.id] ? "Show Less" : "Show More"}
                 </button>
               </p>
+              
               {/* Price with Custom Icon */}
               <p className="price">
                 <img src={priceIcon} alt="Price Icon" className="icon" />
@@ -115,16 +132,19 @@ const ElectronicsCategories = () => {
           {cart.length === 0 ? (
             <p>Your cart is empty</p>
           ) : (
-            <ul>
+            <ul className="cart-summary-container">
               {cart.map((item) => (
                 <li key={item.id} className="cart-item">
                   <img src={item.image} alt={item.name} className="cart-image" />
                   <div className="cart-details">
                     <h4>{item.name}</h4>
                     <p>{item.description}</p>
-                    <p>Quantity: {item.quantity}</p>
-                    <p><strong>Total Price:</strong> ₹{item.finalPrice * item.quantity}</p>
-                    <p><strong>EMI (12 months):</strong> ₹{calculateEMI(item.finalPrice * item.quantity, 12)} / month</p>
+                    <p><strong>Quantity:</strong> {item.quantity}</p>
+                    <p>
+                      <img src={priceIcon} alt="Price Icon" className="icon" />
+                      <strong>Total Price:</strong> ₹{item.finalPrice * item.quantity}
+                    </p>
+                    <p><strong>EMI (12 months):</strong> ₹ {calculateEMI(item.finalPrice * item.quantity, 12)} / month</p>
                     <div className="btn-quantity">
                       <button onClick={() => updateCart(item, 1)} className="btn-inc-dec">+</button>
                       <button onClick={() => updateCart(item, -1)} className="btn-inc-dec">-</button>
@@ -152,6 +172,7 @@ const ElectronicsCategories = () => {
       </div>
 
       <Footer />
+      <Toaster />
     </div>
   );
 };

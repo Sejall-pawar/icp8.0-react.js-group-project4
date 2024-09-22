@@ -4,6 +4,9 @@ import Footer from "./../../Components/Footer/Footer";
 import "./Garments.css";
 import CategoriesData from "../../Config/GarmentsData";
 
+// Import the custom price icon
+import priceIcon from './price.png';
+
 const GarmentsCategories = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [cart, setCart] = useState([]);
@@ -11,16 +14,14 @@ const GarmentsCategories = () => {
   const [showFullDescription, setShowFullDescription] = useState({});
   const [error, setError] = useState("");
 
-  // Function to handle search input changes
   const handleSearch = (e) => setSearchQuery(e.target.value.toLowerCase());
 
-  // Function to toggle full description visibility
-  const toggleFullDescription = (id) => setShowFullDescription(prevState => ({
-    ...prevState,
-    [id]: !prevState[id]
-  }));
+  const toggleFullDescription = (id) =>
+    setShowFullDescription((prevState) => ({
+      ...prevState,
+      [id]: !prevState[id],
+    }));
 
-  // Function to update the cart: add or remove items
   const updateCart = (product, increment) => {
     const exists = cart.find((item) => item.id === product.id);
     if (exists) {
@@ -28,13 +29,22 @@ const GarmentsCategories = () => {
         setError(increment > 0 ? "You cannot add more than 3 items." : "");
         return;
       }
-      setCart(cart.map((item) =>
-        item.id === product.id ? { ...item, quantity: item.quantity + increment } : item
-      ));
-      setError(""); // Clear error message on successful update
+      setCart(
+        cart.map((item) =>
+          item.id === product.id
+            ? { ...item, quantity: item.quantity + increment }
+            : item
+        )
+      );
+      setError("");
     } else {
       setCart([...cart, { ...product, quantity: 1 }]);
     }
+  };
+
+  // Function to handle removing an item from the cart
+  const removeFromCart = (productId) => {
+    setCart(cart.filter((item) => item.id !== productId));
   };
 
   return (
@@ -49,7 +59,6 @@ const GarmentsCategories = () => {
           </p>
         </div>
 
-        {/* Search input */}
         <input
           type="text"
           placeholder="Search Categories"
@@ -58,10 +67,9 @@ const GarmentsCategories = () => {
           className="search-input"
         />
 
-        {/* Display list of categories based on search query */}
         <div className="categories-list">
           {CategoriesData.filter((category) =>
-            category.name && category.name.toLowerCase().includes(searchQuery) // Ensure category.name exists and is defined
+            category.name && category.name.toLowerCase().includes(searchQuery)
           ).map((category) => (
             <div key={category.id} className="category-item">
               <img
@@ -74,7 +82,11 @@ const GarmentsCategories = () => {
               <p>
                 {showFullDescription[category.id]
                   ? category.fullDescription
-                  : `${category.description ? category.description.substring(0, 60) : ''}...`} {/* Ensure description is defined */}
+                  : `${
+                      category.description
+                        ? category.description.substring(0, 60)
+                        : ""
+                    }...`}
                 <button
                   onClick={() => toggleFullDescription(category.id)}
                   className="toggle-description-button"
@@ -82,7 +94,13 @@ const GarmentsCategories = () => {
                   {showFullDescription[category.id] ? "Show Less" : "Show More"}
                 </button>
               </p>
-              <p><strong>Price:</strong> ₹{category.finalPrice.toFixed(2)}</p>
+
+              {/* Price with Custom Icon */}
+              <p className="price">
+                <img src={priceIcon} alt="Price Icon" className="icon" />
+                <strong>₹{category.finalPrice.toFixed(2)}</strong>
+              </p>
+
               {category.inStock ? (
                 <button
                   onClick={() => updateCart(category, 1)}
@@ -91,13 +109,14 @@ const GarmentsCategories = () => {
                   Rent Now
                 </button>
               ) : (
-                <div className="out-of-stock-overlay"><p>Out of Stock</p></div>
+                <div className="out-of-stock-overlay">
+                  <p>Out of Stock</p>
+                </div>
               )}
             </div>
           ))}
         </div>
 
-        {/* Cart Summary Section */}
         <h2 className="card-summary-heading">Cart Summary</h2>
         <div className="cart-summary">
           {cart.length === 0 ? (
@@ -112,31 +131,73 @@ const GarmentsCategories = () => {
                       <h4>{item.name}</h4>
                       <p>{item.description}</p>
                       <p>Quantity: {item.quantity}</p>
-                      <p><strong>Total Price:</strong> ₹{(item.finalPrice * item.quantity).toFixed(2)}</p>
+
+                      {/* Total Price with Custom Icon */}
+                      <p>
+                        <img src={priceIcon} alt="Price Icon" className="icon" />
+                        <strong>Total Price:</strong> ₹
+                        {(item.finalPrice * item.quantity).toFixed(2)}
+                      </p>
+
                       <div className="btn-quantity">
-                        <button onClick={() => updateCart(item, 1)} className="btn-inc-dec">+</button>
-                        <button onClick={() => updateCart(item, -1)} className="btn-inc-dec">-</button>
+                        <button
+                          onClick={() => updateCart(item, 1)}
+                          className="btn-inc-dec"
+                        >
+                          +
+                        </button>
+                        <button
+                          onClick={() => updateCart(item, -1)}
+                          className="btn-inc-dec"
+                        >
+                          -
+                        </button>
                       </div>
+
+                      {/* Remove Button */}
+                      <button
+                        onClick={() => removeFromCart(item.id)}
+                        className="btn-remove"
+                      >
+                        Remove
+                      </button>
                     </div>
                   </li>
                 ))}
               </ul>
               <p className="error-message">{error}</p>
               <div className="total-price">
-                <h3>Total Price: ₹{cart.reduce((total, item) => total + (item.finalPrice * item.quantity), 0).toFixed(2)}</h3>
+                <h3>
+                  Total Price: ₹
+                  {cart
+                    .reduce(
+                      (total, item) => total + item.finalPrice * item.quantity,
+                      0
+                    )
+                    .toFixed(2)}
+                </h3>
               </div>
             </>
           )}
         </div>
 
-        {/* Product Details Modal */}
         {selectedProduct && (
           <div className="product-details">
             <h3>{selectedProduct.name}</h3>
-            <img src={selectedProduct.image} alt={selectedProduct.name} className="category-image" />
-            <p><strong>Full Description:</strong> {selectedProduct.fullDescription}</p>
-            <p><strong>Price:</strong> ₹{selectedProduct.finalPrice.toFixed(2)}</p>
-            <button onClick={() => updateCart(selectedProduct, 1)}>Add to Cart</button>
+            <img
+              src={selectedProduct.image}
+              alt={selectedProduct.name}
+              className="category-image"
+            />
+            <p>
+              <strong>Full Description:</strong> {selectedProduct.fullDescription}
+            </p>
+            <p>
+              <strong>Price:</strong> ₹{selectedProduct.finalPrice.toFixed(2)}
+            </p>
+            <button onClick={() => updateCart(selectedProduct, 1)}>
+              Add to Cart
+            </button>
             <button onClick={() => setSelectedProduct(null)}>Close</button>
           </div>
         )}
@@ -146,4 +207,5 @@ const GarmentsCategories = () => {
     </div>
   );
 };
+
 export default GarmentsCategories;

@@ -1,15 +1,37 @@
-/* Container styling */
+.main {
+    background-image: url('./bg.jpeg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    margin: 0;
+    padding: 0;
+    height: 100%; 
+}
+
+.page-content {
+    min-height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 .container-reg {
-    background: #fff;
+    background: rgba(255, 255, 255, 0.9); 
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 350px;
-    margin-top: 150px;
-    margin-bottom: 130px;
+    margin-top: 95px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 0;
     align-content: center;
+}
+
+.signup {
+    height: 300px;
 }
 
 .imgReg {
@@ -22,7 +44,6 @@ h2 {
     text-align: center;
     color: #405D72;
 }
-
 label {
     display: block;
     margin-bottom: 5px;
@@ -57,7 +78,6 @@ button:hover {
     text-align: center;
 }
 
-/* Terms and Login Links */
 .terms p {
     font-size: 14px;
     text-align: center;
@@ -73,7 +93,6 @@ button:hover {
     text-decoration: underline;
 }
 
-/* Modal styling */
 .modal {
     display: flex;
     justify-content: center;
@@ -102,10 +121,6 @@ button:hover {
     font-weight: bold;
     color: #405D72;
     cursor: pointer;
-}
-
-.close:hover {
-    color: #f00;
 }
 
 .modal h2 {
@@ -139,45 +154,45 @@ button:hover {
 .modal button:hover {
     background-color: #2E4C58;
 }
+
 @media screen and (min-width: 601px) and (max-width: 768px){
-     /* Container styling */
-     .container-reg {
-        width: 350px; /* Increase width to fit smaller screens */
-        margin-top: 150px; /* Adjust margin for better spacing */
-        padding: 15px; /* Reduce padding for space efficiency */
+    .container-reg {
+        width: 350px; 
+        margin-top: 150px; 
+        padding: 15px;
     }
 
     .imgReg {
-        height: 180px; /* Slightly reduce image height */
-        width: 350px; /* Make image responsive */
+        height: 180px;
+        width: 350px;
     }
 
     h2 {
-        font-size: 24px; /* Increase font size for better readability */
+        font-size: 24px;
     }
 
     input {
-        width: 320px; /* Increase input width for a better fit */
+        width: 320px;
     }
 
     button {
-        font-size: 18px; /* Increase button font size for easier tapping */
+        font-size: 18px;
     }
 
     #message {
-        font-size: 16px; /* Increase message font size for visibility */
+        font-size: 16px;
     }
 
     .terms p {
-        font-size: 16px; /* Increase font size for terms and links */
+        font-size: 16px;
     }
 
     .modal-content {
-        width: 300px; /* Make modal responsive */
-        padding: 15px; /* Adjust padding */
+        width: 300px;
+        padding: 15px;
     }
 
     .modal h2 {
-        font-size: 22px; /* Adjust heading size in modal */
+        font-size: 22px;
     }
 }

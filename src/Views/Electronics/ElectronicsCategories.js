@@ -8,8 +8,6 @@ import toast, { Toaster } from 'react-hot-toast';
 // Import price icon
 import priceIcon from './price.png';
 
-const EMI_RATE = 0.1; // 10% interest rate
-
 const ElectronicsCategories = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [cart, setCart] = useState([]);
@@ -56,8 +54,6 @@ const ElectronicsCategories = () => {
     }
   };
 
-   //Function to calculate EMI for a given price and number of months
-  const calculateEMI = (price, months) => ((price * (1 + EMI_RATE)) / months).toFixed(2);
 
   return (
     <div>
@@ -108,10 +104,8 @@ const ElectronicsCategories = () => {
               {/* Price with Custom Icon */}
               <p className="price">
                 <img src={priceIcon} alt="Price Icon" className="icon" />
-                <strong>₹{category.finalPrice.toFixed(2)}</strong>
+                <strong>₹{category.pricePerMonth.toFixed(2)} / month</strong>
               </p>
-              <p className="emi">
-                <strong>EMI (12 Months):</strong> ₹{calculateEMI(category.finalPrice, 12)} / month</p>
               {category.inStock ? (
                 <button
                   onClick={() => updateCart(category, 1)}
@@ -138,13 +132,11 @@ const ElectronicsCategories = () => {
                   <img src={item.image} alt={item.name} className="cart-image" />
                   <div className="cart-details">
                     <h4>{item.name}</h4>
-                    <p>{item.description}</p>
                     <p><strong>Quantity:</strong> {item.quantity}</p>
                     <p>
                       <img src={priceIcon} alt="Price Icon" className="icon" />
-                      <strong>Total Price:</strong> ₹{item.finalPrice * item.quantity}
+                      <strong>Monthly Price:</strong> ₹{item.pricePerMonth * item.quantity} / month
                     </p>
-                    <p><strong>EMI (12 months):</strong> ₹ {calculateEMI(item.finalPrice * item.quantity, 12)} / month</p>
                     <div className="btn-quantity">
                       <button onClick={() => updateCart(item, 1)} className="btn-inc-dec">+</button>
                       <button onClick={() => updateCart(item, -1)} className="btn-inc-dec">-</button>
@@ -163,8 +155,7 @@ const ElectronicsCategories = () => {
             <h3>{selectedProduct.name}</h3>
             <img src={selectedProduct.image} alt={selectedProduct.name} className="category-image" />
             <p><strong>Full Description:</strong> {selectedProduct.fullDescription}</p>
-            <p><strong>Price:</strong> ₹{selectedProduct.finalPrice.toFixed(2)}</p>
-            <p><strong>Monthly EMI:</strong> ₹ {calculateEMI(selectedProduct.finalPrice, 12)}</p>
+            <p><strong>Monthly Price:</strong> ₹{selectedProduct.pricePerMonth.toFixed(2)}</p>
             <button onClick={() => updateCart(selectedProduct, 1)}>Add to Cart</button>
             <button onClick={() => setSelectedProduct(null)}>Close</button>
           </div>

@@ -19,7 +19,7 @@
 }
 
 .search-input {
-  margin-left: 38%;
+  margin-left: 37%;
   display: flex;
 }
 
@@ -76,14 +76,10 @@
 
 .price{
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  color: black;
-  font-size: 16px;
-}
-
-.emi{
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  color: black;
-  font-size: 14px;
+  font-weight: bold;
+  color: #758694;
+  margin-top: 10px;
+  font-size: 18px;
 }
 
 .toggle-description-button {
@@ -175,15 +171,11 @@
 .btn-inc-dec {
   width: 20%;
   border-radius: 10px;
-  border: 1px solid;
+  border: 1px solid #405D72;
   margin-right: 10px;
   margin-top: 5px;
   margin-bottom: 10px;
   cursor: pointer;
-}
-
-.emi-content {
-  padding-bottom: 10px;
 }
 
 
@@ -196,7 +188,30 @@
     max-width: 203px;
     font-size: 12px;
     margin-top: 15px;
-    margin-left: 13% !important;
+    margin-left: 5% !important;
+  }
+  .cart-details h4 {
+    font-size: 12px !important;
+  }
+  
+  .cart-details p {
+    margin: 2px 0;
+  }
+  
+  .btn-quantity {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  .btn-inc-dec {
+    width: 20%;
+    border-radius: 10px;
+    border: 1px solid #405D72;
+    margin-right: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
   }
 }
 
@@ -224,7 +239,7 @@
     max-width: 203px;
     font-size: 12px;
     margin-top: 15px;
-    margin-left: 23%;
+    margin-left: 21%;
   }
 
   .categories-list {
@@ -260,10 +275,6 @@
 
   .price{
     font-size: 14px;
-  }
-  
-  .emi{
-    font-size: 13px;
   }
 
   .toggle-description-button {
@@ -307,11 +318,17 @@
   .cart-details h4 {
     text-align: center;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 12px;
   }
   
   .cart-details p {
     text-align: center;
+  }
+
+  .btn-quantity {
+    display: block;
+    place-self: center;
+    cursor: pointer;
   }
   
   .btn-inc-dec {
@@ -435,10 +452,6 @@
   .price{
     font-size: 18px;
   }
-  
-  .emi{
-    font-size: 18px;
-  }
 
   .toggle-description-button{
     font-size: 16px;
@@ -524,10 +537,6 @@
   }
 
   .price{
-    font-size: 18px;
-  }
-  
-  .emi{
     font-size: 18px;
   }
 

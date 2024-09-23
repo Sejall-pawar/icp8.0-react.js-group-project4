@@ -408,6 +408,7 @@ h3 {
     flex-direction: column;
   }
 }
+
 @media (max-width: 768px) {
   .search-input {
       width: 90%; 
@@ -419,3 +420,52 @@ h3 {
     margin: 0 auto; 
   }
 }
+
+@media (min-width: 768px) and (max-width: 820px) {
+  .head-container {
+    text-align: center; 
+  }
+
+  .search-input {
+    margin: 0 auto;
+    width: 80%;
+    max-width: 100%; 
+    padding: 8px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .head-container {
+    text-align: center;
+  }
+
+  .search-input {
+    margin: 0 auto;
+    width: 90%; 
+    max-width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 1105px) {
+  .head-container {
+    margin-top: 20px;
+  }
+
+  .heading {
+    font-size: 1.8rem;
+    margin-top: 60px; 
+  }
+
+  .search-input {
+    margin: 10px auto; 
+    width: 80%;
+  }
+
+  .furniture-container {
+    padding: 20px; 
+  }
+}
+

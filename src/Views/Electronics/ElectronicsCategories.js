@@ -104,7 +104,7 @@ const ElectronicsCategories = () => {
               {/* Price with Custom Icon */}
               <p className="price">
                 <img src={priceIcon} alt="Price Icon" className="icon" />
-                <strong>₹{category.pricePerMonth.toFixed(2)} / month</strong>
+                <strong>₹{category.pricePerMonth} / month</strong>
               </p>
               {category.inStock ? (
                 <button
@@ -155,7 +155,7 @@ const ElectronicsCategories = () => {
             <h3>{selectedProduct.name}</h3>
             <img src={selectedProduct.image} alt={selectedProduct.name} className="category-image" />
             <p><strong>Full Description:</strong> {selectedProduct.fullDescription}</p>
-            <p><strong>Monthly Price:</strong> ₹{selectedProduct.pricePerMonth.toFixed(2)}</p>
+            <p><strong>Monthly Price:</strong> ₹{selectedProduct.pricePerMonth}</p>
             <button onClick={() => updateCart(selectedProduct, 1)}>Add to Cart</button>
             <button onClick={() => setSelectedProduct(null)}>Close</button>
           </div>

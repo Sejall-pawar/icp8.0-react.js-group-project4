@@ -30,7 +30,7 @@ const Inquiry = () => {
             <div className='inquiry-container'>
             <form onSubmit={handleSubmit}>
                 <div className='box-1'>
-                <h2>Inquiry Form</h2>
+                <h1>Send us Inquiry</h1>
                     <h3>Name:</h3>
                     <Input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder='Enter your Name' />
                     <h3>Email:</h3>

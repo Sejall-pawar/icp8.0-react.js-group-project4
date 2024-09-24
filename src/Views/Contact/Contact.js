@@ -22,9 +22,9 @@ function Contact() {
              <div className='items'>
               <img src={location} alt='img' className='icons'/> 1 &2, Agarwal Market, Station Rd, Opp.rly St., Vile Parle (e) Mumbai Maharashtra</div>
              <div className='items'>
-                <img src={call} alt='img' className='icons'/> <a href='tel:+91 2226146184' className='link-items'>+91 2226146184</a>
+                <img src={call} alt='img' className='icons'/> <a href='tel:+91 2226146184' className='link-items'>070-70984830</a>
               </div>
-             <div className='items'><img src={mail} alt='img' className='icons'/><a href='mailto:rentifyhub@gmail.com'  className='link-items'>rentifyhub@gmail.com</a></div>
+             <div className='items'><img src={mail} alt='img' className='icons'/><a href='mailto:rentifyhub@gmail.com'  className='link-items'>hello@rentifyhub.com</a></div>
           </div>
           <div className='innerbox-2'>
             <div><img src={sales} alt='img' className='callimg'></img>

@@ -50,6 +50,7 @@ footer {
     font-size: 13px;
     flex-wrap: wrap;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    color: white;
 }
 
 .footer-line {

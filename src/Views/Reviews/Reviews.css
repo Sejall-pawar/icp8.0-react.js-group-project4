@@ -13,11 +13,14 @@ margin-top: 50px;
    padding: 10px;
    align-items: center;
    justify-content: space-between;
+   color: #fff;
+   margin-right: 60px;
 }
 .flexboxes2{
     display: flex; 
     align-items: center;
     justify-content: space-evenly;
+    color:#fff ;
     
 }
 
@@ -43,18 +46,16 @@ margin-top: 50px;
     padding: 5px;
 }
 .review-container{
-    border: solid;
-    border-color: #405D72;
     border-radius: 5px;
     box-shadow: 5px 0px 5px 0px gray;
     height: 320px;
     width: 900px;
    margin: 10px;
-   background-color:white;
+   background-color:#405D72;
    
 }
 .review-container:hover{
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 .img{
     height: 80px;
@@ -67,14 +68,15 @@ margin-top: 50px;
     width: 120px;
 }
 .cust-reviews{
-    color: #405D72;
+    color: #fff;
     text-align:justify;
     margin: 5px;
     padding: 5px;
 }
+
 @media screen and (min-width: 601px) and (max-width: 768px) {
     .review-title {
-        margin-top: 120px; /* Reduced margin for smaller screens */
+        margin-top: 150px; /* Reduced margin for smaller screens */
         font-size: 24px; /* Adjust font size if needed */
     }
     
@@ -86,6 +88,13 @@ margin-top: 50px;
         flex-direction: column; /* Stack items vertically */
         font-size: 18px; /* Slightly smaller font size */
         padding: 5px; /* Reduced padding */
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    
+       
+        
     }
 
     .flexboxes2 {
@@ -94,7 +103,7 @@ margin-top: 50px;
 
     .card-container1, .card-container2 {
         height: auto; /* Allow height to adjust */
-        width: 300px; /* Full width on smaller screens */
+        width: 350px; /* Full width on smaller screens */
         margin: 15px; /* Reduced margin */
         padding: 10px; /* Increased padding for better spacing */
         display: flex;
@@ -105,6 +114,62 @@ margin-top: 50px;
         text-align: center;
     }
 
+    .review-container {
+        height: auto; /* Allow height to adjust */
+        width: 90%; /* Full width on smaller screens */
+        margin: 10px 0; /* Vertical margin for spacing */
+    }
+
+    .img {
+        height: 60px; /* Reduced image size */
+        width: 60px; /* Reduced image size */
+        align-content: center;
+    }
+
+    .rating-img {
+        height: 100px; /* Reduced rating image size */
+        width: 100px; /* Reduced rating image size */
+    }
+
+    .cust-reviews {
+        font-size: 16px; /* Adjust font size for readability */
+    }
+}
+ /* tablet devices */
+ @media screen and (min-width:769px) and (max-width:992px){
+    .card-container1, .card-container2 {
+        height: auto; /* Allow height to adjust */
+        width: 350px; /* Full width on smaller screens */
+        margin: 15px; /* Reduced margin */
+        padding: 10px; /* Increased padding for better spacing */
+        display: flex;
+        flex-wrap: wrap; /* Allows cards to wrap onto the next line */
+        justify-content: space-between; /* Adjust spacing */
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+    .review-title {
+        margin-top: 200px; /* Reduced margin for smaller screens */
+        font-size: 25px; /* Adjust font size if needed */
+    }
+    
+    .cards-container {
+        margin-top: 35px; /* Reduced margin for smaller screens */
+    }
+
+    .flexboxes {
+        flex-direction: column; /* Stack items vertically */
+        font-size: 19px; /* Slightly smaller font size */
+        padding: 8px; /* Reduced padding */
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .flexboxes2 {
+        flex-direction: column; /* Stack items vertically */
+    }
     .review-container {
         height: auto; /* Allow height to adjust */
         width: 100%; /* Full width on smaller screens */
@@ -122,29 +187,15 @@ margin-top: 50px;
     }
 
     .cust-reviews {
-        font-size: 16px; /* Adjust font size for readability */
+        font-size: 22px; /* Adjust font size for readability */
     }
-}
- /* tablet devices */
- @media screen and (min-width:769px) and (max-width:992px){
-    .card-container1, .card-container2 {
-        height: auto; /* Allow height to adjust */
-        width: 400px; /* Full width on smaller screens */
-        margin: 15px; /* Reduced margin */
-        padding: 10px; /* Increased padding for better spacing */
-        display: flex;
-        flex-wrap: wrap; /* Allows cards to wrap onto the next line */
-        justify-content: space-between; /* Adjust spacing */
-        margin-left: auto;
-        margin-right: auto;
-        text-align: center;
-    }
+
  }
  /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
     .review-title {
-        margin-top: 120px; /* Reduced margin for smaller screens */
-        font-size: 22px; /* Adjust font size if needed */
+        margin-top: 150px; /* Reduced margin for smaller screens */
+        font-size: 25px; /* Adjust font size if needed */
     }
     
     .cards-container {
@@ -155,6 +206,10 @@ margin-top: 50px;
         flex-direction: column; /* Stack items vertically */
         font-size: 15px; /* Slightly smaller font size */
         padding: 5px; /* Reduced padding */
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
     }
 
     .flexboxes2 {
@@ -162,7 +217,7 @@ margin-top: 50px;
     }
     .card-container1, .card-container2 {
         height: auto; /* Allow height to adjust */
-        width: 200px; /* Full width on smaller screens */
+        width: 230px; /* Full width on smaller screens */
         margin: 15px; /* Reduced margin */
         padding: 10px; /* Increased padding for better spacing */
         display: flex;
@@ -185,12 +240,12 @@ margin-top: 50px;
     }
 
     .rating-img {
-        height: 80px; /* Reduced rating image size */
-        width: 80px; /* Reduced rating image size */
+        height: 100px; /* Reduced rating image size */
+        width: 100px; /* Reduced rating image size */
     }
 
     .cust-reviews {
-        font-size: 14px; /* Adjust font size for readability */
+        font-size: 19px; /* Adjust font size for readability */
     }
 }
 

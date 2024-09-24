@@ -4,11 +4,22 @@
     background-color: white;
     margin: 150px auto;
     box-shadow: 1px 7px 7px gray;
-    margin-top: 150px;
-    width: 705px;
+    margin: 0px auto;
+    width: 605px;
     border-radius: 25px;
     color: #405D72;
     padding: 10px;
+    margin-top: 120px;
+}
+.main{
+    background-image: url('./bg.jpeg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    margin: 0;
+    padding: 40px;
+    height: 100%; 
 }
 .input-container{
     color: #405D72;
@@ -29,11 +40,11 @@
     box-shadow: 1px 5px 7px gray;
     border-radius: 10px;
     border: none;
-    margin: 20px;
+    margin: 10px;
 }
 
 .submit{
-    margin: 50px auto;
+    margin: 30px auto;
 }
 
 h3{
@@ -44,18 +55,20 @@ h3{
         flex-direction: column;
         width: 400px;
         justify-content: space-evenly;
-        margin-top: 200px;
-        padding: 20px;
+        margin-top: 100px;
+        padding-left: 60px;
     }
     .input-box-1{
-        width: 394px;
-        height: 201px;
+        width: 274px;
+        height: 131px;
         margin: 0;
     }
     .box-2{
         padding: 10px;
     }
-    
+    .submit{
+        margin: 25px;
+    }
 }
 
 @media screen and (min-width:901px) and (max-width:1180px) {

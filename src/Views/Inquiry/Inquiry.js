@@ -27,6 +27,7 @@ const Inquiry = () => {
     return (
         <div>
             <Header />
+            <div className='main'>
             <div className='inquiry-container'>
             <form onSubmit={handleSubmit}>
                 <div className='box-1'>
@@ -42,6 +43,7 @@ const Inquiry = () => {
                 <div className='submit'><Button type="submit" text='Submit' >Submit</Button></div>
                 </div>
             </form>
+            </div>
             </div>
             <Footer />
         </div>
